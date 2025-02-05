@@ -253,20 +253,32 @@ window.flipCard = (elementId) => {
     const cardInner = el.querySelector(".card-inner");
     const stackedCards = el.querySelectorAll(".card-shadow"); // Select stacked cards
 
-    // Determine current rotation
-    const isFlipped = cardInner.style.transform.includes("rotateY(180deg)");
-    const newRotation = isFlipped ? "rotateY(0deg)" : "rotateY(180deg)";
+    // Determine if currently flipped
+    const isFlipped = el.classList.contains("flipped");
 
+    // Toggle flip state
+    el.classList.toggle("flipped");
+
+    el.style.transition = "transform 0.15s ease-out, box-shadow 0.15s ease-out";
+    el.style.boxShadow = "0px 8px 15px rgba(0, 0, 0, 0.4)"; // Soft shadow
+    el.style.transform = `scale(1.1)`; // Grow effect
     // Apply flip animation to main card
     cardInner.style.transition = "transform 0.3s ease-in-out";
-    cardInner.style.transform = newRotation;
+    cardInner.style.transform = isFlipped ? "rotateY(0deg)" : "rotateY(180deg)";
 
-    // Apply the same flip animation to stacked cards
-    stackedCards.forEach(card => {
-        card.style.transition = "transform 0.3s ease-in-out";
-        card.style.transform = newRotation;
+    // Apply synchronized flip animation to stacked cards
+    stackedCards.forEach((card, index) => {
+        card.style.transition = `transform 0.3s ease-in-out`; // Slight delay per card for stagger effect
+        card.style.transform = isFlipped ? "rotateY(0deg)" : "rotateY(180deg)";
     });
+    el.style.boxShadow = ""; // Remove shadow
+    el.style.transition = "transform 0.15s ease-out, box-shadow 0.15s ease-out";
+    el.style.transform = `translate(${el.dataset.posX}px, ${el.dataset.posY}px) scale(1) rotate(${el.dataset.rotation || 0}deg)`; // Return to normal size
+
+
 };
+
+
 
 window.moveElementRight = (originId, elementId, distance) => {
     const el = document.getElementById(elementId);

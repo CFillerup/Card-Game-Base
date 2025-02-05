@@ -11,11 +11,12 @@
         if (pile.Cards.Count > 0)
         {
             <div id="draggableDiv_@pile.Id"
-                 class="draggable"
+                 class="draggable @(pile.FaceUp ? "" : "flipped")"
                  data-rotation="@pile.Rotation"
+                 data-faceup="@pile.FaceUp"
                  @onmousedown="(e) => StartDrag(e, pile)"
                  @ondblclick="() => FlipCard(pile)"
-                 style="@(pile.StartingPosition != null ? $"left: {pile.StartingPosition.X}px; top: {pile.StartingPosition.Y}px;" : "")">
+                 style="@(pile.StartingPosition != null ? $"left: {pile.StartingPosition.X}px; top: {pile.StartingPosition.Y}px; rotateY(180deg)" : "")">
 
                 <!--   Create the visual stacking effect -->
                 @for (int i = 1; i < pile.Cards.Count; i++)
@@ -82,9 +83,10 @@
                 Name = $"Card Pile {cardCount}",
                 Id = cardCount,
                 CanMove = true,
+                FaceUp = false,
                 Cards = new List<CardBase>
             {
-                new CardBase { Name = $"Card {cardCount}", CardBack = "Card Back", FaceUp = true }
+                new CardBase { Name = $"Card {cardCount}", CardBack = "Card Back" }
             },
                 StartingPosition = new Models.Position { X = 100, Y = 100 }
             };

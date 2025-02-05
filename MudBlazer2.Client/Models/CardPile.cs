@@ -13,5 +13,6 @@
         public int Rotation { get; set; } = 0; // Store rotation angle
         public bool NewCard { get; set; } = false;
         public Position StartingPosition { get; set; } = new Position();
+        public bool FaceUp { get; set; } = true;
     }
 }

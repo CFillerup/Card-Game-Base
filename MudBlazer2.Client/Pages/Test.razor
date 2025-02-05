@@ -110,9 +110,10 @@
                 Name = $"Card Pile {cardCount}",
                 Id = cardCount,
                 CanMove = true,
+                FaceUp = false,
                 Cards = new List<CardBase>
         {
-            new CardBase { Name = $"Card {cardCount}", CardBack="Card Back", FaceUp = true }
+            new CardBase { Name = $"Card {cardCount}", CardBack="Card Back" }
         }
             };
 
@@ -190,10 +191,7 @@
         var id = cardId.Split("_")[1];
         var pile = piles.First(x => x.Id == int.Parse(id));
         pile.Cards.Reverse();
-        foreach (var card in pile.Cards)
-        {
-            card.FaceUp = isFlipped;
-        }
+        pile.FaceUp = isFlipped;
         StateHasChanged();
         Console.WriteLine($"Card {cardId} flipped. Is Flipped: {isFlipped}");
     }
