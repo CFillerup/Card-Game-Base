@@ -1,0 +1,165 @@
+﻿@page "/"
+@using MudBlazer2.Client.Models
+@inject IJSRuntime JSRuntime
+
+<!-- Full-Screen Board -->
+<div class="board">
+    <button @onclick="AddCardPile">Add Card Pile</button>
+
+    @foreach (var pile in cardPiles)
+    {
+        if (pile.Cards.Count > 0)
+        {
+            <div id="draggableDiv_@pile.Id"
+                 class="draggable"
+                 data-rotation="@pile.Rotation"
+                 @onmousedown="(e) => StartDrag(e, pile)"
+                 @ondblclick="() => FlipCard(pile)"
+                 style="@(pile.StartingPosition != null ? $"left: {pile.StartingPosition.X}px; top: {pile.StartingPosition.Y}px;" : "")">
+
+                <!--   Create the visual stacking effect -->
+                @for (int i = 1; i < pile.Cards.Count; i++)
+                {
+                    <div class="card-shadow" style="top:@(i * 3)px; left:@(i * 3)px; z-index:-@(i)"></div>
+                }
+
+                <!--   Top visible card -->
+                <div class="card-inner">
+                    <div class="card-front">
+                        @pile.Cards.LastOrDefault()?.Name
+                    </div>
+                    <div class="card-back">
+                        @pile.Cards.LastOrDefault()?.CardBack (@pile.Cards.Count)
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+
+@code {
+    private List<CardPile> cardPiles = new();
+    private int cardCount = 0;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var dotNetRef = DotNetObjectReference.Create(this);
+            await JSRuntime.InvokeVoidAsync("setBlazorHelper", dotNetRef);
+        }
+
+        foreach (var pile in cardPiles)
+        {
+            await EnableDragging(pile);
+        }
+    }
+
+    private async Task EnableDragging(CardPile pile)
+    {
+        await JSRuntime.InvokeVoidAsync("enableDragging", $"draggableDiv_{pile.Id}");
+    }
+
+    private async void AddCardPile()
+    {
+        cardCount++;
+        var newPile = new CardPile
+            {
+                Name = $"Card Pile {cardCount}",
+                Id = cardCount,
+                CanMove = true,
+                Cards = new List<CardBase>
+            {
+                new CardBase { Name = $"Card {cardCount}", CardBack = "Card Back", FaceUp = true }
+            },
+                StartingPosition = new Models.Position { X = 100, Y = 100 }
+            };
+
+        cardPiles.Add(newPile);
+        await JSRuntime.InvokeVoidAsync("setElementPosValues", $"draggableDiv_{newPile.Id}", newPile.StartingPosition.X, newPile.StartingPosition.Y);
+        StateHasChanged();
+        await EnableDragging(newPile);
+    }
+    private async void FlipCard(CardPile pile)
+    {
+        await JSRuntime.InvokeVoidAsync("flipCard", $"draggableDiv_{pile.Id}");
+    }
+    private async void StartDrag(MouseEventArgs e, CardPile pile)
+    {
+        await EnableDragging(pile);
+    }
+
+    [JSInvokable]
+    public async Task DrawTopCardJS(string elementId)
+    {
+        var pile = cardPiles.FirstOrDefault(x => x.Id.ToString() == elementId.Split("_")[1]);
+        if (pile == null || pile.Cards.Count <= 1) return;
+
+        var topCard = pile.Cards.LastOrDefault();
+        var pilePosition = await JSRuntime.InvokeAsync<Models.Position>("getPilePosition", $"draggableDiv_{pile.Id}");
+        if (topCard != null)
+        {
+            cardCount++;
+
+            var newCardPile = new CardPile
+                {
+                    Name = topCard.Name,
+                    Id = cardCount,
+                    CanMove = true,
+                    Cards = new List<CardBase> { topCard },
+                    NewCard = true,
+                    StartingPosition = new Models.Position { X = pilePosition.X, Y = pilePosition.Y }
+                };
+
+            pile.Cards.Remove(topCard);
+            cardPiles.Add(newCardPile);
+            StateHasChanged();
+
+            await Task.Delay(50);
+            await JSRuntime.InvokeVoidAsync("flipCard", $"draggableDiv_{newCardPile.Id}", elementId);
+            var moveDistance = pilePosition.Width + 10;
+            var newX = pilePosition.X + moveDistance;
+            await JSRuntime.InvokeVoidAsync("moveElementRight", $"draggableDiv_{pile.Id}", $"draggableDiv_{newCardPile.Id}", moveDistance);
+            await JSRuntime.InvokeVoidAsync("setElementPosValues", $"draggableDiv_{newCardPile.Id}", newX);
+
+            await Task.Delay(300);
+            //await JSRuntime.InvokeVoidAsync("setElementPosition", $"draggableDiv_{pile.Id}", $"draggableDiv_{newCardPile.Id}", moveDistance);
+
+
+        }
+    }
+
+
+
+
+
+
+
+    //   Collision Detection
+    [JSInvokable]
+    public async Task OnCollisionDetected(string id1, string id2)
+    {
+        var pileOne = cardPiles.FirstOrDefault(x => x.Id.ToString() == id1.Split("_")[1]);
+        var pileTwo = cardPiles.FirstOrDefault(x => x.Id.ToString() == id2.Split("_")[1]);
+
+        if (pileOne == null || pileTwo == null)
+        {
+            Console.WriteLine($"Collision Error: Could not find piles for {id1} or {id2}");
+            return;
+        }
+
+        Console.WriteLine($"Triggering snapToStack for {id1} → {id2}");
+
+        //   Call JavaScript to animate the snap effect
+        await JSRuntime.InvokeVoidAsync("snapToStack", $"draggableDiv_{pileOne.Id}", $"draggableDiv_{pileTwo.Id}");
+
+        //   Wait for animation to complete before merging
+        await Task.Delay(250);
+
+        pileTwo.Cards.AddRange(pileOne.Cards);
+        pileOne.Cards.Clear();
+
+        StateHasChanged();
+    }
+}

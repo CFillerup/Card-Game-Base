@@ -1,0 +1,200 @@
+﻿
+@using MudBlazer2.Client.Models
+@inject IJSRuntime JSRuntime
+
+<style>
+    .draggable {
+        position: absolute;
+        cursor: grab;
+        user-select: none;
+        transform-style: preserve-3d;
+        height: 33vh;
+        width: 20vh;
+    }
+
+    .card-inner {
+        transition: transform 0.5s ease-in-out;
+        transform-style: preserve-3d;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .card-front, .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: bold;
+        border: 1px solid black;
+    }
+
+    .card-front {
+        background-color: lightblue;
+    }
+
+    .card-back {
+        background-color: lightcoral;
+        transform: rotateY(180deg);
+    }
+
+    .no-drag {
+        touch-action: none; /* Prevent accidental dragging */
+        cursor: default; /* Change cursor to indicate non-draggable */
+    }
+
+        .no-drag .card-inner {
+            pointer-events: auto; /* Ensure internal elements remain clickable */
+        }
+
+</style>
+
+<button @onclick="AddCard">Add Card</button>
+
+@foreach (var pile in piles)
+{
+    if (pile.Cards.Count > 0)
+    {
+        <div id="draggableDiv_@pile.Id"
+             class="draggable @(pile.CanMove ? "" : "no-drag")"
+             @onclick="() => DrawTopCard(pile)">
+            <div class="card-inner">
+                <div class="card-front">
+                    @pile.Cards.LastOrDefault()?.Name
+                </div>
+                <div class="card-back">
+                    @pile.Cards.LastOrDefault()?.CardBack (@pile.Cards.Count)
+                </div>
+                <div>
+                    <MudSwitch @bind-Value="pile.CanMove" Label="Can Move" @onchange="(e) => ToggleMove(pile)" />
+                </div>
+            </div>
+        </div>
+    }
+}
+
+@code {
+    private List<CardPile> piles = new();
+    private int cardCount = 0;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var dotNetRef = DotNetObjectReference.Create(this);
+            await JSRuntime.InvokeVoidAsync("setBlazorHelper", dotNetRef);
+        }
+    }
+
+    private async Task EnableDragging(CardPile pile)
+    {
+        pile.CanMove = true;
+        await JSRuntime.InvokeVoidAsync("enableDragging", $"draggableDiv_{pile.Id}", DotNetObjectReference.Create(this));
+    }
+
+    private async Task DisableDragging(CardPile pile)
+    {
+        pile.CanMove = false;
+        await JSRuntime.InvokeVoidAsync("disableDragging", $"draggableDiv_{pile.Id}");
+    }
+
+    private async void AddCard()
+    {
+        cardCount++;
+        var newCardPile = new CardPile
+            {
+                Name = $"Card Pile {cardCount}",
+                Id = cardCount,
+                CanMove = true,
+                Cards = new List<CardBase>
+        {
+            new CardBase { Name = $"Card {cardCount}", CardBack="Card Back", FaceUp = true }
+        }
+            };
+
+        piles.Add(newCardPile);
+        StateHasChanged();
+
+        //   Ensure the card is draggable immediately
+        await Task.Delay(50); // Ensure DOM is updated
+        await EnableDragging(newCardPile);
+    }
+
+
+    private async void DrawTopCard(CardPile pile)
+    {
+        if (pile.Cards.Count == 0 || pile.CanMove) return; // Only draw if the pile is not movable
+
+        var topCard = pile.Cards.LastOrDefault();
+        if (topCard != null)
+        {
+            // Create a new draggable pile with the top card
+            cardCount++;
+            var newPile = new CardPile
+                {
+                    Name = topCard.Name,
+                    Id = cardCount,
+                    CanMove = true, // This new card is draggable
+                    Cards = new List<CardBase> { topCard }
+                };
+
+            piles.Add(newPile);
+            pile.Cards.Remove(topCard); // Remove from original pile
+
+            StateHasChanged();
+            await EnableDragging(newPile); // Make it draggable
+        }
+    }
+
+    private async void ToggleMove(CardPile pile)
+    {
+        if (pile.CanMove)
+            await EnableDragging(pile);
+        else
+            await DisableDragging(pile);
+    }
+
+    [JSInvokable]
+    public async Task OnCollisionDetected(string id1, string id2)
+    {
+        var idOne = id1.Split("_")[1];
+        var idTwo = id2.Split("_")[1];
+
+        var pileOne = piles.FirstOrDefault(x => x.Id == int.Parse(idOne));
+        var pileTwo = piles.FirstOrDefault(x => x.Id == int.Parse(idTwo));
+
+        pileOne.CanMove = pileTwo.CanMove;
+
+        if (pileOne != null && pileTwo != null)
+        {
+            await JSRuntime.InvokeVoidAsync("snapToStack", $"draggableDiv_{idOne}", $"draggableDiv_{idTwo}");
+
+            await Task.Delay(300);
+
+            pileTwo.Cards.AddRange(pileOne.Cards);
+            pileOne.Cards.Clear();
+
+            StateHasChanged();
+        }
+
+        Console.WriteLine($"Collision detected between {id1} and {id2}");
+    }
+
+    [JSInvokable]
+    public void OnCardFlipped(string cardId, bool isFlipped)
+    {
+        var id = cardId.Split("_")[1];
+        var pile = piles.First(x => x.Id == int.Parse(id));
+        pile.Cards.Reverse();
+        foreach (var card in pile.Cards)
+        {
+            card.FaceUp = isFlipped;
+        }
+        StateHasChanged();
+        Console.WriteLine($"Card {cardId} flipped. Is Flipped: {isFlipped}");
+    }
+}

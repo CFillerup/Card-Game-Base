@@ -1,0 +1,87 @@
+﻿/* Full-Screen Board */
+.board {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #2e2e2e;
+}
+
+/* Draggable Cards */
+.draggable {
+    position: absolute;
+    cursor: grab;
+    user-select: none;
+    transform-style: preserve-3d;
+    width: 20vh;
+    height: 33vh;
+}
+
+/* Inner structure of a card */
+.card-inner {
+    transition: transform 0.3s ease-in-out;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+/* Default Front */
+.card-front {
+    background-color: lightblue;
+}
+
+/* Hidden Back */
+.card-back {
+    background-color: lightcoral;
+    transform: rotateY(180deg);
+}
+
+/* Disable Dragging */
+.no-drag {
+    touch-action: none;
+    cursor: default;
+}
+
+/* Smooth Stacking Animation */
+@keyframes snapToStack {
+    0% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.snapping {
+    animation: snapToStack 0.3s ease-in-out;
+}
+/*   Visual "stacking" effect for piles with multiple cards */
+.card-shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    border-radius: 5px;
+    border: 2px solid black;
+    opacity: 1;
+    z-index: -1;
+    transition: top 0.1s, left 0.1s;
+}
