@@ -27,7 +27,12 @@
                 <!--   Top visible card -->
                 <div class="card-inner">
                     <div class="card-front">
-                        @pile.Cards.LastOrDefault()?.Name
+                        <div class="card-content">
+                            <div style="height:10%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.Name</div>
+                            <div style="height:40%; outline: 2px solid black;">image</div>
+                            <div style="height:10%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.CardType</div>
+                            <div style="height:40%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.Description</div>
+                        </div>
                     </div>
                     <div class="card-back">
                         @pile.Cards.LastOrDefault()?.CardBack (@pile.Cards.Count)
@@ -86,7 +91,13 @@
                 FaceUp = false,
                 Cards = new List<CardBase>
             {
-                new CardBase { Name = $"Card {cardCount}", CardBack = "Card Back" }
+                new CardBase
+                {
+                    Name = $"Example Card",
+                    Description = "This is an example card",
+                    CardType = "Card Type",
+                    CardBack = "Card Back"
+                }
             },
                 StartingPosition = new Models.Position { X = 100, Y = 100 }
             };
