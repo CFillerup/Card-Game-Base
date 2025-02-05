@@ -46,8 +46,21 @@
     {
         if (firstRender)
         {
+            // Wait until JS is available before calling setBlazorHelper
+            await JSRuntime.InvokeVoidAsync("setTimeout", 100);
             var dotNetRef = DotNetObjectReference.Create(this);
-            await JSRuntime.InvokeVoidAsync("setBlazorHelper", dotNetRef);
+
+            try
+            {
+                await JSRuntime.InvokeVoidAsync("setBlazorHelper", dotNetRef);
+                Console.WriteLine(" Blazor Helper Set!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($" Error: Could not set Blazor Helper - {ex.Message}");
+                await Task.Delay(1000);
+                await OnAfterRenderAsync(firstRender);
+            }
         }
 
         foreach (var pile in cardPiles)
@@ -162,4 +175,17 @@
 
         StateHasChanged();
     }
+    [JSInvokable]
+    public async Task ShufflePileJS(string elementId)
+    {
+        var pile = cardPiles.FirstOrDefault(x => x.Id.ToString() == elementId.Split("_")[1]);
+        if (pile == null || pile.Cards.Count <= 1) return;
+
+        // 🔹 Shuffle the pile
+        var rng = new Random();
+        pile.Cards = pile.Cards.OrderBy(x => rng.Next()).ToList();
+
+        StateHasChanged();
+    }
+
 }

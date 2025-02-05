@@ -6,6 +6,19 @@ document.addEventListener("keydown", (e) => {
         window.flipCard(hoveredPile.id);
     }
 });
+document.addEventListener("keydown", async (e) => {
+    if (e.key.toLowerCase() === "s" && hoveredPile) {
+        console.log(`Shuffling pile: ${hoveredPile.id}`);
+        shufflePile(hoveredPile.id);
+
+        // 🔹 Call Blazor to shuffle the data internally
+        if (window.blazorHelper) {
+            await window.blazorHelper.invokeMethodAsync("ShufflePileJS", hoveredPile.id)
+                .catch(() => console.warn("Blazor component is disposed."));
+        }
+    }
+});
+
 
 window.enableDragging = (elementId) => {
     const el = document.getElementById(elementId);
@@ -152,7 +165,7 @@ window.snapToStack = (droppedId, stackId) => {
 
     const boardRect = document.querySelector(".board").getBoundingClientRect();
     const stackRect = stackElement.getBoundingClientRect();
-
+    droppedElement.style.zIndex = "1000"; 
     //   Get the exact target position (absolute)
     let stackPosX = stackRect.left - boardRect.left;
     let stackPosY = stackRect.top - boardRect.top;
@@ -238,14 +251,23 @@ window.flipCard = (elementId) => {
     if (!el) return;
 
     const cardInner = el.querySelector(".card-inner");
+    const stackedCards = el.querySelectorAll(".card-shadow"); // Select stacked cards
 
-    // Check current rotation to determine front or back
-    if (cardInner.style.transform.includes("rotateY(180deg)")) {
-        cardInner.style.transform = "rotateY(0deg)";
-    } else {
-        cardInner.style.transform = "rotateY(180deg)";
-    }
+    // Determine current rotation
+    const isFlipped = cardInner.style.transform.includes("rotateY(180deg)");
+    const newRotation = isFlipped ? "rotateY(0deg)" : "rotateY(180deg)";
+
+    // Apply flip animation to main card
+    cardInner.style.transition = "transform 0.3s ease-in-out";
+    cardInner.style.transform = newRotation;
+
+    // Apply the same flip animation to stacked cards
+    stackedCards.forEach(card => {
+        card.style.transition = "transform 0.3s ease-in-out";
+        card.style.transform = newRotation;
+    });
 };
+
 window.moveElementRight = (originId, elementId, distance) => {
     const el = document.getElementById(elementId);
     if (!el) return;
@@ -315,3 +337,26 @@ document.addEventListener("keydown", async (e) => {
             .catch(() => console.warn("Blazor component is disposed."));
     }
 });
+
+window.shufflePile = (elementId) => {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+
+    // Get all shadow cards (behind the top card)
+    const shadowCards = el.querySelectorAll(".card-shadow");
+
+    shadowCards.forEach((shadow, index) => {
+        // Assign a slightly different duration to each
+        let duration = 0.3 + Math.random() * 0.3; // Between 0.3s - 0.6s
+
+        // Apply shuffle animation
+        shadow.style.transition = `transform ${duration}s ease-in-out`;
+        shadow.style.transform = `rotate(${360 + (Math.random() * 30)}deg)`;
+
+        // Reset after animation
+        setTimeout(() => {
+            shadow.style.transition = "";
+            shadow.style.transform = "rotate(0deg)";
+        }, duration * 1000);
+    });
+};
