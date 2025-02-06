@@ -1,0 +1,136 @@
+{
+  "HeroClassCards": [
+    {
+      "Name": "Fighter",
+      "Description": "A trained combatant in all manner of weapons and armor. What you lack in arcane knowledge you make up for in pure physical prowess.",
+      "CardType": "HeroClass",
+      "DiceModifications": {
+        "Str": "+1",
+        "Dex": "+1",
+        "Con": "+1"
+      },
+      "ClassAbilities": [
+        {
+          "Name": "Power Strike",
+          "Effect": "Attack 1 creature within 1 space. The attack can use any weapon you have, but the damage dice is increased to 1d12, if the weapons damage is less than that.",
+          "AbilityType": "Action"
+        },
+        {
+          "Name": "Shield Wall",
+          "Effect": "Allies within 1 space of you add +1 to their defense rolls.",
+          "AbilityType": "Passive"
+        }
+      ]
+    },
+    {
+      "Name": "Thief",
+      "Description": "A master of stealth, deception, and agility. You strike from the shadows and take what you need before anyone notices.",
+      "CardType": "HeroClass",
+      "DiceModifications": {
+        "Dex": "+1",
+        "Int": "+1",
+        "Cha": "+1"
+      },
+      "ClassAbilities": [
+        {
+          "Name": "Distracting Flourish",
+          "Effect": "Choose a creature within 5 spaces and roll your Cha die. The next defense roll the target makes is reduced by the result.",
+          "AbilityType": "Action"
+        },
+        {
+          "Name": "Evasion",
+          "Effect": "Gain +2 to defense rolls against attacks originating from more that 1 space away.",
+          "AbilityType": "Passive"
+        }
+      ]
+    },
+    {
+      "Name": "Ranger",
+      "Description": "A hunter and survivalist, skilled in ranged combat and tracking. You are at home in the wilderness.",
+      "CardType": "HeroClass",
+      "DiceModifications": {
+        "Dex": "+1",
+        "Wis": "+1",
+        "Con": "+1"
+      },
+      "ClassAbilities": [
+        {
+          "Name": "Rapid Shot",
+          "Effect": "Choose an attack from a weapon that you have equipped. The attack must target a creature more than 1 space away, and have infinite uses. Activate that attack twice.",
+          "AbilityType": "Action"
+        },
+        {
+          "Name": "Finsish the Hunt",
+          "Effect": "Your attack rolls have +1 against targets with less than half their maximum hearts.",
+          "AbilityType": "Passive"
+        }
+      ]
+    },
+    {
+      "Name": "Cleric",
+      "Description": "A devoted servant of the divine, wielding holy magic to heal and protect allies while smiting foes.",
+      "CardType": "HeroClass",
+      "DiceModifications": {
+        "Wis": "+1",
+        "Con": "+1",
+        "Cha": "+1"
+      },
+      "ClassAbilities": [
+        {
+          "Name": "Healing Touch",
+          "Effect": "Restore a number of to an ally within reach equal to a roll of your Wis die.",
+          "AbilityType": "Action"
+        },
+        {
+          "Name": "Divine Protection",
+          "Effect": "Undead that attack you must roll their attack twice and take the lower result.",
+          "AbilityType": "Passive"
+        }
+      ]
+    },
+    {
+      "Name": "Bard",
+      "Description": "A charismatic performer and jack-of-all-trades, using music and magic to inspire allies and deceive foes.",
+      "CardType": "HeroClass",
+      "DiceModifications": {
+        "Cha": "+1",
+        "Dex": "+1",
+        "Int": "+1"
+      },
+      "ClassAbilities": [
+        {
+          "Name": "Inspiring Tune",
+          "Effect": "Choose a creature that can hear you. The next dice that creature rolls increases by 1 for that roll.",
+          "AbilityType": "Action"
+        },
+        {
+          "Name": "Silver Tongue",
+          "Effect": "Whenever you roll your Cha dice to pursuade, lie, or intimidate, you add +1 to the result.",
+          "AbilityType": "Passive"
+        }
+      ]
+    },
+    {
+      "Name": "Mage",
+      "Description": "A scholar of the arcane, capable of wielding powerful spells but physically frail.",
+      "CardType": "HeroClass",
+      "DiceModifications": {
+        "Int": "+1",
+        "Wis": "+1",
+        "Cha": "+1"
+      },
+      "ClassAbilities": [
+        {
+          "Name": "Fireball",
+          "Effect": "Choose a space within 5 spaces of you. Each creature in that space, or adjacent to it, loses 1d4 hearts (roll seperatly for each effected creature).",
+          "AbilityType": "Action"
+        },
+        {
+          "Name": "Arcane Defence",
+          "Effect": "Your defense rolls use your Int instead of your Dex.",
+          "AbilityType": "Passive"
+        }
+      ]
+    }
+  ]
+}

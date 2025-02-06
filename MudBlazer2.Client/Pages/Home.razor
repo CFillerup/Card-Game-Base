@@ -1,10 +1,11 @@
 ﻿@page "/"
 @using MudBlazer2.Client.Models
+@using System.Text.Json
 @inject IJSRuntime JSRuntime
 
 <!-- Full-Screen Board -->
 <div class="board">
-    <button @onclick="AddCardPile">Add Card Pile</button>
+    <button @onclick="AddHeroClassCards">Add Card Pile</button>
 
     @foreach (var pile in cardPiles)
     {
@@ -28,10 +29,41 @@
                 <div class="card-inner">
                     <div class="card-front">
                         <div class="card-content">
-                            <div style="height:10%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.Name</div>
-                            <div style="height:40%; outline: 2px solid black;">image</div>
-                            <div style="height:10%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.CardType</div>
-                            <div style="height:40%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.Description</div>
+                            @switch (pile.Cards.LastOrDefault()?.CardType)
+                            {
+                                case CardBase.CardTypeEnum.HeroClass:
+                                    var card = pile.Cards.LastOrDefault() as HeroClassCard;
+                                    <div class="hero-class-card">
+                                        <h3 class="card-title">@card.Name</h3>
+                                        <p class="card-description">@card.Description</p>
+
+                                        <div class="dice-modifications">
+                                            @foreach (var modifier in card.DiceModifications)
+                                            {
+                                                <h4>
+                                                    @modifier.Key: @modifier.Value
+                                                </h4>
+                                            }
+                                        </div>
+
+                                        <div class="class-abilities">
+                                            <ul>
+                                                @foreach (var ability in card.ClassAbilities)
+                                                {
+                                                    <li><strong>@ability.Name</strong> (@ability.AbilityType): @ability.Effect</li>
+                                                }
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    break;
+                                default:
+                                    <div style="height:10%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.Name</div>
+                                    <div style="height:40%; outline: 2px solid black;">image</div>
+                                    <div style="height:10%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.CardType</div>
+                                    <div style="height:40%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.Description</div>
+                                    break;
+                            }
+
                         </div>
                     </div>
                     <div class="card-back">
@@ -95,7 +127,6 @@
                 {
                     Name = $"Example Card",
                     Description = "This is an example card",
-                    CardType = "Card Type",
                     CardBack = "Card Back"
                 }
             },
@@ -199,6 +230,43 @@
         pile.Cards = pile.Cards.OrderBy(x => rng.Next()).ToList();
 
         StateHasChanged();
+    }
+    public async Task AddHeroClassCards()
+    {
+        string filePath = Path.Combine(Directory.GetCurrentDirectory(), "hero_class_cards.json");
+        // Ensure this file exists in the working directory
+        List<HeroClassCard> heroClassCards = LoadCardPileFromJson(filePath);
+
+        cardPiles.Add(new CardPile
+            {
+                Name = "Hero Class Cards",
+                Id = cardCount,
+                CanMove = true,
+                FaceUp = true,
+                Cards = new List<CardBase>(heroClassCards),
+                StartingPosition = new Models.Position { X = 100, Y = 100 }
+            });
+    }
+
+    public static List<HeroClassCard> LoadCardPileFromJson(string filePath)
+    {
+        try
+        {
+            string json = File.ReadAllText(filePath);
+            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            HeroClassCardCollection cardCollection = JsonSerializer.Deserialize<HeroClassCardCollection>(json, options);
+            return cardCollection?.HeroClassCards ?? new List<HeroClassCard>();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading hero class cards: {ex.Message}");
+            return new List<HeroClassCard>();
+        }
+    }
+
+    public class HeroClassCardCollection
+    {
+        public List<HeroClassCard> HeroClassCards { get; set; }
     }
 
 }
