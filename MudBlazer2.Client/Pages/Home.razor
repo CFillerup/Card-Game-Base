@@ -2,6 +2,7 @@
 @using MudBlazer2.Client.Models
 @using System.Text.Json
 @inject IJSRuntime JSRuntime
+@inject HttpClient Http
 
 <!-- Full-Screen Board -->
 <div class="board">
@@ -233,40 +234,40 @@
     }
     public async Task AddHeroClassCards()
     {
-        string filePath = Path.Combine(Directory.GetCurrentDirectory(), "hero_class_cards.json");
+        //string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "hero_class_cards.json");
+        //Console.WriteLine($"Looking for file at: {Path.GetFullPath(filePath)}");
         // Ensure this file exists in the working directory
-        List<HeroClassCard> heroClassCards = LoadCardPileFromJson(filePath);
+        //List<HeroClassCard> heroClassCards = LoadCardPileFromJson(filePath);
 
-        cardPiles.Add(new CardPile
-            {
-                Name = "Hero Class Cards",
-                Id = cardCount,
-                CanMove = true,
-                FaceUp = true,
-                Cards = new List<CardBase>(heroClassCards),
-                StartingPosition = new Models.Position { X = 100, Y = 100 }
-            });
-    }
-
-    public static List<HeroClassCard> LoadCardPileFromJson(string filePath)
-    {
         try
         {
-            string json = File.ReadAllText(filePath);
-            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-            HeroClassCardCollection cardCollection = JsonSerializer.Deserialize<HeroClassCardCollection>(json, options);
-            return cardCollection?.HeroClassCards ?? new List<HeroClassCard>();
+
+            List<HeroClassCard>? heroClassCards = await Http.GetFromJsonAsync<List<HeroClassCard>>("hero_class_cards.json");
+
+
+            if (heroClassCards == null || heroClassCards.Count == 0)
+            {
+                Console.WriteLine("No hero class cards found");
+
+            }
+            else
+            {
+
+                cardPiles.Add(new CardPile
+                    {
+                        Name = "Hero Class Cards",
+                        Id = cardCount,
+                        CanMove = true,
+                        FaceUp = true,
+                        Cards = new List<CardBase>(heroClassCards),
+                        StartingPosition = new Models.Position { X = 100, Y = 100 }
+                    });
+            }
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error loading hero class cards: {ex.Message}");
-            return new List<HeroClassCard>();
+            Console.WriteLine($"Error: {ex.Message}");
         }
-    }
-
-    public class HeroClassCardCollection
-    {
-        public List<HeroClassCard> HeroClassCards { get; set; }
     }
 
 }

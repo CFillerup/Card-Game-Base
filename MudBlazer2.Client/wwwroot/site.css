@@ -24,6 +24,7 @@
     width: 100%;
     height: 100%;
     position: relative;
+    color: black;
 
 }
 
@@ -35,8 +36,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
-    font-weight: bold;
     border-radius: 5px;
     border: 2px solid black;
 }
@@ -98,9 +97,6 @@
 .hero-class-card {
     width: 100%;
     height: 100%;
-    border: 2px solid #333;
-    border-radius: 8px;
-    background-color: #f9f9f9;
     padding: 1vh;
     overflow: hidden;
     display: flex;
@@ -116,16 +112,22 @@
 }
 
 .card-description {
-    font-size: 0.8vh;
+    font-size: 0.9vh;
     flex-grow: 1;
-    overflow: hidden;
+    font-style: italic;
+    text-align: left;
+    padding-bottom: 1vh;
     text-overflow: ellipsis;
 }
 
 .dice-modifications {
     font-size: 1vh;
+    display:flex;
     text-align: center;
     padding: 0.5vh;
+}
+.class-abilities {
+    text-align: left;
 }
 
 h4 {
@@ -141,7 +143,8 @@ ul {
 
 li {
     font-size: 1vh;
-    overflow: hidden;
+    margin-bottom: 0.5vh;
+    overflow: auto;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
 }
