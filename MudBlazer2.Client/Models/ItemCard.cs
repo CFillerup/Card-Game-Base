@@ -1,6 +1,6 @@
 ﻿namespace MudBlazer2.Client.Models
 {
-    public abstract class ItemCard : CardBase
+    public class ItemCard : CardBase
     {
         public enum ItemTypeEnum
         {

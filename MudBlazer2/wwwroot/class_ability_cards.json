@@ -1,0 +1,30 @@
+[
+  {
+    "Name": "Power Strike",
+    "Description": "A devastating strike that deals extra damage.",
+    "CardType": "ClassAbility",
+    "Class": "Warrior",
+    "Tier": 1,
+    "Abilities": [
+      {
+        "Name": "Power Strike",
+        "Effect": "Attack 1 creature within 1 space. The attack can use any weapon you have, but the damage dice is increased to 1d12 if the weapon's damage is less than that.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Shield Wall",
+    "Description": "Defensive stance to protect nearby allies.",
+    "CardType": "ClassAbility",
+    "Class": "Warrior",
+    "Tier": 1,
+    "Abilities": [
+      {
+        "Name": "Shield Wall",
+        "Effect": "Allies within 1 space of you add +1 to their defense rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  }
+]

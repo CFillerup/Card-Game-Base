@@ -14,6 +14,7 @@ namespace MudBlazer2.Client.Models
     {
         Action,
         Passive,
+        Reaction,
         Consumable
     }
 }

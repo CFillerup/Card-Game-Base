@@ -1,6 +1,6 @@
 [
   {
-    "Name": "Fighter",
+    "Name": "Warrior",
     "Description": "A trained combatant in all manner of weapons and armor. What you lack in arcane knowledge you make up for in pure physical prowess.",
     "CardType": "HeroClass",
     "DiceModifications": {
@@ -11,7 +11,7 @@
     "ClassAbilities": [
       {
         "Name": "Power Strike",
-        "Effect": "Attack 1 creature within 1 space. The attack can use any weapon you have, but the damage dice is increased to 1d12, if the weapons damage is less than that.",
+        "Effect": "Attack 1 creature within 1 space. The attack can use any weapon you have equipped, but the damage dice is increased to 1d12, if the weapons damage is less than that.",
         "AbilityType": "Action"
       },
       {
@@ -19,10 +19,676 @@
         "Effect": "Allies within 1 space of you add +1 to their defense rolls.",
         "AbilityType": "Passive"
       }
+    ],
+
+
+    "AbilityDeck": [
+      {
+        "Name": "Cleave",
+        "Description": "Use a weapon to attack multiple enemies.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Cleave",
+            "Effect": "Attack 2 creature within 1 space of you and 1 space of each other. The attacks can use any weapon you have equipped.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Shield Wall",
+        "Description": "Defensive stance to protect nearby allies.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Shield Wall",
+            "Effect": "Allies within 1 space of you add +1 to their defense rolls.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Battle Endurance",
+        "Description": "Take a breather to regain some hearts.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Battle Endurance",
+            "Effect": "Roll your Con die and regain a number of hearts equal to the result.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Soldiers March",
+        "Description": "Your speed is that of a trained soldier.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Soldiers March",
+            "Effect": "Your movement rolls use your Str instead of your Dex.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Riposte",
+        "Description": "Get an attack against a target that damages you.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Riposte",
+            "Effect": "When you take damage from an attack within 1 space of you, you can make 1 attack against the attacker. The attack can use any weapon you have equipped.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Battlefield Commander",
+        "Description": "Snap your allies to attention, increasing their attack dice size.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Battlefield Commander",
+            "Effect": "Until the start of your next turn, the damage dice of attacks made by your allies increases by 1.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Admiration of Skill",
+        "Description": "You are bolstered when an ally shows strength of arms.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Admiration of Skill",
+            "Effect": "Whenever an ally rolls the max number on the dice of an attack roll using a weapon you regain 1 missing heart.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Move Those Feet",
+        "Description": "Have a creature re-roll their initiative.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Move Those Feet",
+            "Effect": "After all creatures roll initiative for an encounter, but before the first turn, you can have one creature re-roll their initiative check.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Berserker's Resilience",
+        "Description": "The more damage you take, the stronger you become.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Berserker's Resilience",
+            "Effect": "Whenever you take damage, roll your Con die. If the result is 4 or higher, gain +1 to your next attack roll this encounter. This effect can stack if you take multiple instance of damage before attacking.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Overhead Slam",
+        "Description": "A heavy downward attack that knocks enemies prone.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Overhead Slam",
+            "Effect": "Make an attack against a creature within 1 space. If the attack hits, the target is knocked prone (reducing their next movement roll by half).",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "War Cry",
+        "Description": "A battle cry that demoralizes enemies and bolsters allies.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "War Cry",
+            "Effect": "Roll your Cha die, Each enemy within 3 spaces subtract the result from their next attack roll.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Last Stand",
+        "Description": "Push yourself beyond your limits when facing death.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Last Stand",
+            "Effect": "When you reach 3 hearts or lower, roll your Con die. If the result is 4 or higher, gain +2 to all defense rolls until the end of the encounter.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Defensive Stance",
+        "Description": "Brace yourself against incoming attacks.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Defensive Stance",
+            "Effect": "Until the start of your next turn, whenever you roll a defense roll, you can roll twice and take the higher result.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Reckless Assault",
+        "Description": "Attack with full force, sacrificing defense for power.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Reckless Assault",
+            "Effect": "Make an attack with a weapon that uses your Str die. You add 2 the attack roll, but you subtract 2 from your next defense roll.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Tactical Kick",
+        "Description": "A swift kick to reposition your enemy.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Tactical Kick",
+            "Effect": "When a creature ends its turn within 1 space of you, you can push them 1 space directly away from you.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Hold the Line",
+        "Description": "Prevent enemies from slipping past you.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Hold the Line",
+            "Effect": "When an enemy moves out of a space adjacent to you, you may make an attack against them.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Unbreakable Will",
+        "Description": "Shake off the effects of pain and fear.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Unbreakable Will",
+            "Effect": "Whenever you are forced to roll a Int, Wis, or Cha roll to resist an enemy action you can roll your Con die instes.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Shoulder Bash",
+        "Description": "Ram into an opponent to unbalance them.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Shoulder Bash",
+            "Effect": "Make an attack using your Str die. If the attack hits, the target loses 1 Action Point on their next turn.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Vengeance Strike",
+        "Description": "Strike back with fury when an ally falls.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Vengeance Strike",
+            "Effect": "When an ally within 3 spaces loses one or more hearts, you may immediately make an attack against any enemy within range.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Brutal Grapple",
+        "Description": "Hold an enemy in place to control the battlefield.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Brutal Grapple",
+            "Effect": "Make an attack using your Str die. If the attack hits, the target cannot move until the start of your next turn.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Furious Charge",
+        "Description": "Rush forward to close the gap between you and your enemy.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Furious Charge",
+            "Effect": "Move up to 3 spaces in a straight line. If you end your movement adjacent to an enemy, make an attack with a weapon that uses your Str die.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Quick Recovery",
+        "Description": "Your determination allows you to resist exhaustion.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Quick Recovery",
+            "Effect": "When you roll a 1 on an attack roll, you may refresh one exhausted Action.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Lunging Attack",
+        "Description": "Lunge forward at an enemy.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Lunging Attack",
+            "Effect": "Make an attack with a melee weapon you have equipped. The attacks range is increased to 3 spaces.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Savage Momentum",
+        "Description": "Your attacks become stronger as you press the assault.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Savage Momentum",
+            "Effect": "Whenever you successfully hit a creature, your attack rolls for this encounter gains +1. This effect stacks up to +3.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Crushing Blow",
+        "Description": "Deliver a strike so powerful it weakens your foe's defenses.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Crushing Blow",
+            "Effect": "Make an attack using your Str die. If the attack hits, the target rolls its next defense roll with disadvantage.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Battlefield Awareness",
+        "Description": "Your experience in battle helps you react faster.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Battlefield Awareness",
+            "Effect": "At the start of each encounter, roll your Wis die. You may increase your initiative roll by the result.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Counterstrike",
+        "Description": "When an enemy fails to land a hit, you retaliate instantly.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Counterstrike",
+            "Effect": "When a creature attacks you and misses, you may immediately make an attack against that creature.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Bull Rush",
+        "Description": "Charge through enemies, knocking them aside.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Bull Rush",
+            "Effect": "Roll your Str die and Move up to 4 spaces in a straight line. Any enemy in your path must roll their Con die. If their result is lower than yours, they are knocked prone.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Adrenaline Surge",
+        "Description": "Tap into reserves of energy, pushing past exhaustion.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Adrenaline Surge",
+            "Effect": "Roll your Con die. You may refresh a number of abilites equal to half the result (rounded down).",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Adept Training",
+        "Description": "You are skilled enough that even the worst attack is still impressive.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Adept Training",
+            "Effect": "Attack rolls you make can not be less than 4.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Unyielding Guard",
+        "Description": "Your stance makes you immovable.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Unyielding Guard",
+            "Effect": "If an effect would push, pull, or knock you prone, roll your Con die. If the result is 6 or higher, you resist the effect and gain +1 to your next Defense roll.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Sweeping Strike",
+        "Description": "Cleave through multiple enemies in a single motion.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Sweeping Strike",
+            "Effect": "Make an attack using a melee weapon. The attack affects all creatures within 1 space of you.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Rallying Presence",
+        "Description": "Your presence alone bolsters your allies' resolve.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Rallying Presence",
+            "Effect": "At the start of your turn, each ally within 3 spaces adds +1 to their next attack or defense roll.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Brutal Reprisal",
+        "Description": "Punish those who dare to attack you.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Brutal Reprisal",
+            "Effect": "When you take damage from an adjacent enemy, you may make an attack against them using your Str die. If your attack roll is 8 or higher, they also lose 1 Action Point.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Shattering Strike",
+        "Description": "Strike with enough force to break armor and shields.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Shattering Strike",
+            "Effect": "Make an attack using your Str die. If the attack roll is 10 or higher, the target's defense rolls are reduced by 2 until the start of your next turn.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Guardian’s Reflex",
+        "Description": "Protect allies in the heat of battle.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Guardian’s Reflex",
+            "Effect": "When an ally within 1 space takes damage, you may swap places with them and take the damage instead. Roll your Con die and reduce the damage by the result.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Resilient Spirit",
+        "Description": "Refuse to fall, even when struck down.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Resilient Spirit",
+            "Effect": "When you are reduced to 0 hearts, roll your Con die. If the result is 6 or higher, you remain standing with 1 heart and gain +1 to your next attack roll.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Titan's Wrath",
+        "Description": "Channel your fury into an earth-shattering strike.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 3,
+        "Abilities": [
+          {
+            "Name": "Titan's Wrath",
+            "Effect": "Make an attack with a melee weapon with advantage If the result is 10 or higher, all enemies within 2 spaces take half the damage dealt. If the result is 15 or higher, they are also knocked prone.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Unstoppable Force",
+        "Description": "Your sheer might allows you to charge through any obstacle.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 3,
+        "Abilities": [
+          {
+            "Name": "Unstoppable Force",
+            "Effect": "Roll your Str die. You may move that many spaces. You may move through enemy spaces. Any creature you move through must roll their Con die. If the result is lower than your Str die roll, they are knocked prone and take 1d4 damage.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Indomitable",
+        "Description": "Your willpower refuses to let you fall.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 3,
+        "Abilities": [
+          {
+            "Name": "Indomitable",
+            "Effect": "When an attack would reduce you to 0 hearts, you can instead cause the attack to miss.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Crippling Onslaught",
+        "Description": "Your relentless strikes leave enemies weakened and exposed.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 3,
+        "Abilities": [
+          {
+            "Name": "Crippling Onslaught",
+            "Effect": "Make two attacks with a melee weapon against one target. If both attacks hit, the target’s movement is reduced by half and they take -2 to their attack rolls until the start of your next turn.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Vanguard’s Protection",
+        "Description": "Your sheer presence makes your allies harder to harm.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 3,
+        "Abilities": [
+          {
+            "Name": "Vanguard’s Protection",
+            "Effect": "You and all allies within 2 spaces gains advantage on their defense rolls.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Reckless Rage",
+        "Description": "Your attacks become deadlier, but at great risk to yourself.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 3,
+        "Abilities": [
+          {
+            "Name": "Reckless Rage",
+            "Effect": "For the next 3 attacks you make, you roll the attack dice twice and add them together. However, all defense rolls you make are reduced by 2 sizes until you make all three attacks.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Warlord’s Command",
+        "Description": "Your voice alone can turn the tide of battle.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 3,
+        "Abilities": [
+          {
+            "Name": "Warlord’s Command",
+            "Effect": "Choose up to 3 allies within 5 spaces. They immediately move up to 2 spaces and can make an attack with a +1 bonus to their roll.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Eye of the Storm",
+        "Description": "At the center of battle, your precision is unmatched.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 3,
+        "Abilities": [
+          {
+            "Name": "Eye of the Storm",
+            "Effect": "For the next 3 turns, when rolling an attack roll, if the result is 5 or lower, you may re-roll once.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Raging Resurgence",
+        "Description": "Your fury fuels you, healing wounds as you fight.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 3,
+        "Abilities": [
+          {
+            "Name": "Raging Resurgence",
+            "Effect": "At the start of your turn, roll your Con die. You regain hearts equal to half the result, rounded up.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Decisive Execution",
+        "Description": "Strike with lethal efficiency, ensuring your enemy falls.",
+        "CardType": "ClassAbility",
+        "Class": "Warrior",
+        "Tier": 3,
+        "Abilities": [
+          {
+            "Name": "Decisive Execution",
+            "Effect": "Make an attack using your Str die. If the target is at half their maximum hearts or lower, they take double damage from the attack.",
+            "AbilityType": "Action"
+          }
+        ]
+      }
+
+
+
+
     ]
   },
   {
-    "Name": "Thief",
+    "Name": "Scout",
     "Description": "A master of stealth, deception, and agility. You strike from the shadows and take what you need before anyone notices.",
     "CardType": "HeroClass",
     "DiceModifications": {
@@ -32,8 +698,8 @@
     },
     "ClassAbilities": [
       {
-        "Name": "Distracting Flourish",
-        "Effect": "Choose a creature within 5 spaces and roll your Cha die. The next defense roll the target makes is reduced by the result.",
+        "Name": "Detect Weakpoints",
+        "Effect": "Choose a creature within 5 spaces and roll your Wis die. The next defense roll the target makes is reduced by the result.",
         "AbilityType": "Action"
       },
       {
@@ -41,32 +707,13 @@
         "Effect": "Gain +2 to defense rolls against attacks originating from more that 1 space away.",
         "AbilityType": "Passive"
       }
+    ],
+    "AbilityDeck": [
+
     ]
   },
   {
-    "Name": "Ranger",
-    "Description": "A hunter and survivalist, skilled in ranged combat and tracking. You are at home in the wilderness.",
-    "CardType": "HeroClass",
-    "DiceModifications": {
-      "Dex": "+1",
-      "Wis": "+1",
-      "Con": "+1"
-    },
-    "ClassAbilities": [
-      {
-        "Name": "Rapid Shot",
-        "Effect": "Choose an attack from a weapon that you have equipped. The attack must target a creature more than 1 space away, and have infinite uses. Activate that attack twice.",
-        "AbilityType": "Action"
-      },
-      {
-        "Name": "Finsish the Hunt",
-        "Effect": "Your attack rolls have +1 against targets with less than half their maximum hearts.",
-        "AbilityType": "Passive"
-      }
-    ]
-  },
-  {
-    "Name": "Cleric",
+    "Name": "Chaplain",
     "Description": "A devoted servant of the divine, wielding holy magic to heal and protect allies while smiting foes.",
     "CardType": "HeroClass",
     "DiceModifications": {
@@ -85,32 +732,13 @@
         "Effect": "Undead that attack you must roll their attack twice and take the lower result.",
         "AbilityType": "Passive"
       }
+    ],
+    "AbilityDeck": [
+
     ]
   },
   {
-    "Name": "Bard",
-    "Description": "A charismatic performer and jack-of-all-trades, using music and magic to inspire allies and deceive foes.",
-    "CardType": "HeroClass",
-    "DiceModifications": {
-      "Cha": "+1",
-      "Dex": "+1",
-      "Int": "+1"
-    },
-    "ClassAbilities": [
-      {
-        "Name": "Inspiring Tune",
-        "Effect": "Choose a creature that can hear you. The next dice that creature rolls increases by 1 for that roll.",
-        "AbilityType": "Action"
-      },
-      {
-        "Name": "Silver Tongue",
-        "Effect": "Whenever you roll your Cha dice to pursuade, lie, or intimidate, you add +1 to the result.",
-        "AbilityType": "Passive"
-      }
-    ]
-  },
-  {
-    "Name": "Mage",
+    "Name": "Mystic",
     "Description": "A scholar of the arcane, capable of wielding powerful spells but physically frail.",
     "CardType": "HeroClass",
     "DiceModifications": {
@@ -129,6 +757,9 @@
         "Effect": "Your defense rolls use your Int instead of your Dex.",
         "AbilityType": "Passive"
       }
+    ],
+    "AbilityDeck": [
+
     ]
   }
 ]

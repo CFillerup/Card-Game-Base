@@ -17,11 +17,10 @@
                  data-rotation="@pile.Rotation"
                  data-faceup="@pile.FaceUp"
                  @onmousedown="(e) => StartDrag(e, pile)"
-                 @ondblclick="() => FlipCard(pile)"
                  style="@(pile.StartingPosition != null ? $"left: {pile.StartingPosition.X}px; top: {pile.StartingPosition.Y}px; rotateY(180deg)" : "")">
 
                 <!--   Create the visual stacking effect -->
-                @for (int i = 1; i < pile.Cards.Count; i++)
+                @for (int i = 1; i < pile.Cards.Count && i < 6; i++)
                 {
                     <div class="card-shadow" style="top:@(i * 3)px; left:@(i * 3)px; z-index:-@(i)"></div>
                 }
@@ -57,6 +56,24 @@
                                         </div>
                                     </div>
                                     break;
+                                case CardBase.CardTypeEnum.ClassAbility:
+                                    var abilityCard = pile.Cards.LastOrDefault() as ClassAbilityCard;
+                                    <div class="hero-class-card">
+                                        <h3 class="card-title">@abilityCard.Name</h3>
+                                        <p class="card-description">@abilityCard.Description</p>
+                                        <div class="dice-modifications">
+                                            <h4>@abilityCard.Class - Tier @abilityCard.Tier</h4>
+                                        </div>
+                                        <div class="class-abilities">
+                                            <ul>
+                                                @foreach (var ability in abilityCard.abilities)
+                                                {
+                                                    <li><strong>@ability.Name</strong> (@ability.AbilityType): @ability.Effect</li>
+                                                }
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    break;
                                 default:
                                     <div style="height:10%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.Name</div>
                                     <div style="height:40%; outline: 2px solid black;">image</div>
@@ -79,7 +96,7 @@
 
 @code {
     private List<CardPile> cardPiles = new();
-    private int cardCount = 0;
+    private int pileCount = 0;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -104,22 +121,26 @@
 
         foreach (var pile in cardPiles)
         {
-            await EnableDragging(pile);
+            if (pile.CanMove == false)
+            {
+                await EnableDragging(pile);
+            }
         }
     }
 
     private async Task EnableDragging(CardPile pile)
     {
+        pile.CanMove = true;
         await JSRuntime.InvokeVoidAsync("enableDragging", $"draggableDiv_{pile.Id}");
     }
 
     private async void AddCardPile()
     {
-        cardCount++;
+        pileCount++;
         var newPile = new CardPile
             {
-                Name = $"Card Pile {cardCount}",
-                Id = cardCount,
+                Name = $"Card Pile {pileCount}",
+                Id = pileCount,
                 CanMove = true,
                 FaceUp = false,
                 Cards = new List<CardBase>
@@ -158,12 +179,12 @@
         var pilePosition = await JSRuntime.InvokeAsync<Models.Position>("getPilePosition", $"draggableDiv_{pile.Id}");
         if (topCard != null)
         {
-            cardCount++;
+            pileCount++;
 
             var newCardPile = new CardPile
                 {
                     Name = topCard.Name,
-                    Id = cardCount,
+                    Id = pileCount,
                     CanMove = true,
                     Cards = new List<CardBase> { topCard },
                     NewCard = true,
@@ -216,7 +237,7 @@
         await Task.Delay(250);
 
         pileTwo.Cards.AddRange(pileOne.Cards);
-        pileOne.Cards.Clear();
+        cardPiles.Remove(pileOne);
 
         StateHasChanged();
     }
@@ -252,16 +273,31 @@
             }
             else
             {
-
-                cardPiles.Add(new CardPile
+                int classCount = 0;
+                foreach (var heroClass in heroClassCards)
+                {
+                    pileCount++;
+                    var cards = heroClass.AbilityDeck;
+                    if (cards == null || cards.Count == 0)
                     {
-                        Name = "Hero Class Cards",
-                        Id = cardCount,
-                        CanMove = true,
-                        FaceUp = true,
-                        Cards = new List<CardBase>(heroClassCards),
-                        StartingPosition = new Models.Position { X = 100, Y = 100 }
-                    });
+                        cards = new List<ClassAbilityCard>();
+                    }
+                    var newPile = new CardPile
+                        {
+                            Name = $"{heroClass.Name} Ability Deck",
+                            Id = pileCount,
+                            CanMove = true,
+                            FaceUp = true,
+                            Cards = new List<CardBase>(cards),
+                            StartingPosition = new Models.Position { X = 100, Y = 100 }
+                        };
+                    newPile.Cards.Add(heroClass);
+                    cardPiles.Add(newPile);
+                    await JSRuntime.InvokeVoidAsync("setElementPosValues", $"draggableDiv_{newPile.Id}", newPile.StartingPosition.X, newPile.StartingPosition.Y);
+                    StateHasChanged();
+                    await EnableDragging(newPile);
+                    classCount++;
+                }
             }
         }
         catch (Exception ex)

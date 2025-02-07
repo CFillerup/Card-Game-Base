@@ -167,11 +167,14 @@ window.snapToStack = (droppedId, stackId) => {
     const stackRect = stackElement.getBoundingClientRect();
     droppedElement.style.zIndex = "1000"; 
     //   Get the exact target position (absolute)
+    let droppedPosX = parseFloat(droppedElement.dataset.posX) || 0;
+    let droppedPosY = parseFloat(droppedElement.dataset.posY) || 0;
     let stackPosX = stackRect.left - boardRect.left;
     let stackPosY = stackRect.top - boardRect.top;
     const targetRotation = parseFloat(stackElement.dataset.rotation) || 0;
 
     console.log(`Snapping ${droppedId} to ${stackId}`);
+    console.log(`base: ${droppedPosX}, to ${droppedPosY}`);
     console.log(`Target X: ${stackPosX}, Y: ${stackPosY}, Rotation: ${targetRotation}`);
 
     //   Apply smooth transition
@@ -259,9 +262,6 @@ window.flipCard = (elementId) => {
     // Toggle flip state
     el.classList.toggle("flipped");
 
-    el.style.transition = "transform 0.15s ease-out, box-shadow 0.15s ease-out";
-    el.style.boxShadow = "0px 8px 15px rgba(0, 0, 0, 0.4)"; // Soft shadow
-    el.style.transform = `scale(1.1)`; // Grow effect
     // Apply flip animation to main card
     cardInner.style.transition = "transform 0.3s ease-in-out";
     cardInner.style.transform = isFlipped ? "rotateY(0deg)" : "rotateY(180deg)";
@@ -271,12 +271,8 @@ window.flipCard = (elementId) => {
         card.style.transition = `transform 0.3s ease-in-out`; // Slight delay per card for stagger effect
         card.style.transform = isFlipped ? "rotateY(0deg)" : "rotateY(180deg)";
     });
-    el.style.boxShadow = ""; // Remove shadow
-    el.style.transition = "transform 0.15s ease-out, box-shadow 0.15s ease-out";
-    el.style.transform = `translate(${el.dataset.posX}px, ${el.dataset.posY}px) scale(1) rotate(${el.dataset.rotation || 0}deg)`; // Return to normal size
-
-
 };
+
 
 
 
