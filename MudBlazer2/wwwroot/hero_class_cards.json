@@ -446,9 +446,120 @@
             "AbilityType": "Passive"
           }
         ]
+      },
+      {
+        "Name": "Sharpshooter",
+        "Description": "Your precision allows you to strike from even greater distances.",
+        "CardType": "ClassAbility",
+        "Class": "Scout",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Sharpshooter",
+            "Effect": "Your ranged attacks gain +2 spaces of range. If you use a favored die for the attack roll and roll 6 or higher, the attack ignores cover.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Danger Sense",
+        "Description": "You instinctively recognize when something feels off.",
+        "CardType": "ClassAbility",
+        "Class": "Scout",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Danger Sense",
+            "Effect": "When entering a new room, roll a favored die. If the result is 6 or higher, you immediately learn if the room contains a trap or encounter before revealing it.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Ambush Tactics",
+        "Description": "You can catch enemies off guard when engaging first.",
+        "CardType": "ClassAbility",
+        "Class": "Scout",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Ambush Tactics",
+            "Effect": "Make a ranged attack against a creature that has not acted yet in an encounter, you roll the attack die twice and add them together. If you roll a favored die and roll max, you can take another action.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Calculated Retreat",
+        "Description": "You know when to disengage and reposition.",
+        "CardType": "ClassAbility",
+        "Class": "Scout",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Calculated Retreat",
+            "Effect": "When an enemy attacks you, you may move up to 2 spaces before the attack roll is made, potentially causing you to be out of range.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Scout’s Gambit",
+        "Description": "You make a quick call to aid yourself and your allies.",
+        "CardType": "ClassAbility",
+        "Class": "Scout",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Scout’s Gambit",
+            "Effect": "At the start of your turn, roll a d6. On a 5 or higher, you or an ally of your choice may refresh one class ability.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Treasure Seeker",
+        "Description": "Your expertise in navigation ensures you always find the best loot.",
+        "CardType": "ClassAbility",
+        "Class": "Scout",
+        "Tier": 3,
+        "Abilities": [
+          {
+            "Name": "Treasure Seeker",
+            "Effect": "When you would draw an item roll Dex. If the result if 5 or higher, you instead draw an item of 1 rarity higher.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Unerring Instinct",
+        "Description": "Your keen awareness allows you to succeed where others fail.",
+        "CardType": "ClassAbility",
+        "Class": "Scout",
+        "Tier": 3,
+        "Abilities": [
+          {
+            "Name": "Unerring Instinct",
+            "Effect": "When making a skill check, you may roll two favored dice and take the higher result. If both rolls are the same, you automatically succeed.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Sniper’s Focus",
+        "Description": "Your unwavering focus makes every shot count.",
+        "CardType": "ClassAbility",
+        "Class": "Scout",
+        "Tier": 3,
+        "Abilities": [
+          {
+            "Name": "Sniper’s Focus",
+            "Effect": "Make a ranged attack. It's range is doubled. If the attack uses a favored die, it deals double damage.",
+            "AbilityType": "Action"
+          }
+        ]
       }
     ]
-
   },
   {
     "Name": "Chaplain",
@@ -463,8 +574,8 @@
     },
     "ClassAbilities": [
       {
-        "Name": "Healing Touch",
-        "Effect": "Restore a number of to an ally within reach equal to a roll of your Wis die.",
+        "Name": "Healing Whisper",
+        "Effect": "Restore 1 heart to an ally within 1 space.",
         "AbilityType": "Action"
       },
       {
@@ -474,8 +585,260 @@
       }
     ],
     "AbilityDeck": [
-
+      {
+        "Name": "Healing Grasp",
+        "Description": "Your divine energy mends the wounds of your allies.",
+        "CardType": "ClassAbility",
+        "Class": "Chaplain",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Healing Touch",
+            "Effect": "Restore a number of hearts to an ally within 1 space equal to a roll of your favored die.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Blessed Guidance",
+        "Description": "Your words fill an ally with confidence, improving their next action.",
+        "CardType": "ClassAbility",
+        "Class": "Chaplain",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Blessed Guidance",
+            "Effect": "Choose an ally within 3 spaces. Their next roll increases its dice size by 1 (max d12).",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Hymn of Fortitude",
+        "Description": "Your presence emboldens allies, making them tougher.",
+        "CardType": "ClassAbility",
+        "Class": "Chaplain",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Hymn of Fortitude",
+            "Effect": "When you would roll Defense, you allies within 2 spaces add +1 to their next defense roll.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Restorative Wave",
+        "Description": "A burst of divine energy washes over your allies.",
+        "CardType": "ClassAbility",
+        "Class": "Chaplain",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Restorative Wave",
+            "Effect": "Roll a d4. Up to two allies within 3 spaces each regain hearts equal to the result.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Sacred Favor",
+        "Description": "You bless an ally, ensuring their success.",
+        "CardType": "ClassAbility",
+        "Class": "Chaplain",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Sacred Favor",
+            "Effect": "Before an ally rolls a die, you may declare it to be a favored die for this roll.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Bolstering Chant",
+        "Description": "Your divine chant fuels the next effort of an ally.",
+        "CardType": "ClassAbility",
+        "Class": "Chaplain",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Bolstering Chant",
+            "Effect": "When an ally within 3 spaces rolls max on a die, they may roll an additional d4 and add it to the result.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Martyr’s Resilience",
+        "Description": "You take on some of the burden of an ally’s injuries.",
+        "CardType": "ClassAbility",
+        "Class": "Chaplain",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Martyr’s Resilience",
+            "Effect": "When an ally within 2 spaces takes damage, you may take half of that damage instead.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Divine Acceleration",
+        "Description": "You call upon divine power to hasten an ally’s reflexes.",
+        "CardType": "ClassAbility",
+        "Class": "Chaplain",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Divine Acceleration",
+            "Effect": "An ally within 3 spaces may immediately roll their Dex and move that many spaces.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Rejuvenating Prayer",
+        "Description": "Your prayers instill lasting resilience.",
+        "CardType": "ClassAbility",
+        "Class": "Chaplain",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Rejuvenating Prayer",
+            "Effect": "At the start of your turn, roll a d4. One ally of your choice within 3 spaces regains hearts equal to the result.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Beacon of Hope",
+        "Description": "Your divine presence reassures those around you.",
+        "CardType": "ClassAbility",
+        "Class": "Chaplain",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Beacon of Hope",
+            "Effect": "When an ally within 3 spaces rolls a 1, they may reroll once.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Divine Intervention",
+        "Description": "Your divine connection allows you to protect allies from disaster.",
+        "CardType": "ClassAbility",
+        "Class": "Chaplain",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Divine Intervention",
+            "Effect": "When an ally within 3 spaces would take damage that would reduce them to 0 hearts, you may prevent all damage and restore 1d4 hearts instead.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Celestial Insight",
+        "Description": "You call upon divine wisdom to aid an ally’s decision-making.",
+        "CardType": "ClassAbility",
+        "Class": "Chaplain",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Celestial Insight",
+            "Effect": "Before an ally makes a skill check, they may roll two dice and take the higher result. If both dice are favored, they gain +2 to the final roll.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Blessing of Might",
+        "Description": "You imbue an ally with divine power, enhancing their strength.",
+        "CardType": "ClassAbility",
+        "Class": "Chaplain",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Blessing of Might",
+            "Effect": "Choose an ally within 3 spaces. Their next melee attack increases its attack die size by 2 (max d12).",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Radiant Protection",
+        "Description": "A divine aura shields your allies from harm.",
+        "CardType": "ClassAbility",
+        "Class": "Chaplain",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Radiant Protection",
+            "Effect": "For the next 3 turns, whenever an ally within 2 spaces rolls for defense, they add +1 to their roll.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Miraculous Recovery",
+        "Description": "Your healing is powerful enough to restore even the most grievous wounds.",
+        "CardType": "ClassAbility",
+        "Class": "Chaplain",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Miraculous Recovery",
+            "Effect": "Restore a number of hearts to an ally within 3 spaces equal to double the result of a favored die roll.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Judgment of the Divine",
+        "Description": "Unleash holy fury, smiting all enemies in your path.",
+        "CardType": "ClassAbility",
+        "Class": "Chaplain",
+        "Tier": 3,
+        "Abilities": [
+          {
+            "Name": "Judgment of the Divine",
+            "Effect": "A line of divine flame 6 spaces long and 2 spaces wide emanates from you in a direction you choose. Each creature in the line takes radiant damage equal to 2 rolls of your Wis.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Resurrection’s Grace",
+        "Description": "Bring an ally back from the brink of death with renewed strength.",
+        "CardType": "ClassAbility",
+        "Class": "Chaplain",
+        "Tier": 3,
+        "Abilities": [
+          {
+            "Name": "Resurrection’s Grace",
+            "Effect": "When an ally within 4 spaces falls to 0 hearts. Restore hearts equal to double the result of a favored die roll. The next die the revived ally rolls counts as a favored die for them.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Divine Benediction",
+        "Description": "Your presence inspires greatness, elevating your allies’ abilities.",
+        "CardType": "ClassAbility",
+        "Class": "Chaplain",
+        "Tier": 3,
+        "Abilities": [
+          {
+            "Name": "Divine Benediction",
+            "Effect": "For the first round of combat, all allies treat any die they roll as favored. If an ally rolls max on a die, this benefit gets extended by 1 turn, to a max of three total turns.",
+            "AbilityType": "Passive"
+          }
+        ]
+      }
     ]
+
   },
   {
     "Name": "Mystic",
@@ -490,8 +853,8 @@
     },
     "ClassAbilities": [
       {
-        "Name": "Fireball",
-        "Effect": "Choose a space within 5 spaces of you. Each creature in that space, or adjacent to it, loses 1d4 hearts (roll seperatly for each effected creature).",
+        "Name": "Fire Bolt",
+        "Effect": "Make a ranged magic attack within 5 spaces using your Int. If you roll max, the attack ignores armor bonuses to defense..",
         "AbilityType": "Action"
       },
       {
@@ -502,6 +865,259 @@
     ],
     "AbilityDeck": [
 
+      {
+        "Name": "Arcane Blast",
+        "Description": "A simple yet effective magical projectile.",
+        "CardType": "ClassAbility",
+        "Class": "Mystic",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Arcane Bolt",
+            "Effect": "Make a ranged magic attack against two targets, who are adjacent to eachother, within 5 spaces. The targets are also pushed back 1 space.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Mana Surge",
+        "Description": "A surge of energy replenishes your magical prowess.",
+        "CardType": "ClassAbility",
+        "Class": "Mystic",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Mana Surge",
+            "Effect": "Roll a d4. You may refresh a number of class abilities equal to the result.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Mystic Barrier",
+        "Description": "A shimmering barrier shields you from harm.",
+        "CardType": "ClassAbility",
+        "Class": "Mystic",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Mystic Barrier",
+            "Effect": "When rolling for defense, you may roll an additional d4 and add it to your result.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Mind Fracture",
+        "Description": "A pulse of psychic energy disrupts an enemy’s mind.",
+        "CardType": "ClassAbility",
+        "Class": "Mystic",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Mind Fracture",
+            "Effect": "Choose an enemy within 4 spaces. They must roll their Wis die and you roll a d10. If their result is lower than yours, they become Staggered (their next action costs 2 AP).",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Ethereal Shift",
+        "Description": "You briefly phase out of existence to avoid danger.",
+        "CardType": "ClassAbility",
+        "Class": "Mystic",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Ethereal Shift",
+            "Effect": "Before you take damage, you may roll a d4. If the result is 3 or higher, you teleport 2 spaces in any direction before the attack lands.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Cursed Touch",
+        "Description": "Your magic saps the strength of your enemies.",
+        "CardType": "ClassAbility",
+        "Class": "Mystic",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Cursed Touch",
+            "Effect": "Make a melee magic attack. On a hit, the targets next die roll is reduced by 1 size.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Arcane Sight",
+        "Description": "Your magic allows you to detect hidden forces.",
+        "CardType": "ClassAbility",
+        "Class": "Mystic",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Arcane Sight",
+            "Effect": "When entering a new room, you may roll a d4. On a 3 or higher, you immediately detect if the room has an encounter, a trap, or a magical effect.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Warding Glyph",
+        "Description": "You leave behind a sigil that weakens enemies.",
+        "CardType": "ClassAbility",
+        "Class": "Mystic",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Warding Glyph",
+            "Effect": "Choose a space within 3 spaces and place a glyph there. The first enemy to enter that space takes 1d4 arcane damage and rolls their next action at disadvantage.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Force Ripple",
+        "Description": "A small burst of magical force disrupts enemies around you.",
+        "CardType": "ClassAbility",
+        "Class": "Mystic",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Force Ripple",
+            "Effect": "All enemies within 2 spaces must roll their Con die and you roll a d10. If they roll lower than your d10, they are pushed a number of spaces away from you equal to the difference.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Spellbound Reflexes",
+        "Description": "Your magical awareness grants you quick reactions.",
+        "CardType": "ClassAbility",
+        "Class": "Mystic",
+        "Tier": 1,
+        "Abilities": [
+          {
+            "Name": "Spellbound Reflexes",
+            "Effect": "When an enemy within 3 spaces uses an action, you may roll a d4. If the result is 4, you may immediately take an action before they resolve theirs.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Echoing Blast",
+        "Description": "A burst of unstable magic that rebounds unpredictably.",
+        "CardType": "ClassAbility",
+        "Class": "Mystic",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Echoing Blast",
+            "Effect": "Choose a space within 4 spaces. All creatures in that space and adjacent spaces take damage equal to a d4 roll. If the dice rolls max, you may repeat this effect in a different space, increasing the size of the dice each time.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Reality Fracture",
+        "Description": "Tear at the fabric of reality, causing enemies to stumble.",
+        "CardType": "ClassAbility",
+        "Class": "Mystic",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Reality Fracture",
+            "Effect": "Roll your Int, target a number of enemies within 5 spaces equal to the result (minimum of 2). They must roll a d10 die. If their result is 5 or lower, they become Confused (they must roll a d6 before taking an action, on a 1-3 they lose that action).",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Aegis Ward",
+        "Description": "A spectral shield forms around an ally, protecting them from harm.",
+        "CardType": "ClassAbility",
+        "Class": "Mystic",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Aegis Ward",
+            "Effect": "When an ally rolls Defense you can add your Int to their result. If they still take damage, refresh this ability.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+      {
+        "Name": "Devouring Shadows",
+        "Description": "Summon a dark vortex that saps an enemy’s strength.",
+        "CardType": "ClassAbility",
+        "Class": "Mystic",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Devouring Shadows",
+            "Effect": "Choose a Space within 10 spaces. Creatures that start their turn in or adjacent to that space roll their Wis. If they roll 5 or less, they lose 2 AP on their next turn. If they rolled minnimum they also take 1d4 arcane damage.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Arcane Feedback",
+        "Description": "When an enemy attacks you, they suffer from your latent magic.",
+        "CardType": "ClassAbility",
+        "Class": "Mystic",
+        "Tier": 2,
+        "Abilities": [
+          {
+            "Name": "Arcane Feedback",
+            "Effect": "When a creature within 2 spaces attacks you, roll a d4. They take damage equal to the result, this damage cannot be reduced in any way. If you rolled max, they must also roll their Dex; if they roll lower than 4, they have disadvantage on the attack.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      },
+
+      {
+        "Name": "Obliteration Wave",
+        "Description": "Unleash the full power of arcane destruction in a massive burst.",
+        "CardType": "ClassAbility",
+        "Class": "Mystic",
+        "Tier": 3,
+        "Abilities": [
+          {
+            "Name": "Obliteration Wave",
+            "Effect": "Choose a point within 12 spaces. A wave of force erupts in a 2-space radius centered on that point. Each creature in the area takes damage equal to your two rolls of your Int. If either rolls max, the area expands by 1 space and you may roll another Int, dealing that much extra damage to all affected creatures, continuing the expansion on a max roll.",
+            "AbilityType": "Action"
+          }
+        ]
+      },
+      {
+        "Name": "Temporal Shackles",
+        "Description": "You bind your enemies in ethereal chains, slowing their movements through time itself.",
+        "CardType": "ClassAbility",
+        "Class": "Mystic",
+        "Tier": 3,
+        "Abilities": [
+          {
+            "Name": "Temporal Shackles",
+            "Effect": "Enemies within 2 spaces must roll their Dex at the start of their turn. If they roll lower than a roll of your Int, they cannot move and cannot use Reactions until the start of their next turn. If you rolled max, they also lose 1 Action Point.",
+            "AbilityType": "Passive"
+          }
+        ]
+      },
+      {
+        "Name": "Veil of the Unseen",
+        "Description": "Bend the fabric of reality, making yourself and your allies untouchable for a moment.",
+        "CardType": "ClassAbility",
+        "Class": "Mystic",
+        "Tier": 3,
+        "Abilities": [
+          {
+            "Name": "Veil of the Unseen",
+            "Effect": "When an enemy attacks you or an ally, you can cause the target to fade away from reality, causing the next attack that would hit them miss entirely instead. Roll a d4, if you roll max you may repeat this ability, targeting a different ally.",
+            "AbilityType": "Reaction"
+          }
+        ]
+      }
     ]
   }
 ]

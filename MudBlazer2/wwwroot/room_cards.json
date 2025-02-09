@@ -1,0 +1,453 @@
+[
+  {
+    "Name": "Hall of Echoes",
+    "Description": "A large chamber where every sound reverberates eerily.",
+    "CardType": "Room",
+    "Doors": [ true, true, false, false ],
+    "EncounterChance": 25,
+    "Grid": [
+      [ false, true, true, true, false ],
+      [ true, true, true, true, true ],
+      [ true, true, false, true, true ],
+      [ false, true, true, true, false ]
+    ],
+    "RoomWidth": 5,
+    "RoomHeight": 4
+  },
+  {
+    "Name": "Lair of the Forgotten",
+    "Description": "Dust-covered relics line the walls of this twisted cavern.",
+    "CardType": "Room",
+    "Doors": [ true, false, true, true ],
+    "EncounterChance": 30,
+    "Grid": [
+      [ true, true, true, false, false ],
+      [ true, true, true, true, true ],
+      [ true, false, true, true, true ],
+      [ false, false, true, true, true ]
+    ],
+    "RoomWidth": 5,
+    "RoomHeight": 4
+  },
+  {
+    "Name": "Collapsed Courtyard",
+    "Description": "Once a great hall, now a mess of fallen stones and unstable footing.",
+    "CardType": "Room",
+    "Doors": [ true, true, false, false ],
+    "EncounterChance": 15,
+    "Grid": [
+      [ false, true, true, false, false ],
+      [ true, true, true, true, true ],
+      [ true, true, true, true, false ]
+    ],
+    "RoomWidth": 5,
+    "RoomHeight": 3
+  },
+  {
+    "Name": "Arcane Laboratory",
+    "Description": "Faint magical energy hums in the air, remnants of past experiments.",
+    "CardType": "Room",
+    "Doors": [ true, false, false, true ],
+    "EncounterChance": 20,
+    "Grid": [
+      [ false, false, true, true, true, false ],
+      [ true, true, true, true, true, true ],
+      [ true, true, false, true, true, true ],
+      [ false, true, true, true, false, false ]
+    ],
+    "RoomWidth": 6,
+    "RoomHeight": 4
+  },
+  {
+    "Name": "Twisting Cavern",
+    "Description": "A winding path of stone, damp with dripping water.",
+    "CardType": "Room",
+    "Doors": [ true, true, false, false ],
+    "EncounterChance": 30,
+    "Grid": [
+      [ true, true, false, false, false ],
+      [ true, true, true, true, false ],
+      [ false, true, true, true, true ],
+      [ false, false, true, true, true ]
+    ],
+    "RoomWidth": 5,
+    "RoomHeight": 4
+  },
+  {
+    "Name": "The Great Chamber",
+    "Description": "A vast chamber, its ceiling barely visible in the darkness.",
+    "CardType": "Room",
+    "Doors": [ true, true, true, true ],
+    "EncounterChance": 40,
+    "Grid": [
+      [ false, true, true, true, true, true, false ],
+      [ true, true, true, true, true, true, true ],
+      [ true, true, false, false, true, true, true ],
+      [ true, true, true, true, true, true, true ],
+      [ false, true, true, true, true, true, false ]
+    ],
+    "RoomWidth": 7,
+    "RoomHeight": 5
+  },
+  {
+    "Name": "Winding Crossroads",
+    "Description": "A junction where paths cross in unexpected ways.",
+    "CardType": "Room",
+    "Doors": [ true, true, true, false ],
+    "EncounterChance": 35,
+    "Grid": [
+      [ false, true, true, false, false, false ],
+      [ true, true, true, true, true, false ],
+      [ true, false, true, true, true, true ],
+      [ false, false, true, true, false, false ]
+    ],
+    "RoomWidth": 6,
+    "RoomHeight": 4
+  },
+  {
+    "Name": "L-Shaped Hall",
+    "Description": "A long hall that bends at an odd angle.",
+    "CardType": "Room",
+    "Doors": [ false, true, true, false ],
+    "EncounterChance": 25,
+    "Grid": [
+      [ true, true, true, false, false ],
+      [ false, false, true, true, true ],
+      [ false, false, true, true, true ]
+    ],
+    "RoomWidth": 5,
+    "RoomHeight": 3
+  },
+  {
+    "Name": "Forsaken Chapel",
+    "Description": "An eerie, hollow space where prayers have long gone unheard.",
+    "CardType": "Room",
+    "Doors": [ true, false, false, true ],
+    "EncounterChance": 30,
+    "Grid": [
+      [ false, true, true, true, false ],
+      [ true, true, true, true, true ],
+      [ true, true, false, true, true ],
+      [ false, true, true, true, false ]
+    ],
+    "RoomWidth": 5,
+    "RoomHeight": 4
+  },
+  {
+    "Name": "Grand Vault",
+    "Description": "A towering chamber filled with the remnants of ancient treasures.",
+    "CardType": "Room",
+    "Doors": [ true, true, true, true ],
+    "EncounterChance": 50,
+    "Grid": [
+      [ true, true, true, true, true, true, true, true, true, true, true, true ],
+      [ true, true, false, false, false, true, false, false, false, true, true, true ],
+      [ true, true, true, true, true, true, true, true, true, true, true, true ],
+      [ true, false, false, false, false, false, false, false, false, false, false, true ],
+      [ true, true, true, true, true, true, true, true, true, true, true, true ]
+    ],
+    "RoomWidth": 12,
+    "RoomHeight": 5
+  },
+  {
+    "Name": "Crumbling Alcove",
+    "Description": "A small, half-collapsed space littered with debris.",
+    "CardType": "Room",
+    "Doors": [ false, true, false, true ],
+    "EncounterChance": 10,
+    "Grid": [
+      [ true, true, false ],
+      [ false, true, true ]
+    ],
+    "RoomWidth": 3,
+    "RoomHeight": 2
+  },
+  {
+    "Name": "Vaulted Antechamber",
+    "Description": "Tall ceilings echo with distant whispers.",
+    "CardType": "Room",
+    "Doors": [ true, false, false, true ],
+    "EncounterChance": 30,
+    "Grid": [
+      [ false, true, true, false ],
+      [ true, true, true, true ],
+      [ false, true, true, false ]
+    ],
+    "RoomWidth": 4,
+    "RoomHeight": 3
+  },
+  {
+    "Name": "Cursed Labyrinth",
+    "Description": "A twisting series of corridors, inscribed with glowing runes.",
+    "CardType": "Room",
+    "Doors": [ true, true, false, false ],
+    "EncounterChance": 40,
+    "Grid": [
+      [ true, true, false, true, true, true ],
+      [ true, false, false, true, false, true ],
+      [ true, true, true, true, true, true ]
+    ],
+    "RoomWidth": 6,
+    "RoomHeight": 3
+  },
+  {
+    "Name": "Sacrificial Chamber",
+    "Description": "An ominous chamber with an altar in the center.",
+    "CardType": "Room",
+    "Doors": [ true, false, true, false ],
+    "EncounterChance": 50,
+    "Grid": [
+      [ false, true, true, true, false ],
+      [ true, true, true, true, true ],
+      [ false, true, true, true, false ]
+    ],
+    "RoomWidth": 5,
+    "RoomHeight": 3
+  },
+  {
+    "Name": "Collapsed Hallway",
+    "Description": "A long passage, half-buried under rubble.",
+    "CardType": "Room",
+    "Doors": [ false, true, false, true ],
+    "EncounterChance": 15,
+    "Grid": [
+      [ true, true, true, true, true ],
+      [ false, false, true, false, false ]
+    ],
+    "RoomWidth": 5,
+    "RoomHeight": 2
+  },
+  {
+    "Name": "Flooded Cavern",
+    "Description": "The floor is slick with water, and faint ripples hint at movement.",
+    "CardType": "Room",
+    "Doors": [ true, false, false, true ],
+    "EncounterChance": 35,
+    "Grid": [
+      [ false, true, true, false, false ],
+      [ true, true, true, true, true ],
+      [ true, false, true, true, false ],
+      [ false, true, true, true, false ]
+    ],
+    "RoomWidth": 5,
+    "RoomHeight": 4
+  },
+  {
+    "Name": "Royal Mausoleum",
+    "Description": "A grand tomb with shattered sarcophagi.",
+    "CardType": "Room",
+    "Doors": [ true, true, false, false ],
+    "EncounterChance": 45,
+    "Grid": [
+      [ false, true, true, true, false ],
+      [ true, true, false, true, true ],
+      [ true, true, true, true, true ],
+      [ false, true, true, true, false ]
+    ],
+    "RoomWidth": 5,
+    "RoomHeight": 4
+  },
+  {
+    "Name": "Twisting Catacombs",
+    "Description": "Winding passages filled with alcoves where the dead rest uneasily.",
+    "CardType": "Room",
+    "Doors": [ true, false, true, true ],
+    "EncounterChance": 50,
+    "Grid": [
+      [ true, true, false, false, true, true ],
+      [ true, true, true, true, true, false ],
+      [ false, false, true, true, true, true ]
+    ],
+    "RoomWidth": 6,
+    "RoomHeight": 3
+  },
+  {
+    "Name": "Echoing Hall",
+    "Description": "A vast chamber with intricate pillars.",
+    "CardType": "Room",
+    "Doors": [ true, true, true, true ],
+    "EncounterChance": 40,
+    "Grid": [
+      [ true, true, true, true, true, true, true ],
+      [ true, false, false, true, false, false, true ],
+      [ true, true, true, true, true, true, true ]
+    ],
+    "RoomWidth": 7,
+    "RoomHeight": 3
+  },
+  {
+    "Name": "The Grand Archive",
+    "Description": "An enormous library filled with dust-covered tomes.",
+    "CardType": "Room",
+    "Doors": [ true, true, false, false ],
+    "EncounterChance": 20,
+    "Grid": [
+      [ true, true, true, true, true, true, true, true, true, true ],
+      [ true, false, false, false, false, false, false, false, false, true ],
+      [ true, true, true, true, true, true, true, true, true, true ]
+    ],
+    "RoomWidth": 10,
+    "RoomHeight": 3
+  },
+  {
+    "Name": "The Forsaken Keep",
+    "Description": "A sprawling fortress overrun by nature.",
+    "CardType": "Room",
+    "Doors": [ true, true, true, true ],
+    "EncounterChance": 55,
+    "Grid": [
+      [ false, false, true, true, true, true, false, false ],
+      [ false, true, true, true, true, true, true, false ],
+      [ true, true, false, false, true, true, true, true ],
+      [ true, true, true, true, true, true, true, true ],
+      [ false, false, true, true, true, true, false, false ]
+    ],
+    "RoomWidth": 8,
+    "RoomHeight": 5
+  },
+  {
+    "Name": "The Abyssal Shrine",
+    "Description": "An ancient temple, its walls carved with alien symbols.",
+    "CardType": "Room",
+    "Doors": [ true, false, false, true ],
+    "EncounterChance": 60,
+    "Grid": [
+      [ false, false, true, true, true, false, false ],
+      [ true, true, true, true, true, true, true ],
+      [ true, true, false, false, false, true, true ],
+      [ true, true, true, true, true, true, true ],
+      [ false, false, true, true, true, false, false ]
+    ],
+    "RoomWidth": 7,
+    "RoomHeight": 5
+  },
+  {
+    "Name": "The Great Hall of Kings",
+    "Description": "A massive chamber lined with decayed thrones, each belonging to a forgotten ruler.",
+    "CardType": "Room",
+    "Doors": [ true, true, false, true ],
+    "EncounterChance": 50,
+    "Grid": [
+      [ false, true, true, true, true, true, true, true, true, false ],
+      [ true, true, false, false, false, false, false, false, true, true ],
+      [ true, true, true, true, true, true, true, true, true, true ],
+      [ true, false, false, false, false, false, false, false, false, true ],
+      [ true, true, true, true, true, true, true, true, true, true ]
+    ],
+    "RoomWidth": 10,
+    "RoomHeight": 5
+  },
+  {
+    "Name": "The Sunken Vault",
+    "Description": "A sprawling underground treasury, now partially flooded and home to lurking creatures.",
+    "CardType": "Room",
+    "Doors": [ true, false, true, true ],
+    "EncounterChance": 65,
+    "Grid": [
+      [ false, true, true, true, true, true, true, false, false ],
+      [ true, true, false, false, true, true, true, true, true ],
+      [ true, true, true, true, true, false, false, true, true ],
+      [ false, true, true, false, false, false, true, true, false ],
+      [ false, false, true, true, true, true, true, false, false ]
+    ],
+    "RoomWidth": 9,
+    "RoomHeight": 5
+  },
+  {
+    "Name": "The Forsaken Temple",
+    "Description": "A sprawling temple with high ceilings, lined with broken statues of forgotten gods.",
+    "CardType": "Room",
+    "Doors": [ true, true, true, true ],
+    "EncounterChance": 70,
+    "Grid": [
+      [ false, false, true, true, true, true, true, true, false, false, false ],
+      [ true, true, true, false, false, false, false, true, true, true, true ],
+      [ true, true, true, true, true, true, true, true, true, true, true ],
+      [ false, true, true, true, true, true, true, true, true, true, false ],
+      [ false, false, false, true, true, true, true, false, false, false, false ]
+    ],
+    "RoomWidth": 11,
+    "RoomHeight": 5
+  },
+  {
+    "Name": "The Broken Colosseum",
+    "Description": "A massive battle arena where challengers once fought, now filled with eerie silence.",
+    "CardType": "Room",
+    "Doors": [ true, false, false, true ],
+    "EncounterChance": 80,
+    "Grid": [
+      [ false, false, false, true, true, true, false, false, false ],
+      [ false, true, true, true, false, true, true, true, false ],
+      [ true, true, false, true, true, true, false, true, true ],
+      [ true, true, true, true, true, true, true, true, true ],
+      [ false, true, true, true, true, true, true, true, false ],
+      [ false, false, false, true, true, true, false, false, false ]
+    ],
+    "RoomWidth": 9,
+    "RoomHeight": 6
+  },
+  {
+    "Name": "The Infinite Library",
+    "Description": "Rows of towering bookshelves stretch into the darkness, filled with forgotten knowledge.",
+    "CardType": "Room",
+    "Doors": [ true, true, true, true ],
+    "EncounterChance": 45,
+    "Grid": [
+      [ false, false, true, true, true, true, true, true, true, false, false ],
+      [ true, true, true, false, false, false, false, false, true, true, true ],
+      [ true, true, true, true, true, true, true, true, true, true, true ],
+      [ true, false, false, false, false, false, false, false, false, false, true ],
+      [ false, false, true, true, true, true, true, true, true, false, false ]
+    ],
+    "RoomWidth": 11,
+    "RoomHeight": 5
+  },
+  {
+    "Name": "The Arcane Sanctum",
+    "Description": "A mysterious chamber glowing with strange energy, filled with floating relics.",
+    "CardType": "Room",
+    "Doors": [ true, false, true, true ],
+    "EncounterChance": 55,
+    "Grid": [
+      [ false, false, true, true, true, false, false ],
+      [ true, true, true, false, true, true, true ],
+      [ true, true, true, true, true, true, true ],
+      [ false, true, true, true, true, true, false ],
+      [ false, false, true, true, true, false, false ]
+    ],
+    "RoomWidth": 7,
+    "RoomHeight": 5
+  },
+  {
+    "Name": "The Infernal Forge",
+    "Description": "A massive workshop filled with still-burning forges and shattered weapons.",
+    "CardType": "Room",
+    "Doors": [ true, true, false, false ],
+    "EncounterChance": 85,
+    "Grid": [
+      [ false, false, true, true, true, true, false, false ],
+      [ true, true, true, false, false, true, true, true ],
+      [ true, true, true, true, true, true, true, true ],
+      [ false, true, true, true, true, true, true, false ],
+      [ false, false, true, true, true, true, false, false ]
+    ],
+    "RoomWidth": 8,
+    "RoomHeight": 5
+  },
+  {
+    "Name": "The Abyssal Ruins",
+    "Description": "A crumbling, seemingly endless labyrinth descending into darkness.",
+    "CardType": "Room",
+    "Doors": [ true, false, true, true ],
+    "EncounterChance": 90,
+    "Grid": [
+      [ false, false, true, true, true, false, false ],
+      [ true, true, true, false, true, true, true ],
+      [ true, true, true, true, true, true, true ],
+      [ false, true, true, true, true, true, false ],
+      [ false, false, true, true, true, false, false ]
+    ],
+    "RoomWidth": 7,
+    "RoomHeight": 5
+  }
+]

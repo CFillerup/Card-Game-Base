@@ -13,8 +13,8 @@
     cursor: grab;
     user-select: none;
     transform-style: preserve-3d;
-    width: 20vh;
-    height: 33vh;
+    width: 250px;
+    height: 390px;
 }
 
 /* Inner structure of a card */
@@ -97,51 +97,102 @@
 .hero-class-card {
     width: 100%;
     height: 100%;
-    padding: 1vh;
+    padding: 10px;
     overflow: hidden;
     text-align: center;
 }
 
 .card-title {
-    font-size: 2vh;
+    font-size: 24px;
     font-weight: bold;
-    margin-bottom: 0.5vh;
+    margin-bottom: 5px;
 }
 
 .card-description {
-    font-size: 0.9vh;
+    font-size: 10px;
     flex-grow: 1;
     font-style: italic;
     /*text-align: left;*/
-    padding-bottom: 1vh;
     text-overflow: ellipsis;
 }
 
 .dice-modifications {
-    font-size: 1vh;
+    font-size: 16px;
     display:inline-flex;
     text-align: center;
-    padding: 0.5vh;
+    padding: 10px;
 }
 .class-abilities {
     text-align: left;
 }
 
 h4 {
-    //font-size: 1.8vh;
     margin: 5px;
 }
 
 ul {
-    padding-left: 1vh;
+    padding-left: 10px;
     margin: 0;
     list-style-type: none;
 }
 
 li {
-    font-size: 1vh;
-    margin-bottom: 0.5vh;
+    font-size: 14px;
+    margin-bottom: 15px;
     overflow: auto;
     text-overflow: ellipsis;
     /*white-space: nowrap;*/
+}
+
+.room-container-card {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Highlight each side if there is a door */
+.room-border {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Door Indicators */
+.door-indicator {
+    position: absolute;
+    background-color: gray; /* Default: invisible */
+    width: 40%; /* Make it a third of the width */
+    height: 6px; /* Small strip */
+}
+
+/* Show only when door is present */
+.door-visible {
+    opacity: 1;
+    background-color: gold;
+}
+
+/* Positioning */
+.door-top {
+    top: 0;
+    left: 30%; /* Centers it horizontally */
+}
+
+.door-right {
+    top: 30%;
+    right: 0;
+    width: 6px; /* Vertical strip */
+    height: 40%; /* Make it a third of the height */
+}
+
+.door-bottom {
+    bottom: 0;
+    left: 30%;
+}
+
+.door-left {
+    top: 30%;
+    left: 0;
+    width: 6px; /* Vertical strip */
+    height: 40%; /* Make it a third of the height */
 }

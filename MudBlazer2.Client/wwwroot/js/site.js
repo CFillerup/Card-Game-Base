@@ -6,6 +6,25 @@ document.addEventListener("keydown", (e) => {
         window.flipCard(hoveredPile.id);
     }
 });
+
+window.updateCardDimensions = () => {
+    const baseHeight = window.innerHeight * 0.33; // 33% of viewport height
+    const aspectRatio = 2.5 / 3.5; // Standard playing card ratio (width / height)
+
+    const cardWidth = baseHeight * aspectRatio;
+    const cardHeight = baseHeight;
+
+    console.log(`Updating card dimensions: ${cardWidth}px x ${cardHeight}px`);
+
+    document.documentElement.style.setProperty("--card-width", `${cardWidth}px`);
+    document.documentElement.style.setProperty("--card-height", `${cardHeight}px`);
+};
+
+// Ensure cards are properly scaled on load and when resizing
+window.addEventListener("resize", updateCardDimensions);
+window.addEventListener("DOMContentLoaded", updateCardDimensions);
+
+
 document.addEventListener("keydown", async (e) => {
     if (e.key.toLowerCase() === "s" && hoveredPile) {
         console.log(`Shuffling pile: ${hoveredPile.id}`);

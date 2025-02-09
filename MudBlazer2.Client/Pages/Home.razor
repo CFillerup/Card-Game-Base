@@ -7,88 +7,145 @@
 <!-- Full-Screen Board -->
 <div class="board">
     <button @onclick="AddHeroClassCards">Add Card Pile</button>
+    <button @onclick="AddRoomCards">Add Room Pile</button>
 
     @foreach (var pile in cardPiles)
     {
         if (pile.Cards.Count > 0)
         {
-            <div id="draggableDiv_@pile.Id"
-                 class="draggable @(pile.FaceUp ? "" : "flipped")"
-                 data-rotation="@pile.Rotation"
-                 data-faceup="@pile.FaceUp"
-                 @onmousedown="(e) => StartDrag(e, pile)"
-                 style="@(pile.StartingPosition != null ? $"left: {pile.StartingPosition.X}px; top: {pile.StartingPosition.Y}px; rotateY(180deg)" : "")">
-
-                <!--   Create the visual stacking effect -->
-                @for (int i = 1; i < pile.Cards.Count && i < 6; i++)
+            if (pile.Cards.Count > 0 && pile.Cards != null)
+            {
+                if (pile.Cards.LastOrDefault() is RoomCard)
                 {
-                    <div class="card-shadow" style="top:@(i * 3)px; left:@(i * 3)px; z-index:-@(i)"></div>
-                }
+                    var roomCard = pile.Cards.LastOrDefault() as RoomCard;
+                    <div id="draggableDiv_@pile.Id"
+                         class="draggable
+            @(pile.FaceUp ? "" : "flipped")"
+                         data-rotation="@pile.Rotation"
+                         data-faceup="@pile.FaceUp"
+                         @onmousedown="(e) => StartDrag(e, pile)"
+                         style="height: 300px; width: 300px; background: #222; @(pile.StartingPosition != null ? $"left: {pile.StartingPosition.X}px; top: {pile.StartingPosition.Y}px; rotateY(180deg)" : "")">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="card-content">
+                                    <div class="room-border">
+                                        <div class="room-container-card">
+                                            <div class="door-indicator door-top @(roomCard.Doors[0] ? "door-visible" : "")"></div>
+                                            <div class="door-indicator door-right @(roomCard.Doors[1] ? "door-visible" : "")"></div>
+                                            <div class="door-indicator door-bottom @(roomCard.Doors[2] ? "door-visible" : "")"></div>
+                                            <div class="door-indicator door-left @(roomCard.Doors[3] ? "door-visible" : "")"></div>
 
-                <!--   Top visible card -->
-                <div class="card-inner">
-                    <div class="card-front">
-                        <div class="card-content">
-                            @switch (pile.Cards.LastOrDefault()?.CardType)
-                            {
-                                case CardBase.CardTypeEnum.HeroClass:
-                                    var card = pile.Cards.LastOrDefault() as HeroClassCard;
-                                    <div class="hero-class-card">
-                                        <h3 class="card-title">@card.Name</h3>
-                                        <p class="card-description">@card.Description</p>
-
-                                        <div class="dice-modifications">
-                                            @foreach (var modifier in card.DiceModifications)
-                                            {
-                                                <h4>
-                                                    @modifier.Key: @modifier.Value
-                                                </h4>
-                                            }
-                                        </div>
-
-                                        <div class="class-abilities">
-                                            <ul>
-                                                @foreach (var ability in card.ClassAbilities)
-                                                {
-                                                    <li><strong>@ability.Name</strong> (@ability.AbilityType): @ability.Effect</li>
-                                                }
-                                            </ul>
+                                            <h3 class="card-title">@roomCard.Name</h3>
+                                            <p class="card-description">@roomCard.Description</p>
+                                            <h4>Room Size: @roomCard.RoomWidth x @roomCard.RoomHeight</h4>
+                                            <h4>Encounter Chance: 1 - @roomCard.EncounterChance</h4>
+                                            <div style="width: 100%; padding:0% 15% 0% 15%">
+                                                <GridComponent room="@roomCard" />
+                                            </div>
                                         </div>
                                     </div>
-                                    break;
-                                case CardBase.CardTypeEnum.ClassAbility:
-                                    var abilityCard = pile.Cards.LastOrDefault() as ClassAbilityCard;
-                                    <div class="hero-class-card">
-                                        <h3 class="card-title">@abilityCard.Name</h3>
-                                        <p class="card-description">@abilityCard.Description</p>
-                                        <div class="dice-modifications">
-                                            <h4>@abilityCard.Class - Tier @abilityCard.Tier</h4>
-                                        </div>
-                                        <div class="class-abilities">
-                                            <ul>
-                                                @foreach (var ability in abilityCard.abilities)
-                                                {
-                                                    <li><strong>@ability.Name</strong> (@ability.AbilityType): @ability.Effect</li>
-                                                }
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    break;
-                                default:
-                                    <div style="height:10%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.Name</div>
-                                    <div style="height:40%; outline: 2px solid black;">image</div>
-                                    <div style="height:10%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.CardType</div>
-                                    <div style="height:40%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.Description</div>
-                                    break;
-                            }
-
+                                    @for (int i = 1; i < pile.Cards.Count && i < 6; i++)
+                                    {
+                                        <div class="card-shadow" style="top:@(i * 3)px; left:@(i * 3)px; z-index:-@(i)"></div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                @roomCard.CardBack (@pile.Cards.Count)
+                            </div>
                         </div>
                     </div>
-                    <div class="card-back">
-                        @pile.Cards.LastOrDefault()?.CardBack (@pile.Cards.Count)
+                }
+                else
+                {
+
+                    <div id="draggableDiv_@pile.Id"
+                         class="draggable @(pile.FaceUp ? "" : "flipped")"
+                         data-rotation="@pile.Rotation"
+                         data-faceup="@pile.FaceUp"
+                         @onmousedown="(e) => StartDrag(e, pile)"
+                         style="@(pile.StartingPosition != null ? $"left: {pile.StartingPosition.X}px; top: {pile.StartingPosition.Y}px; rotateY(180deg)" : "")">
+
+                        <!--   Create the visual stacking effect -->
+                        @for (int i = 1; i < pile.Cards.Count && i < 6; i++)
+                        {
+                            <div class="card-shadow" style="top:@(i * 3)px; left:@(i * 3)px; z-index:-@(i)"></div>
+                        }
+
+                        <!--   Top visible card -->
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="card-content">
+                                    @switch (pile.Cards.LastOrDefault()?.CardType)
+                                    {
+                                        case CardBase.CardTypeEnum.HeroClass:
+                                            var card = pile.Cards.LastOrDefault() as HeroClassCard;
+                                            <div class="hero-class-card">
+                                                <h3 class="card-title">@card.Name</h3>
+                                                <p class="card-description">@card.Description</p>
+
+                                                <div class="dice-modifications">
+                                                    @foreach (var modifier in card.DiceModifications)
+                                                    {
+                                                        <h4>
+                                                            @modifier.Key: @modifier.Value
+                                                        </h4>
+                                                    }
+                                                </div>
+                                                <div style="text-align:center;">
+                                                    <h4 style="margin: 0px;">-Favored Dice-</h4>
+                                                </div>
+                                                <div class="dice-modifications">
+                                                    <h5 style="margin: 0px 15px 0px 15px; font-weight:bold;">@card.PrimaryDice</h5>
+                                                    <h5 style="margin: 0px 15px 0px 15px; font-weight:bold;">@card.SecondaryDice</h5>
+                                                </div>
+
+                                                <div class="class-abilities">
+                                                    <ul>
+                                                        @foreach (var ability in card.ClassAbilities)
+                                                        {
+                                                            <li><strong>@ability.Name</strong> (@ability.AbilityType): @ability.Effect</li>
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            break;
+                                        case CardBase.CardTypeEnum.ClassAbility:
+                                            var abilityCard = pile.Cards.LastOrDefault() as ClassAbilityCard;
+                                            <div class="hero-class-card">
+                                                <h3 class="card-title">@abilityCard.Name</h3>
+                                                <p class="card-description">@abilityCard.Description</p>
+                                                <div class="dice-modifications">
+                                                    <h4>@abilityCard.Class - Tier @abilityCard.Tier</h4>
+                                                </div>
+                                                <div class="class-abilities">
+                                                    <ul>
+                                                        @foreach (var ability in abilityCard.abilities)
+                                                        {
+                                                            <li><strong>@ability.Name</strong> (@ability.AbilityType): @ability.Effect</li>
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            break;
+
+                                        default:
+                                            <div style="height:10%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.Name</div>
+                                            <div style="height:40%; outline: 2px solid black;">image</div>
+                                            <div style="height:10%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.CardType</div>
+                                            <div style="height:40%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.Description</div>
+                                            break;
+                                    }
+
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                @pile.Cards.LastOrDefault()?.CardBack (@pile.Cards.Count)
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                }
+            }
         }
     }
 </div>
@@ -97,26 +154,28 @@
 @code {
     private List<CardPile> cardPiles = new();
     private int pileCount = 0;
+    bool helperSet = false;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
+
+        try
+        {
+            if (helperSet) return;
+            var dotNetRef = DotNetObjectReference.Create(this);
+            await JSRuntime.InvokeVoidAsync("setBlazorHelper", dotNetRef);
+            helperSet = true;
+            Console.WriteLine(" Blazor Helper Set!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($" Error: Could not set Blazor Helper - {ex.Message}");
+            await Task.Delay(1000);
+            await OnAfterRenderAsync(firstRender);
+        }
         if (firstRender)
         {
             // Wait until JS is available before calling setBlazorHelper
-            await JSRuntime.InvokeVoidAsync("setTimeout", 100);
-            var dotNetRef = DotNetObjectReference.Create(this);
-
-            try
-            {
-                await JSRuntime.InvokeVoidAsync("setBlazorHelper", dotNetRef);
-                Console.WriteLine(" Blazor Helper Set!");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($" Error: Could not set Blazor Helper - {ex.Message}");
-                await Task.Delay(1000);
-                await OnAfterRenderAsync(firstRender);
-            }
         }
 
         foreach (var pile in cardPiles)
@@ -169,19 +228,21 @@
         await EnableDragging(pile);
     }
 
+
     [JSInvokable]
     public async Task DrawTopCardJS(string elementId)
     {
         var pile = cardPiles.FirstOrDefault(x => x.Id.ToString() == elementId.Split("_")[1]);
         if (pile == null || pile.Cards.Count <= 1) return;
 
+        CardPile newCardPile = new CardPile();
         var topCard = pile.Cards.LastOrDefault();
         var pilePosition = await JSRuntime.InvokeAsync<Models.Position>("getPilePosition", $"draggableDiv_{pile.Id}");
         if (topCard != null)
         {
             pileCount++;
 
-            var newCardPile = new CardPile
+            newCardPile = new CardPile
                 {
                     Name = topCard.Name,
                     Id = pileCount,
@@ -193,15 +254,16 @@
 
             pile.Cards.Remove(topCard);
             cardPiles.Add(newCardPile);
+
             StateHasChanged();
 
             await Task.Delay(50);
-            await JSRuntime.InvokeVoidAsync("flipCard", $"draggableDiv_{newCardPile.Id}", elementId);
+            //await JSRuntime.InvokeVoidAsync("flipCard", $"draggableDiv_{newCardPile.Id}", elementId);
             var moveDistance = pilePosition.Width + 10;
             var newX = pilePosition.X + moveDistance;
             await JSRuntime.InvokeVoidAsync("moveElementRight", $"draggableDiv_{pile.Id}", $"draggableDiv_{newCardPile.Id}", moveDistance);
-            await JSRuntime.InvokeVoidAsync("setElementPosValues", $"draggableDiv_{newCardPile.Id}", newX);
-
+            //await JSRuntime.InvokeVoidAsync("setElementPosValues", $"draggableDiv_{newCardPile.Id}", newX);
+            await EnableDragging(newCardPile);
             await Task.Delay(300);
             //await JSRuntime.InvokeVoidAsync("setElementPosition", $"draggableDiv_{pile.Id}", $"draggableDiv_{newCardPile.Id}", moveDistance);
 
@@ -298,6 +360,51 @@
                     await EnableDragging(newPile);
                     classCount++;
                 }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+    }
+
+    public async Task AddRoomCards()
+    {
+        //string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "hero_class_cards.json");
+        //Console.WriteLine($"Looking for file at: {Path.GetFullPath(filePath)}");
+        // Ensure this file exists in the working directory
+        //List<HeroClassCard> heroClassCards = LoadCardPileFromJson(filePath);
+
+        try
+        {
+
+            List<RoomCard>? roomCards = await Http.GetFromJsonAsync<List<RoomCard>>("room_cards.json");
+
+
+            if (roomCards == null || roomCards.Count == 0)
+            {
+                Console.WriteLine("No Room cards found");
+
+            }
+            else
+            {
+                pileCount++;
+
+                var newPile = new CardPile
+                    {
+                        Name = $"Room Pile",
+                        Id = pileCount,
+                        CanMove = true,
+                        FaceUp = true,
+                        Cards = new List<CardBase>(roomCards),
+                        StartingPosition = new Models.Position { X = 100, Y = 100 }
+                    };
+                cardPiles.Add(newPile);
+                await JSRuntime.InvokeVoidAsync("setElementPosValues", $"draggableDiv_{newPile.Id}", newPile.StartingPosition.X, newPile.StartingPosition.Y);
+                StateHasChanged();
+                await EnableDragging(newPile);
+                //classCount++;
+
             }
         }
         catch (Exception ex)

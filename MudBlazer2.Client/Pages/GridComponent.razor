@@ -1,0 +1,61 @@
+﻿@using MudBlazer2.Client.Models
+@code {
+    [Parameter] public RoomCard room { get; set; }
+}
+
+@if (room != null)
+{
+
+        <div class="room-card">
+            <div class="room-grid" style="--cols:@room.RoomWidth; --rows:@room.RoomHeight;">
+                @for (int y = 0; y < room.RoomHeight; y++)
+                {
+                    @for (int x = 0; x < room.RoomWidth; x++)
+                    {
+                        <div class="grid-cell @(room.Grid[y][x] ? "filled" : "empty")"></div>
+                    }
+                }
+            </div>
+        </div>
+
+}
+else
+{
+    <p>Loading room...</p>
+}
+
+<style>
+    .room-card {
+        width: 100%; /* Adjust this based on card size */
+        height: 100%; /* Ensure this matches your card aspect ratio */
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #222;
+    }
+
+    .room-grid {
+        display: grid;
+        width: 95%;
+        height: 80%;
+        grid-template-columns: repeat(var(--cols), 1fr);
+        grid-template-rows: repeat(var(--rows), 1fr);
+        gap: 2px; /* Space between cells */
+    }
+
+    .grid-cell {
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        aspect-ratio: 1 / 1; /* Ensures squares */
+    }
+
+    .filled {
+        background: #f0f0f0;
+    }
+
+    .empty {
+        background: transparent;
+    }
+
+</style>
