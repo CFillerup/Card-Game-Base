@@ -8,7 +8,7 @@
 <div class="board">
     <button @onclick="AddHeroClassCards">Add Card Pile</button>
     <button @onclick="AddRoomCards">Add Room Pile</button>
-
+    <button @onclick="AddEncounterCards">Add Encounter Pile</button>
     @foreach (var pile in cardPiles)
     {
         if (pile.Cards.Count > 0)
@@ -128,7 +128,68 @@
                                                 </div>
                                             </div>
                                             break;
+                                        case CardBase.CardTypeEnum.Encounter:
+                                            var encounterCard = pile.Cards.LastOrDefault() as EncounterCard;
+                                            <div class="hero-class-card">
+                                                <h3 class="card-title">@encounterCard.Name</h3>
+                                                <p class="card-description">@encounterCard.Description</p>
+                                                <h4>@encounterCard.EncounterSetup</h4>
+                                                <div class="dice-modifications">
+                                                    @foreach (var creatures in encounterCard.Creatures)
+                                                    {
+                                                        <h4>@creatures.Key: @creatures.Value</h4>
+                                                        <button @onclick="() => AddCreatureCard(creatures.Value)" style="background:transparent">Add</button>
+                                                    }
+                                                </div>
+                                                <div class="class-abilities">
+                                                    <ul>
+                                                        @foreach (var req in encounterCard.RequirementAndRewards)
+                                                        {
+                                                            <li><strong>@req.Key</strong> @req.Value</li>
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            break;
+                                        case CardBase.CardTypeEnum.Creature:
+                                            var creatureCard = pile.Cards.LastOrDefault() as CreatureCard;
+                                            <div class="hero-class-card">
+                                                <h3 class="card-title">@creatureCard.Name</h3>
+                                                <p class="card-description">@creatureCard.Description</p>
 
+                                                <div class="dice-modifications">
+                                                    @foreach (var modifier in creatureCard.Attributes)
+                                                    {
+                                                        <h5>
+                                                            @modifier.Key: @modifier.Value
+                                                        </h5>
+                                                    }
+                                                </div>
+                                                <div style="text-align:center;">
+                                                    <h5 style="margin: 0px;">@creatureCard.Behavior</h5>
+                                                </div>
+                                                <div class="dice-modifications">
+                                                    <ul>
+                                                        <li><strong>Health:</strong> @creatureCard.Health</li>
+                                                        <li><strong>Armor:</strong> @creatureCard.Defense</li>
+                                                    </ul>
+                                                    <ul>
+
+                                                        <li><strong>Size:</strong> @creatureCard.Size</li>
+                                                        <li><strong>Tier:</strong> @creatureCard.Tier</li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="class-abilities">
+                                                    <ul>
+                                                        @foreach (var ability in creatureCard.Abilities)
+                                                        {
+                                                            <li><strong>@ability.Name</strong> (@ability.AbilityType): @ability.Effect</li>
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            break;
                                         default:
                                             <div style="height:10%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.Name</div>
                                             <div style="height:40%; outline: 2px solid black;">image</div>
@@ -397,6 +458,169 @@
                         CanMove = true,
                         FaceUp = true,
                         Cards = new List<CardBase>(roomCards),
+                        StartingPosition = new Models.Position { X = 100, Y = 100 }
+                    };
+                cardPiles.Add(newPile);
+                await JSRuntime.InvokeVoidAsync("setElementPosValues", $"draggableDiv_{newPile.Id}", newPile.StartingPosition.X, newPile.StartingPosition.Y);
+                StateHasChanged();
+                await EnableDragging(newPile);
+                //classCount++;
+
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+    }
+
+    public async Task AddEncounterCards()
+    {
+        //string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "hero_class_cards.json");
+        //Console.WriteLine($"Looking for file at: {Path.GetFullPath(filePath)}");
+        // Ensure this file exists in the working directory
+        //List<HeroClassCard> heroClassCards = LoadCardPileFromJson(filePath);
+
+        try
+        {
+
+            List<EncounterCard>? encounterCards = await Http.GetFromJsonAsync<List<EncounterCard>>("encounter_cards.json");
+            List<CreatureCard>? creatureCards = await Http.GetFromJsonAsync<List<CreatureCard>>("creature_cards.json");
+
+            var tierOneEncounters = new List<EncounterCard>();
+            var tierTwoEncounters = new List<EncounterCard>();
+            var tierThreeEncounters = new List<EncounterCard>();
+
+            foreach (var encounter in encounterCards)
+            {
+                int highestTier = 0;
+                var creatures = new List<CreatureCard>();
+                foreach (var creature in encounter.Creatures)
+                {
+                    var creatureCard = creatureCards.FirstOrDefault(x => x.Name == creature.Value);
+                    if (creatureCard != null)
+                    {
+                        creatures.Add(creatureCard);
+                        if (creatureCard.Tier > highestTier)
+                        {
+                            highestTier = creatureCard.Tier;
+                        }
+                    }
+                }
+                switch (highestTier)
+                {
+                    case 1:
+                        encounter.CardBack = "Tier 1 Encounter";
+                        tierOneEncounters.Add(encounter);
+                        break;
+                    case 2:
+                        encounter.CardBack = "Tier 2 Encounter";
+                        tierTwoEncounters.Add(encounter);
+                        break;
+                    case 3:
+                        encounter.CardBack = "Tier 3 Encounter";
+                        tierThreeEncounters.Add(encounter);
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+
+            if (encounterCards == null || encounterCards.Count == 0)
+            {
+                Console.WriteLine("No Room cards found");
+
+            }
+            else
+            {
+                pileCount++;
+
+                var newPileTier1 = new CardPile
+                    {
+                        Name = $"Encounter Pile",
+                        Id = pileCount,
+                        CanMove = true,
+                        FaceUp = true,
+                        Cards = new List<CardBase>(tierOneEncounters),
+                        StartingPosition = new Models.Position { X = 100, Y = 100 }
+                    };
+                cardPiles.Add(newPileTier1);
+                await JSRuntime.InvokeVoidAsync("setElementPosValues", $"draggableDiv_{newPileTier1.Id}", newPileTier1.StartingPosition.X, newPileTier1.StartingPosition.Y);
+                StateHasChanged();
+                await EnableDragging(newPileTier1);
+                //classCount++;
+
+
+                pileCount++;
+
+                var newPileTier2 = new CardPile
+                    {
+                        Name = $"Encounter Pile",
+                        Id = pileCount,
+                        CanMove = true,
+                        FaceUp = true,
+                        Cards = new List<CardBase>(tierTwoEncounters),
+                        StartingPosition = new Models.Position { X = 100, Y = 100 }
+                    };
+                cardPiles.Add(newPileTier2);
+                await JSRuntime.InvokeVoidAsync("setElementPosValues", $"draggableDiv_{newPileTier2.Id}", newPileTier2.StartingPosition.X, newPileTier2.StartingPosition.Y);
+                StateHasChanged();
+                await EnableDragging(newPileTier2);
+
+
+                pileCount++;
+
+                var newPileTier3 = new CardPile
+                    {
+                        Name = $"Encounter Pile",
+                        Id = pileCount,
+                        CanMove = true,
+                        FaceUp = true,
+                        Cards = new List<CardBase>(tierThreeEncounters),
+                        StartingPosition = new Models.Position { X = 100, Y = 100 }
+                    };
+                cardPiles.Add(newPileTier3);
+                await JSRuntime.InvokeVoidAsync("setElementPosValues", $"draggableDiv_{newPileTier3.Id}", newPileTier3.StartingPosition.X, newPileTier3.StartingPosition.Y);
+                StateHasChanged();
+                await EnableDragging(newPileTier3);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+    }
+
+    public async Task AddCreatureCard(string creature)
+    {
+        //string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "hero_class_cards.json");
+        //Console.WriteLine($"Looking for file at: {Path.GetFullPath(filePath)}");
+        // Ensure this file exists in the working directory
+        //List<HeroClassCard> heroClassCards = LoadCardPileFromJson(filePath);
+
+        try
+        {
+
+            List<CreatureCard>? creatureCards = await Http.GetFromJsonAsync<List<CreatureCard>>("creature_cards.json");
+
+            if (creatureCards == null || creatureCards.Count == 0)
+            {
+                Console.WriteLine("No creature cards found");
+
+            }
+            else
+            {
+                pileCount++;
+
+                var creatureCard = creatureCards.FirstOrDefault(x => x.Name == creature);
+                var newPile = new CardPile
+                    {
+                        Name = $"Encounter Pile",
+                        Id = pileCount,
+                        CanMove = true,
+                        FaceUp = true,
+                        Cards = new List<CardBase> { creatureCard },
                         StartingPosition = new Models.Position { X = 100, Y = 100 }
                     };
                 cardPiles.Add(newPile);

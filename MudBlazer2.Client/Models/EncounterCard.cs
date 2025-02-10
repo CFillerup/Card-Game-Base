@@ -2,9 +2,8 @@
 {
     public class EncounterCard : CardBase
     {
-        public List<CreatureCard> Creatures { get; set; }
+        public Dictionary<string, string> Creatures { get; set; }
         public string EncounterSetup { get; set; }
-        public string CompletionRequirement { get; set; }
-        public string Rewards { get; set; }
+        public Dictionary<string, string> RequirementAndRewards { get; set; }
     }
 }

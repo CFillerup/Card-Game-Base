@@ -2,12 +2,13 @@
 {
     public class CreatureCard :CardBase
     {
-        public string Species { get; set; }
-        public string Size { get; set; }
-        public string Ammount { get; set; } = "1";
-        public Dictionary<string, string> AbilityDice { get; set; }
-        public string Disposition { get; set; }
-        public string Tactics { get; set; }
-        public List<Ability> CreatureAbilities { get; set; }
+        public string Size { get; set; } // Small, Medium, Large, Huge
+        public string Type { get; set; } // Beast, Undead, Humanoid, Construct, etc.
+        public int Tier { get; set; } // 1, 2, or 3
+        public int Health { get; set; } // Average of Constitution dice
+        public int Defense { get; set; } // Flat defense value
+        public Dictionary<string, string> Attributes { get; set; } // Strength, Dex, etc.
+        public List<Ability> Abilities { get; set; } // Standardized with hero abilities
+        public string Behavior { get; set; } // Combat AI behavior
     }
 }

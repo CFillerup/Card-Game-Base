@@ -1,0 +1,1745 @@
+[
+  {
+    "Name": "Giant Rat",
+    "Description": "A disease-ridden rodent the size of a large dog, its beady red eyes glinting with hunger.",
+    "CardType": "Creature",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "1d6",
+      "Dex": "2d6",
+      "Con": "1d6",
+      "Int": "1d4",
+      "Wis": "1d4",
+      "Cha": "1d4"
+    },
+    "Health": 3,
+    "Defense": 8,
+    "Behavior": "The Giant Rat moves quickly, darting in and out of cover. It prefers to attack from the flanks or in groups, targeting the weakest-looking prey.",
+    "Abilities": [
+      {
+        "Name": "Bite",
+        "Effect": "Make a melee attack using 1d6+1. On a max roll, the target suffers a festering wound, reducing their next healing received by 1.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Pack Tactics",
+        "Effect": "If another Giant Rat is adjacent to the target, this attack roll gains +1.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Skittering Retreat",
+        "Effect": "After making an attack, the Giant Rat may move 1 space without provoking attacks of opportunity.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Swarm Instinct",
+        "Effect": "If at least three Giant Rats are in the encounter, all Giant Rats gain +1 to defense.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Mystic Peddler",
+    "Description": "A robed figure with a mysterious air, offering rare and magical goods. Their true motives remain unclear.",
+    "CardType": "Creature",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "1d4",
+      "Dex": "1d6",
+      "Con": "1d6",
+      "Int": "2d8",
+      "Wis": "2d6",
+      "Cha": "2d8"
+    },
+    "Health": 6,
+    "Defense": 9,
+    "Behavior": "The Peddler avoids combat at all costs, preferring to talk their way out of trouble or flee. They will only attack if cornered.",
+    "Abilities": [
+      {
+        "Name": "Silver Tongue",
+        "Effect": "Roll Cha. Any non-hostile creature who rolls lower must take disadvantage on their next attempt to intimidate or haggle with the Peddler.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Tricksters Escape",
+        "Effect": "Once per encounter, the Peddler may teleport up to 4 spaces away when attacked.",
+        "AbilityType": "Reaction"
+      },
+      {
+        "Name": "Arcane Trinkets",
+        "Effect": "Roll 1d4. On a 4, the Peddler pulls out a minor magical item that can be used as a consumable (GMs discretion).",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Desperate Blast",
+        "Effect": "Make a magic attack using 1d6+2. If the attack lands, the target is pushed back 1 space.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Mercenary Bodyguard",
+    "Description": "A hardened warrior-for-hire, ensuring the merchants safety. Their loyalty only extends as far as their pay.",
+    "CardType": "Creature",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "2d6",
+      "Dex": "1d6",
+      "Con": "2d8",
+      "Int": "1d4",
+      "Wis": "1d6",
+      "Cha": "1d6"
+    },
+    "Health": 8,
+    "Defense": 10,
+    "Behavior": "The Bodyguard will not attack unless provoked. If the merchant is harmed, they will fight to protect them. If they take heavy damage, they may attempt to flee instead.",
+    "Abilities": [
+      {
+        "Name": "Brutal Strike",
+        "Effect": "Make a melee attack using 1d8+3.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Interpose",
+        "Effect": "If the Mystic Peddler is attacked and the Bodyguard is within 2 spaces, they may swap places and take the attack instead.",
+        "AbilityType": "Reaction"
+      },
+      {
+        "Name": "Steadfast Defense",
+        "Effect": "The first attack made against the Bodyguard each round has disadvantage.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Intimidating Presence",
+        "Effect": "Roll Cha. If the result is 5 or higher, one hostile creature within 3 spaces must take disadvantage on their next attack.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Dungeon Brute",
+    "Description": "A burly enforcer with little patience and even less mercy. They relish in tormenting their captives and intimidating intruders.",
+    "CardType": "Creature",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "3d6",
+      "Dex": "1d4",
+      "Con": "2d8",
+      "Int": "1d4",
+      "Wis": "1d6",
+      "Cha": "1d6"
+    },
+    "Health": 10,
+    "Defense": 10,
+    "Behavior": "The Brute prefers to intimidate and control rather than fight. If outnumbered or wounded, they may attempt to negotiate or use a hostage as leverage.",
+    "Abilities": [
+      {
+        "Name": "Crushing Blow",
+        "Effect": "Make a melee attack using 2d6+2.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Chokehold",
+        "Effect": "Make a melee attack using Str. On a hit, the target is grappled and must roll Str 6+ on their turn to escape.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Taunting Threat",
+        "Effect": "Choose one creature within 3 spaces. They must roll Wis. If they roll lower than 5, they must target the Brute with their next attack.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Thick Skin",
+        "Effect": "Reduce all damage taken by 1.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Dark Cultist",
+    "Description": "A devoted worshipper of dark forces, chanting incantations to summon something beyond mortal understanding.",
+    "CardType": "Creature",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "1d4",
+      "Dex": "1d6",
+      "Con": "1d6",
+      "Int": "2d6",
+      "Wis": "2d6",
+      "Cha": "1d8"
+    },
+    "Health": 6,
+    "Defense": 8,
+    "Behavior": "The cultists prioritize finishing the ritual. They will defend themselves if necessary but will focus on completing the summoning unless actively prevented.",
+    "Abilities": [
+      {
+        "Name": "Shadow Bolt",
+        "Effect": "Make a magic attack against a creature within 6 spaces using 1d6+2.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Ritual Chant",
+        "Effect": "If two or more cultists are chanting, they roll 1d6 at the start of their turn. On a 5+, the ritual advances. If four chant uninterrupted for three turns, the ritual completes and the Abyssal Spawn appears.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Dark Blessing",
+        "Effect": "Choose an ally within 3 spaces. Their next attack roll gains +1.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Sacrificial Resolve",
+        "Effect": "If an ally within 3 spaces would take damage, the Cultist may take the damage instead.",
+        "AbilityType": "Reaction"
+      }
+    ]
+  },
+  {
+    "Name": "Abyssal Spawn",
+    "Description": "A nightmarish creature birthed from the void, its form shifting unpredictably as it claws at reality itself.",
+    "CardType": "Creature",
+    "Tier": 2,
+    "Attributes": {
+      "Str": "3d8",
+      "Dex": "2d6",
+      "Con": "2d8",
+      "Int": "1d4",
+      "Wis": "1d6",
+      "Cha": "1d8"
+    },
+    "Health": 14,
+    "Defense": 10,
+    "Behavior": "The Abyssal Spawn lashes out in all directions, attacking the nearest creatures regardless of allegiance. It thrives in chaos, sowing destruction without discrimination.",
+    "Abilities": [
+      {
+        "Name": "Rend Reality",
+        "Effect": "Make a melee attack using 2d8+3. If the target rolls 5 or lower for defense, they take an additional 1d4 damage.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Abyssal Howl",
+        "Effect": "All creatures within 3 spaces must roll Wis. If they roll lower than 6, they lose 1 action point on their next turn.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Eldritch Mutation",
+        "Effect": "At the start of its turn, roll 1d6. On a 4+, the Abyssal Spawn gains +1 to all attack rolls until the end of the encounter.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Warp Step",
+        "Effect": "When hit by an attack, roll a d6. On a 5+, teleport 2 spaces in a random direction before damage is applied.",
+        "AbilityType": "Reaction"
+      }
+    ]
+  },
+  {
+    "Name": "Mimic",
+    "Description": "A cunning predator disguised as an ordinary treasure chest, waiting for the perfect moment to strike.",
+    "CardType": "Creature",
+    "Tier": 2,
+    "Attributes": {
+      "Str": "3d8",
+      "Dex": "1d6",
+      "Con": "3d10",
+      "Int": "1d4",
+      "Wis": "1d6",
+      "Cha": "1d4"
+    },
+    "Health": 18,
+    "Defense": 12,
+    "Behavior": "The Mimic remains motionless until disturbed, then latches onto its prey, grappling and devouring them. It prioritizes the first creature to touch it.",
+    "Abilities": [
+      {
+        "Name": "Ambush Bite",
+        "Effect": "Make a melee attack using 2d8+3. If the target was unaware, the attack deals double damage.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Adhesive Grip",
+        "Effect": "If the Mimic hits with a melee attack, the target must roll Str. If they roll lower than 8, they are grappled (cannot move until they succeed a Str roll on their turn).",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Shapeshift",
+        "Effect": "The Mimic can transform into any object of similar size. Creatures must roll Wis to detect it (DC 10).",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Devour",
+        "Effect": "If a creature remains grappled for two turns, the Mimic makes an attack using 3d8+4, ignoring armor bonuses.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Dungeon Guardian",
+    "Description": "A magical construct imbued with ancient runes, standing watch over the dungeons most prized possessions.",
+    "CardType": "Creature",
+    "Tier": 2,
+    "Attributes": {
+      "Str": "2d6",
+      "Dex": "1d6",
+      "Con": "3d8",
+      "Int": "1d4",
+      "Wis": "1d8",
+      "Cha": "1d4"
+    },
+    "Health": 14,
+    "Defense": 10,
+    "Behavior": "The Guardian activates when a trap is triggered or the mimic attacks. It prioritizes ranged attackers and spellcasters.",
+    "Abilities": [
+      {
+        "Name": "Arcane Blast",
+        "Effect": "Make a ranged magic attack against a creature within 6 spaces using 2d6+2.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Sentinel Stance",
+        "Effect": "If the Guardian has not moved this turn, it rolls an additional d6 on defense.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Energy Drain",
+        "Effect": "If a creature is hit by the Guardians attack, they roll a d6. On a 4 or lower, they lose 1 Action Point next turn.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Overload",
+        "Effect": "Unleash a surge of unstable magic, dealing 1d10 arcane damage to all creatures within 2 spaces.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Shadow Wraith",
+    "Description": "A spectral being of pure darkness, drawn to corrupted places, feeding on fear and life force.",
+    "CardType": "Creature",
+    "Tier": 2,
+    "Attributes": {
+      "Str": "1d4",
+      "Dex": "3d8",
+      "Con": "2d6",
+      "Int": "2d6",
+      "Wis": "2d8",
+      "Cha": "3d6"
+    },
+    "Health": 12,
+    "Defense": 11,
+    "Behavior": "The wraiths phase in and out of reality, striking from the shadows. They avoid direct confrontation, preferring to weaken their enemies over time.",
+    "Abilities": [
+      {
+        "Name": "Life Drain",
+        "Effect": "Make a melee magic attack using 2d6+3. The target must roll Con. If they roll lower than 6, restore health equal to half the damage dealt.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Ethereal Form",
+        "Effect": "Physical attacks against the wraith must roll twice and take the lower result.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Dark Pulse",
+        "Effect": "Make a magic attack against each creature in a 2-space radius using 1d6+2. Targets hit take -1 on their next defense roll.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Corrupting Aura",
+        "Effect": "At the start of its turn, the wraith regains 1 health while within 3 spaces of a source of corruption.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Bandit",
+    "Description": "A rogue scavenger preying on travelers. Quick with a blade and quicker to flee when outmatched.",
+    "CardType": "Creature",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "2d6",
+      "Dex": "2d8",
+      "Con": "1d6",
+      "Int": "1d6",
+      "Wis": "1d4",
+      "Cha": "2d6"
+    },
+    "Health": 8,
+    "Defense": 10,
+    "Behavior": "Bandits work together to flank and overwhelm their targets. On a narrow bridge, they will attempt to shove enemies off rather than fight directly.",
+    "Abilities": [
+      {
+        "Name": "Backstab",
+        "Effect": "Make a melee attack using 2d6+1. If the target is adjacent to an ally of the bandit, deal +2 damage.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Trip and Push",
+        "Effect": "Instead of dealing damage, force a target within 1 space to roll Dex. If they roll lower than 7, they are shoved 1 space.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Quick Escape",
+        "Effect": "If the bandit takes damage, they may immediately move up to 2 spaces away.",
+        "AbilityType": "Reaction"
+      }
+    ]
+  },
+  {
+    "Name": "Bandit Captain",
+    "Description": "The leader of a ruthless band of thieves, skilled in both combat and intimidation.",
+    "CardType": "Creature",
+    "Tier": 2,
+    "Attributes": {
+      "Str": "3d8",
+      "Dex": "2d8",
+      "Con": "2d6",
+      "Int": "2d6",
+      "Wis": "1d6",
+      "Cha": "3d8"
+    },
+    "Health": 14,
+    "Defense": 12,
+    "Behavior": "The captain directs their crew efficiently, focusing on pushing enemies off the bridge first. They will flee if left alone.",
+    "Abilities": [
+      {
+        "Name": "Coordinated Strike",
+        "Effect": "Make a melee attack using 3d8+2. If at least one ally is adjacent to the target, roll an additional d6 and add the result to damage.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Commanding Presence",
+        "Effect": "All bandits within 3 spaces gain +1 on attack rolls.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Bridge Tactics",
+        "Effect": "Once per turn, may force an enemy within 1 space to roll Dex. If they roll lower than 8, they are knocked prone and must spend an action to stand.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Cursed Guardian",
+    "Description": "A towering, enchanted statue brought to life by ancient magic. It defends its domain relentlessly.",
+    "CardType": "Creature",
+    "Tier": 3,
+    "Attributes": {
+      "Str": "4d12",
+      "Dex": "1d6",
+      "Con": "3d12",
+      "Int": "2d8",
+      "Wis": "2d10",
+      "Cha": "1d4"
+    },
+    "Health": 36,
+    "Defense": 14,
+    "Behavior": "The guardian does not move until the statue is disturbed. Once awakened, it will focus on the nearest target, attacking methodically. If the runes are deciphered, the guardian deactivates and becomes inert.",
+    "Abilities": [
+      {
+        "Name": "Titanic Slam",
+        "Effect": "Make a melee attack using 4d12+5. If the attack hits, the target is knocked prone and must spend an action to stand.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Arcane Pulse",
+        "Effect": "Make a magic attack against each creature in a 3x3 area using 2d10+4. Targets must roll Wis. If they roll lower than 10, they are Staggered (next action costs 2 AP).",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Stone Resilience",
+        "Effect": "This creature takes half damage from non-magical attacks.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Ward of the Runes",
+        "Effect": "If an enemy tries to decipher the runes, they must roll Int. If they roll lower than 12, the guardian immediately takes an extra action.",
+        "AbilityType": "Reaction"
+      }
+    ]
+  },
+  {
+    "Name": "Spiderling",
+    "Description": "A small but aggressive offspring of the Broodmother. They attack in swarms to overwhelm their prey.",
+    "CardType": "Creature",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "1d6",
+      "Dex": "2d8",
+      "Con": "1d6",
+      "Int": "1d4",
+      "Wis": "1d6",
+      "Cha": "1d4"
+    },
+    "Health": 6,
+    "Defense": 9,
+    "Behavior": "Spiderlings attack in coordinated waves. They target weakened foes and try to pin them down with sheer numbers.",
+    "Abilities": [
+      {
+        "Name": "Swarm Tactics",
+        "Effect": "Make a melee attack using 1d6+1. If another Spiderling is adjacent to the target, deal +2 damage.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Cling to Prey",
+        "Effect": "If the Spiderling hits a target, that creature rolls Dex. If they roll lower than 8, their next movement is reduced by half.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Sacrificial Bite",
+        "Effect": "If the Broodmother is attacked, the Spiderling may immediately move adjacent to the attacker and make a melee attack.",
+        "AbilityType": "Reaction"
+      }
+    ]
+  },
+  {
+    "Name": "Giant Spider",
+    "Description": "A monstrous arachnid, lurking in the shadows, ready to ensnare its prey with venomous silk.",
+    "CardType": "Creature",
+    "Tier": 3,
+    "Attributes": {
+      "Str": "3d10",
+      "Dex": "4d12",
+      "Con": "3d8",
+      "Int": "1d6",
+      "Wis": "2d8",
+      "Cha": "1d4"
+    },
+    "Health": 28,
+    "Defense": 13,
+    "Behavior": "The spider lurks in the darkness, striking from above. If threatened, it calls its young to swarm the enemy. Prefers to entangle and poison foes before finishing them off.",
+    "Abilities": [
+      {
+        "Name": "Venomous Fangs",
+        "Effect": "Make a melee attack using 3d10+3. If the attack hits, the target must roll Con. If they roll lower than 10, they are Poisoned (1d6 damage at the start of their turn for 3 turns).",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Web Snare",
+        "Effect": "Make a ranged attack using Dex. If the attack hits, the target is Restrained (cannot move or attack) until they roll Str higher than 10 to break free.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Lair Tactics",
+        "Effect": "If an enemy moves within 2 spaces, the spider may move up to 3 spaces as a reaction without provoking attacks.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Broodmothers Call",
+        "Effect": "If the Giant Spider takes damage, all Spiderlings in the encounter may move up to 2 spaces toward the attacker.",
+        "AbilityType": "Reaction"
+      }
+    ]
+  },
+  {
+    "Name": "Arcane Sentinel",
+    "Description": "A towering construct of stone and enchanted runes, designed to guard its ancient prisoner at all costs.",
+    "CardType": "Creature",
+    "Tier": 3,
+    "Attributes": {
+      "Str": "3d10",
+      "Dex": "2d8",
+      "Con": "4d12",
+      "Int": "1d6",
+      "Wis": "2d8",
+      "Cha": "1d4"
+    },
+    "Health": 36,
+    "Defense": 15,
+    "Behavior": "The Sentinel prioritizes guarding the prisoner. It will only attack if approached or if someone attempts to tamper with the runes binding the captive. If its health falls below half, it activates defensive wards.",
+    "Abilities": [
+      {
+        "Name": "Runic Slam",
+        "Effect": "Make a melee attack using 3d10+4. If the attack hits, the target must roll Str. If they roll lower than 12, they are knocked prone.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Arcane Discharge",
+        "Effect": "Make a magic attack against each creature in a 3 by 3 area using 2d8+2. If any roll max, the affected creatures are also Staggered (their next action costs 2 AP).",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Runebound Ward",
+        "Effect": "The Arcane Sentinel gains +2 defense if within 3 spaces of the Runebound Prisoner. If reduced to half health, its defense increases by an additional +1.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Arcane Retaliation",
+        "Effect": "When an enemy deals 6 or more damage to the Sentinel, roll a d8. If the result is 6 or higher, that enemy takes 1d6 arcane damage.",
+        "AbilityType": "Reaction"
+      }
+    ]
+  },
+  {
+    "Name": "Goblin",
+    "Description": "A small, sneaky humanoid with a mischievous grin and a tendency to attack in numbers.",
+    "CardType": "Creature",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "1d6",
+      "Dex": "2d8",
+      "Con": "1d6",
+      "Int": "1d4",
+      "Wis": "1d6",
+      "Cha": "1d6"
+    },
+    "Health": 3,
+    "Defense": 10,
+    "Behavior": "Goblins prefer to attack in groups, striking from the shadows and retreating when injured. If reduced to half numbers, they will attempt to flee.",
+    "Abilities": [
+      {
+        "Name": "Rusty Dagger",
+        "Effect": "Make a melee attack using 1d6+1.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Sneaky Tactics",
+        "Effect": "If a goblin is adjacent to an ally, it gains +1 to attack rolls.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Quick Retreat",
+        "Effect": "When a goblin takes damage, it may immediately move 2 spaces away.",
+        "AbilityType": "Reaction"
+      }
+    ]
+  },
+  {
+    "Name": "Goblin Archer",
+    "Description": "A goblin with a crude bow, hiding behind cover and taking cheap shots at enemies.",
+    "CardType": "Creature",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "1d4",
+      "Dex": "3d8",
+      "Con": "1d6",
+      "Int": "1d6",
+      "Wis": "1d6",
+      "Cha": "1d6"
+    },
+    "Health": 4,
+    "Defense": 11,
+    "Behavior": "Goblin archers avoid melee at all costs, preferring to attack from range and reposition whenever an enemy approaches. They take advantage of cover whenever possible.",
+    "Abilities": [
+      {
+        "Name": "Crude Shortbow",
+        "Effect": "Make a ranged attack using 1d8+1.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Dodge and Weave",
+        "Effect": "If the Goblin Archer moves at least 2 spaces on its turn, it gains +1 to its next Defense roll.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Trick Shot",
+        "Effect": "Make a ranged attack against a target in cover. If the attack hits, the target loses their cover bonus until the start of their next turn.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Stone Sentinel",
+    "Description": "A massive construct of enchanted stone, built to guard ancient ruins.",
+    "CardType": "Creature",
+    "Tier": 3,
+    "Attributes": {
+      "Str": "4d12",
+      "Dex": "1d6",
+      "Con": "4d12",
+      "Int": "1d6",
+      "Wis": "2d8",
+      "Cha": "1d4"
+    },
+    "Health": 32,
+    "Defense": 15,
+    "Behavior": "The Sentinel methodically crushes intruders, prioritizing those wielding magic. If deactivated, it will remain dormant until disturbed again.",
+    "Abilities": [
+      {
+        "Name": "Crushing Fist",
+        "Effect": "Make a melee attack using 3d12+4.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Seismic Slam",
+        "Effect": "All creatures within 2 spaces must roll Dex (8+). On failure, they take 2d8 damage and fall prone.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Immutable Form",
+        "Effect": "Immune to poison, charm, and mind-affecting effects.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Water Wraith",
+    "Description": "A spectral entity formed from drowned souls, haunting flooded ruins.",
+    "CardType": "Creature",
+    "Tier": 2,
+    "Attributes": {
+      "Str": "1d6",
+      "Dex": "3d8",
+      "Con": "2d10",
+      "Int": "1d6",
+      "Wis": "2d8",
+      "Cha": "2d6"
+    },
+    "Health": 14,
+    "Defense": 12,
+    "Behavior": "The wraith phases in and out of the water, attacking from different angles. It prioritizes dragging enemies underwater to drown them.",
+    "Abilities": [
+      {
+        "Name": "Drowning Grasp",
+        "Effect": "Make a melee attack using 1d8+2. If the target is in water, they must roll Str (8+) or begin suffocating.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Ethereal Drift",
+        "Effect": "The wraith can move through walls and obstacles without penalty.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Abyssal Whisper",
+        "Effect": "Target a creature within 5 spaces. They must roll Wis (6+) or become Frightened until their next turn.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Possessed Guardian",
+    "Description": "An ancient protector twisted by the dark magic of the cursed relic.",
+    "CardType": "Creature",
+    "Tier": 2,
+    "Attributes": {
+      "Str": "2d10",
+      "Dex": "2d6",
+      "Con": "3d10",
+      "Int": "1d6",
+      "Wis": "2d8",
+      "Cha": "1d4"
+    },
+    "Health": 18,
+    "Defense": 13,
+    "Behavior": "The Guardian moves methodically, attacking anyone who touches the relic. It will fight to the death unless the relic is destroyed.",
+    "Abilities": [
+      {
+        "Name": "Heavy Slam",
+        "Effect": "Make a melee attack using 2d10+3.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Soul Drain",
+        "Effect": "Target a creature within 4 spaces. They take 1d8 necrotic damage and you heal for the same amount.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Cursed Binding",
+        "Effect": "Any creature that damages the Guardian takes 1d4 necrotic damage.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Traveling Merchant",
+    "Description": "A wandering seller of exotic goods, always looking for a fair trade.",
+    "CardType": "Creature",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "1d6",
+      "Dex": "1d8",
+      "Con": "1d8",
+      "Int": "2d8",
+      "Wis": "2d6",
+      "Cha": "3d8"
+    },
+    "Health": 9,
+    "Defense": 8,
+    "Behavior": "The merchant prefers to avoid violence, favoring negotiation or fleeing if threatened. They will raise their prices if insulted or lied to.",
+    "Abilities": [
+      {
+        "Name": "Haggle",
+        "Effect": "Make a Cha roll (7+). On success, lower item costs by 25% for the encounter.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Identify Goods",
+        "Effect": "Reveal if an item is magical or cursed upon inspection.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Call for Help",
+        "Effect": "If threatened, summons 1d4 mercenary bodyguards.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Cultist Priest",
+    "Description": "A high-ranking cultist, channeling dark magic to empower rituals.",
+    "CardType": "Creature",
+    "Tier": 2,
+    "Attributes": {
+      "Str": "1d6",
+      "Dex": "2d8",
+      "Con": "2d8",
+      "Int": "2d10",
+      "Wis": "3d8",
+      "Cha": "3d8"
+    },
+    "Health": 12,
+    "Defense": 11,
+    "Behavior": "The Priest prioritizes finishing the ritual, casting spells while keeping distance. If overwhelmed, they attempt to flee or sacrifice an acolyte to escape.",
+    "Abilities": [
+      {
+        "Name": "Shadowbolt",
+        "Effect": "Make a magic attack against a target within 6 spaces using 2d8+2.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Dark Blessing",
+        "Effect": "Choose an ally within 3 spaces. They gain +2 to their next attack roll.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Unholy Aura",
+        "Effect": "All allies within 2 spaces gain +1 to attack rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Cultist Acolyte",
+    "Description": "A devoted follower of dark rituals, eager to spill blood for their cause.",
+    "CardType": "Creature",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "1d6",
+      "Dex": "1d8",
+      "Con": "2d6",
+      "Int": "1d6",
+      "Wis": "2d8",
+      "Cha": "2d6"
+    },
+    "Health": 7,
+    "Defense": 9,
+    "Behavior": "Acolytes seek to protect the ritual at all costs, attacking intruders with zeal. If their leader falls, they may flee.",
+    "Abilities": [
+      {
+        "Name": "Dark Dagger",
+        "Effect": "Make a melee attack using 1d6+2.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Blood Offering",
+        "Effect": "Sacrifice 2 health to grant +2 to the next attack roll of an ally within 3 spaces.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Fanatic Zeal",
+        "Effect": "If this creature is below half health, it gains +1 to attack rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Assassin",
+    "Description": "A silent killer lurking in the shadows, waiting for the perfect strike.",
+    "CardType": "Creature",
+    "Tier": 2,
+    "Attributes": {
+      "Str": "1d8",
+      "Dex": "3d10",
+      "Con": "2d8",
+      "Int": "2d8",
+      "Wis": "2d6",
+      "Cha": "2d6"
+    },
+    "Health": 14,
+    "Defense": 12,
+    "Behavior": "The Assassin prioritizes striking vulnerable targets, attacking from stealth before vanishing again.",
+    "Abilities": [
+      {
+        "Name": "Deadly Strike",
+        "Effect": "Make a melee attack using 2d10+3. If the target is unaware, deal double damage.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Shadow Step",
+        "Effect": "Teleport up to 4 spaces into cover.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Elusive",
+        "Effect": "When this creature takes damage, it may roll Dex (7+). On success, it moves 2 spaces and the attack misses.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Bandit Leader",
+    "Description": "A cunning and ruthless leader, commanding lesser bandits with an iron fist.",
+    "CardType": "Creature",
+    "Tier": 2,
+    "Attributes": {
+      "Str": "2d10",
+      "Dex": "2d8",
+      "Con": "2d8",
+      "Int": "2d6",
+      "Wis": "2d6",
+      "Cha": "3d8"
+    },
+    "Health": 16,
+    "Defense": 11,
+    "Behavior": "The Bandit Leader directs attacks and focuses on the weakest enemies first, ensuring no one escapes their toll.",
+    "Abilities": [
+      {
+        "Name": "Commanding Strike",
+        "Effect": "Make a melee attack using 2d10+2. A nearby Bandit may immediately attack as well.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Rally",
+        "Effect": "All Bandits within 3 spaces gain +1 to attack rolls until their next turn.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Threatening Presence",
+        "Effect": "Enemies within 2 spaces must roll Wis (6+) before attacking this creature. On failure, they must choose a different target.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Goblin Bruiser",
+    "Description": "A larger, tougher goblin that leads smaller ones into battle with brute force.",
+    "CardType": "Creature",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "2d8",
+      "Dex": "2d6",
+      "Con": "2d8",
+      "Int": "1d6",
+      "Wis": "2d6",
+      "Cha": "2d4"
+    },
+    "Health": 10,
+    "Defense": 10,
+    "Behavior": "The Bruiser charges headfirst into battle, attempting to overwhelm enemies with its brute strength.",
+    "Abilities": [
+      {
+        "Name": "Reckless Charge",
+        "Effect": "Move up to 3 spaces and make a melee attack using 2d8+2. If the attack hits, the target is knocked back 1 space.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Smash",
+        "Effect": "Make a melee attack using 2d8+2. If the attack rolls max, the target is stunned for 1 turn.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Bully Tactics",
+        "Effect": "If an ally is adjacent to the same target, this creature gains +1 to attack rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Skeleton Warrior",
+    "Description": "A reanimated warrior from an ancient battlefield, wielding rusted weapons.",
+    "CardType": "Creature",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "2d8",
+      "Dex": "2d6",
+      "Con": "2d8",
+      "Int": "1d4",
+      "Wis": "1d6",
+      "Cha": "1d4"
+    },
+    "Health": 9,
+    "Defense": 10,
+    "Behavior": "Skeletons fight relentlessly, attacking the closest enemies with single-minded focus.",
+    "Abilities": [
+      {
+        "Name": "Rusty Blade",
+        "Effect": "Make a melee attack using 2d8+1.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Bone Armor",
+        "Effect": "Reduce all non-magical damage taken by 1.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Undead Resilience",
+        "Effect": "When this creature is reduced to 0 health, roll 1d6. On a 5 or higher, it rises again with 2 health.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Stone Guardian",
+    "Description": "An enchanted golem built to protect ancient treasures from intruders.",
+    "CardType": "Creature",
+    "Tier": 2,
+    "Attributes": {
+      "Str": "3d10",
+      "Dex": "1d6",
+      "Con": "3d12",
+      "Int": "1d4",
+      "Wis": "2d6",
+      "Cha": "1d4"
+    },
+    "Health": 24,
+    "Defense": 14,
+    "Behavior": "The Guardian remains motionless until the treasure is disturbed. Once activated, it pursues enemies relentlessly.",
+    "Abilities": [
+      {
+        "Name": "Crushing Blow",
+        "Effect": "Make a melee attack using 3d10+3.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Unyielding",
+        "Effect": "Cannot be knocked prone or pushed.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Stone Grip",
+        "Effect": "If the Guardian hits a target, they must roll Str (7+) or be grappled, unable to move until they break free.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Ogre",
+    "Description": "A massive brute with more strength than brains, collecting tolls and smashing intruders.",
+    "CardType": "Creature",
+    "Tier": 3,
+    "Attributes": {
+      "Str": "4d12",
+      "Dex": "1d6",
+      "Con": "4d10",
+      "Int": "1d4",
+      "Wis": "2d6",
+      "Cha": "2d4"
+    },
+    "Health": 32,
+    "Defense": 13,
+    "Behavior": "The Ogre demands gold first but becomes enraged if refused. He fights brutally, focusing on the weakest enemy.",
+    "Abilities": [
+      {
+        "Name": "Massive Club",
+        "Effect": "Make a melee attack using 4d12+4. If the attack rolls max, the target is knocked prone.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Stomp",
+        "Effect": "All creatures within 1 space must roll Dex (8+) or take 2d8 damage and be pushed 1 space away.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Terrifying Roar",
+        "Effect": "Once per encounter, all enemies must roll Wis (7+). On failure, they become Frightened and cannot move closer to the Ogre for 1 turn.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Shadow Spirit",
+    "Description": "A malevolent entity of pure darkness, drawn to places of suffering and despair.",
+    "CardType": "Creature",
+    "Tier": 2,
+    "Attributes": {
+      "Str": "1d6",
+      "Dex": "3d10",
+      "Con": "2d8",
+      "Int": "2d8",
+      "Wis": "3d8",
+      "Cha": "2d6"
+    },
+    "Health": 14,
+    "Defense": 11,
+    "Behavior": "The Shadow Spirit phases in and out of the material plane, striking from the darkness before vanishing again.",
+    "Abilities": [
+      {
+        "Name": "Dark Claw",
+        "Effect": "Make a melee attack using 3d10+2. If this attack hits, the target takes 1 additional necrotic damage at the start of their turn.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Phantom Veil",
+        "Effect": "This creature takes half damage from non-magical attacks.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Haunting Whispers",
+        "Effect": "All enemies within 3 spaces must roll Wis (8+) or become frightened until the end of their next turn.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Doomguard Enforcer",
+    "Description": "A heavily armored demon warrior, serving an infernal master with unwavering loyalty.",
+    "CardType": "Creature",
+    "Tier": 3,
+    "Attributes": {
+      "Str": "3d12",
+      "Dex": "2d8",
+      "Con": "3d10",
+      "Int": "2d6",
+      "Wis": "2d8",
+      "Cha": "1d6"
+    },
+    "Health": 26,
+    "Defense": 14,
+    "Behavior": "The Doomguard Enforcer fights with ruthless efficiency, blocking pathways and taking hits for its allies.",
+    "Abilities": [
+      {
+        "Name": "Infernal Blade",
+        "Effect": "Make a melee attack using 3d12+3. If the attack hits, the target suffers 1 fire damage at the start of their turn.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Unyielding Bastion",
+        "Effect": "When this creature takes damage, reduce it by 2.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Infernal Roar",
+        "Effect": "All enemies within 2 spaces must roll Wis (9+) or be unable to move away from this creature on their next turn.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Doomguard Captain",
+    "Description": "The leader of an infernal squad, exuding dark power and discipline.",
+    "CardType": "Creature",
+    "Tier": 3,
+    "Attributes": {
+      "Str": "4d12",
+      "Dex": "2d10",
+      "Con": "4d10",
+      "Int": "3d8",
+      "Wis": "3d8",
+      "Cha": "2d10"
+    },
+    "Health": 32,
+    "Defense": 15,
+    "Behavior": "The Doomguard Captain issues commands, ensuring its squad fights at peak efficiency.",
+    "Abilities": [
+      {
+        "Name": "Hellfire Strike",
+        "Effect": "Make a melee attack using 4d12+4. If the attack hits, the target is burned for 2 damage at the start of their turn.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Infernal Command",
+        "Effect": "All Doomguard within 5 spaces gain +1 to attack rolls until the end of their next turn.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Unholy Resilience",
+        "Effect": "Once per encounter, when reduced to 0 health, this creature instead stays at 1 health.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Abyssal Guardian",
+    "Description": "A towering fiend, bound to guard a powerful relic from mortals.",
+    "CardType": "Creature",
+    "Tier": 3,
+    "Attributes": {
+      "Str": "4d12",
+      "Dex": "2d8",
+      "Con": "4d10",
+      "Int": "3d8",
+      "Wis": "3d10",
+      "Cha": "2d6"
+    },
+    "Health": 34,
+    "Defense": 14,
+    "Behavior": "The Abyssal Guardian defends the relic at all costs, punishing those who approach.",
+    "Abilities": [
+      {
+        "Name": "Void Slash",
+        "Effect": "Make a melee attack using 4d12+5. If the target fails a Wis (10+) save, they are stunned for 1 turn.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Abyssal Barrier",
+        "Effect": "Reduce all incoming damage by 3.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Reality Fracture",
+        "Effect": "Target a 3x3 area. All creatures within must roll Dex (10+) or take 3d10 damage.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Ancient Guardian Drake",
+    "Description": "A dragon-like entity that has stood watch over sacred ruins for centuries.",
+    "CardType": "Creature",
+    "Tier": 3,
+    "Attributes": {
+      "Str": "5d12",
+      "Dex": "3d10",
+      "Con": "5d10",
+      "Int": "3d8",
+      "Wis": "4d10",
+      "Cha": "4d8"
+    },
+    "Health": 40,
+    "Defense": 16,
+    "Behavior": "The Drake defends its territory fiercely, attacking intruders without mercy.",
+    "Abilities": [
+      {
+        "Name": "Draconic Bite",
+        "Effect": "Make a melee attack using 5d12+6. If this attack hits, the target takes 2 bleeding damage for 2 turns.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Wing Buffet",
+        "Effect": "All creatures within 2 spaces must roll Dex (10+) or be knocked prone and pushed 2 spaces.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Ancient Scales",
+        "Effect": "Reduce all non-magical damage taken by 3.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Judgement Echo",
+    "Description": "A spectral reflection of ones soul, bound to the Mirror of Judgement.",
+    "CardType": "Creature",
+    "Tier": 2,
+    "Attributes": {
+      "Str": "2d8",
+      "Dex": "3d10",
+      "Con": "2d8",
+      "Int": "3d8",
+      "Wis": "4d10",
+      "Cha": "2d8"
+    },
+    "Health": 16,
+    "Defense": 12,
+    "Behavior": "The Echo mirrors the abilities of those it fights, adapting quickly.",
+    "Abilities": [
+      {
+        "Name": "Reflective Strike",
+        "Effect": "Make a melee attack using the highest Strength or Dex dice of its opponent.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Mirror Image",
+        "Effect": "At the start of combat, the Echo creates an illusion of itself. The illusion vanishes after one attack.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Soul Glimpse",
+        "Effect": "Target a creature. They must roll Wis (9+) or suffer 2 mental damage and gain disadvantage on their next action.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Voidspawn",
+    "Description": "A writhing horror from beyond reality, its presence warping the space around it.",
+    "CardType": "Creature",
+    "Tier": 3,
+    "Attributes": {
+      "Str": "3d10",
+      "Dex": "3d8",
+      "Con": "3d10",
+      "Int": "4d12",
+      "Wis": "4d10",
+      "Cha": "2d8"
+    },
+    "Health": 28,
+    "Defense": 14,
+    "Behavior": "The Voidspawn twists space itself, distorting reality and causing madness.",
+    "Abilities": [
+      {
+        "Name": "Void Rend",
+        "Effect": "Make a melee attack using 3d10+4. If this attack hits, the target must roll Wis (10+) or suffer Disadvantage on their next action.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Reality Warp",
+        "Effect": "All creatures within 3 spaces must roll Int (10+) or be teleported to a random space within 5 spaces.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Unstable Form",
+        "Effect": "When this creature is attacked, roll a d6. On a 5 or 6, the attack misses automatically.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Starborne Titan",
+    "Description": "A celestial giant infused with the energy of the cosmos, its gaze burning with astral power.",
+    "CardType": "Creature",
+    "Tier": 3,
+    "Attributes": {
+      "Str": "5d12",
+      "Dex": "2d10",
+      "Con": "6d12",
+      "Int": "4d10",
+      "Wis": "5d10",
+      "Cha": "4d8"
+    },
+    "Health": 50,
+    "Defense": 16,
+    "Behavior": "The Titan moves with slow, deliberate power, unleashing bursts of cosmic energy.",
+    "Abilities": [
+      {
+        "Name": "Celestial Smite",
+        "Effect": "Make a melee attack using 5d12+5. If this attack hits, the target must roll Str (10+) or be knocked prone.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Solar Flare",
+        "Effect": "All creatures in a 3-space radius must roll Dex (10+) or take 3d10 radiant damage.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Cosmic Resilience",
+        "Effect": "Reduce all damage taken by 3.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Archlich",
+    "Description": "A master of necromantic arts, bound to undeath through a powerful phylactery.",
+    "CardType": "Creature",
+    "Tier": 3,
+    "Attributes": {
+      "Str": "2d8",
+      "Dex": "3d10",
+      "Con": "4d12",
+      "Int": "6d12",
+      "Wis": "5d10",
+      "Cha": "4d12"
+    },
+    "Health": 40,
+    "Defense": 15,
+    "Behavior": "The Archlich hovers in place, commanding its minions while unleashing deadly spells.",
+    "Abilities": [
+      {
+        "Name": "Necrotic Bolt",
+        "Effect": "Make a magic attack against two targets using 6d12. If the attack hits, targets must roll Con (10+) or take 2 necrotic damage at the start of their next turn.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Unholy Resurrection",
+        "Effect": "Revive a fallen Skeletal Archmage with half health.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Lichs Phylactery",
+        "Effect": "If reduced to 0 HP, the Archlich reforms in 3 turns unless its phylactery is destroyed.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Skeletal Archmage",
+    "Description": "A former wizard who defied death, now a servant of the lich.",
+    "CardType": "Creature",
+    "Tier": 2,
+    "Attributes": {
+      "Str": "1d6",
+      "Dex": "3d8",
+      "Con": "2d10",
+      "Int": "4d10",
+      "Wis": "4d8",
+      "Cha": "2d8"
+    },
+    "Health": 18,
+    "Defense": 12,
+    "Behavior": "The Skeletal Archmage stays at range, hurling arcane magic at intruders.",
+    "Abilities": [
+      {
+        "Name": "Arcane Blast",
+        "Effect": "Make a magic attack using 4d10+3 against one target.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Bone Shield",
+        "Effect": "Reduce damage taken by 2.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Mass Dispel",
+        "Effect": "Remove one magical buff from all enemies within 5 spaces.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Tormented Wraith",
+    "Description": "A lost soul, forever screaming in agony, bound to a cursed fate.",
+    "CardType": "Creature",
+    "Tier": 2,
+    "Attributes": {
+      "Str": "1d6",
+      "Dex": "3d10",
+      "Con": "3d8",
+      "Int": "3d8",
+      "Wis": "4d10",
+      "Cha": "3d8"
+    },
+    "Health": 18,
+    "Defense": 13,
+    "Behavior": "The Tormented Wraith moves erratically, attacking any living creature it sees.",
+    "Abilities": [
+      {
+        "Name": "Soul Drain",
+        "Effect": "Make a melee attack using 3d10+2. The target must roll Wis (9+) or lose 2 action points next turn.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Ethereal Form",
+        "Effect": "Takes half damage from physical attacks.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Horrifying Wail",
+        "Effect": "All creatures within 2 spaces must roll Wis (9+) or become frightened for 1 turn.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Spirit Reaver",
+    "Description": "A specter that feeds on the life force of those who dare approach.",
+    "CardType": "Creature",
+    "Tier": 3,
+    "Attributes": {
+      "Str": "2d8",
+      "Dex": "4d10",
+      "Con": "3d10",
+      "Int": "4d12",
+      "Wis": "5d10",
+      "Cha": "3d12"
+    },
+    "Health": 26,
+    "Defense": 14,
+    "Behavior": "The Spirit Reaver moves silently, striking when least expected.",
+    "Abilities": [
+      {
+        "Name": "Reaping Strike",
+        "Effect": "Make a melee attack using 4d10+3. If this attack hits, the target must roll Wis (10+) or lose 3 health at the start of their next turn.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Phantom Step",
+        "Effect": "Teleport up to 5 spaces as a free action once per turn.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Eternal Hunger",
+        "Effect": "If this creature reduces an enemy to 0 HP, it regains half of its missing health.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Dark King",
+    "Description": "A long-dead tyrant, risen from his tomb to reclaim his throne with dark sorcery and steel.",
+    "CardType": "Creature",
+    "Tier": 3,
+    "Attributes": {
+      "Str": "5d12",
+      "Dex": "3d10",
+      "Con": "6d12",
+      "Int": "4d10",
+      "Wis": "5d10",
+      "Cha": "5d12"
+    },
+    "Health": 50,
+    "Defense": 16,
+    "Behavior": "The Dark King commands his undead forces while striking down intruders with his cursed blade.",
+    "Abilities": [
+      {
+        "Name": "Cursed Greatsword",
+        "Effect": "Make a melee attack using 5d12+5. If the attack hits, the target must roll Con (10+) or take an additional 2d6 necrotic damage at the start of their next turn.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Raise the Fallen",
+        "Effect": "Revive an Undying Knight with half health.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Aura of Dread",
+        "Effect": "All non-undead creatures within 3 spaces must roll Wis (10+) or suffer Disadvantage on all attacks against the Dark King.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Regal Command",
+        "Effect": "Once per turn, the Dark King may order an Undying Knight within 5 spaces to immediately take an extra action.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Undying Knight",
+    "Description": "A once-loyal warrior, now bound to serve the Dark King for eternity.",
+    "CardType": "Creature",
+    "Tier": 3,
+    "Attributes": {
+      "Str": "4d12",
+      "Dex": "3d10",
+      "Con": "5d12",
+      "Int": "2d8",
+      "Wis": "4d10",
+      "Cha": "3d8"
+    },
+    "Health": 38,
+    "Defense": 15,
+    "Behavior": "The Undying Knight fights with unwavering discipline, protecting the Dark King at all costs.",
+    "Abilities": [
+      {
+        "Name": "Greatsword Slash",
+        "Effect": "Make a melee attack using 4d12+4. If the attack hits, the target must roll Dex (9+) or be knocked prone.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Shield of the Damned",
+        "Effect": "The first attack that hits the Undying Knight each round deals half damage.",
+        "AbilityType": "Passive"
+      },
+      {
+        "Name": "Eternal Duty",
+        "Effect": "If the Dark King is within 5 spaces, the Undying Knight gains +2 to Defense and Advantage on melee attacks.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Mad Alchemist",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "1d4",
+      "Dex": "2d6",
+      "Con": "1d6",
+      "Int": "3d6",
+      "Wis": "1d6",
+      "Cha": "1d4"
+    },
+    "Defense": 4,
+    "Health": 6,
+    "Behavior": "Throws volatile potions unpredictably.",
+    "Abilities": [
+      {
+        "Name": "Explosive Flask",
+        "Effect": "Make a ranged attack using 1d6+3 against each creature in a 2x2 area.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Toxic Mist",
+        "Effect": "All creatures within 1 space roll Con (6+). On failure, they are poisoned for 1 turn.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Cave Spider",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "1d4",
+      "Dex": "3d6",
+      "Con": "1d6",
+      "Int": "1d4",
+      "Wis": "1d4",
+      "Cha": "1d4"
+    },
+    "Defense": 6,
+    "Health": 5,
+    "Behavior": "Ambush predator. Waits in the shadows before striking.",
+    "Abilities": [
+      {
+        "Name": "Venomous Bite",
+        "Effect": "Make a melee attack using 1d6+2. On a hit, target rolls Con (6+) or is poisoned.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Web Trap",
+        "Effect": "Target within 3 spaces rolls Dex (6+). On failure, they are restrained for 1 turn.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Bandit",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "1d6",
+      "Dex": "2d6",
+      "Con": "1d6",
+      "Int": "1d4",
+      "Wis": "1d4",
+      "Cha": "1d6"
+    },
+    "Defense": 5,
+    "Health": 4,
+    "Behavior": "Prefers ambush tactics and quick getaways.",
+    "Abilities": [
+      {
+        "Name": "Short Sword Slash",
+        "Effect": "Make a melee attack using 1d6+1.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Feign Retreat",
+        "Effect": "If the bandit takes damage, it can move 2 spaces away.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Cultist Acolyte",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "1d4",
+      "Dex": "1d6",
+      "Con": "1d6",
+      "Int": "2d6",
+      "Wis": "1d6",
+      "Cha": "2d6"
+    },
+    "Defense": 4,
+    "Health": 4,
+    "Behavior": "Fanatical and unyielding. Attempts to weaken foes with dark magic before attacking.",
+    "Abilities": [
+      {
+        "Name": "Dark Bolt",
+        "Effect": "Make a magic attack using 1d6+2.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Whispered Curse",
+        "Effect": "Target must roll Wis (6+). On failure, they suffer -1 to all rolls for 1 turn.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Wolf",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "1d6",
+      "Dex": "2d6",
+      "Con": "1d6",
+      "Int": "1d4",
+      "Wis": "1d4",
+      "Cha": "1d4"
+    },
+    "Defense": 5,
+    "Health": 5,
+    "Behavior": "Hunts in packs, flanking enemies for advantage.",
+    "Abilities": [
+      {
+        "Name": "Bite",
+        "Effect": "Make a melee attack using 1d6+1.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Pack Tactics",
+        "Effect": "Gain +1 to attack rolls if an ally is adjacent to the target.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Skeleton Warrior",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "2d6",
+      "Dex": "1d6",
+      "Con": "2d6",
+      "Int": "1d4",
+      "Wis": "1d4",
+      "Cha": "1d4"
+    },
+    "Defense": 6,
+    "Health": 6,
+    "Behavior": "Mindless and relentless. Fights until destroyed.",
+    "Abilities": [
+      {
+        "Name": "Rusty Sword",
+        "Effect": "Make a melee attack using 1d6+2.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Bone Shield",
+        "Effect": "Reduce incoming damage by 1.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Goblin Sharpshooter",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "1d4",
+      "Dex": "3d6",
+      "Con": "1d6",
+      "Int": "1d6",
+      "Wis": "1d4",
+      "Cha": "1d4"
+    },
+    "Defense": 5,
+    "Health": 4,
+    "Behavior": "Hides behind cover and shoots from a distance. Retreats if injured.",
+    "Abilities": [
+      {
+        "Name": "Shortbow Shot",
+        "Effect": "Make a ranged attack using 2d6+2.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Quick Step",
+        "Effect": "Move 2 spaces before or after attacking.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Goblin",
+    "Tier": 1,
+    "Attributes": {
+      "Str": "1d6",
+      "Dex": "2d6",
+      "Con": "1d6",
+      "Int": "1d4",
+      "Wis": "1d4",
+      "Cha": "1d6"
+    },
+    "Defense": 4,
+    "Health": 3,
+    "Behavior": "Sneaky and opportunistic. Prefers to attack in numbers and retreat if outmatched.",
+    "Abilities": [
+      {
+        "Name": "Rusty Dagger",
+        "Effect": "Make a melee attack using 1d6+1.",
+        "AbilityType": "Action"
+      },
+      {
+        "Name": "Dirty Trick",
+        "Effect": "Target a creature within 1 space. It must roll Wis (6+) or be blinded for 1 turn.",
+        "AbilityType": "Action"
+      }
+    ]
+  }
+]

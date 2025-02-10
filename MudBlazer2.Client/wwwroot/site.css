@@ -196,3 +196,6 @@ li {
     width: 6px; /* Vertical strip */
     height: 40%; /* Make it a third of the height */
 }
+button{
+    outline:1px solid black;
+}

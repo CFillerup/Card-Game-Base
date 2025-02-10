@@ -1,0 +1,767 @@
+[
+  {
+    "Name": "Swarm of Vermin",
+    "Description": "The room is filled with chittering and movement in the shadows. A horde of vermin skitters toward you.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "6": "Giant Rat"
+    },
+    "EncounterSetup": "The swarm moves unpredictably, scurrying along the walls and through debris. Creatures have +2 to defense while in cover.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "1 common item. 2XP.",
+      "Use fire to scatter the swarm before they can attack.": "1 XP. Take no damage from the encounter."
+    }
+  },
+  {
+    "Name": "The Wandering Merchant",
+    "Description": "A strange merchant stands by a stall of odd wares. They claim to sell exotic goods at a fair price.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Mystic Peddler",
+      "2": "Mercenary Bodyguard"
+    },
+    "EncounterSetup": "The merchant offers goods but seems wary. The bodyguards watch you closely.",
+    "RequirementAndRewards": {
+      "Successfully haggle by rolling higher than the creature using Cha.": "Items sold by the creature cost 25% less. 1XP.",
+      "Kill the merchant and take their stock.": "2 random items. 3XP. The bodyguards will fight back."
+    }
+  },
+  {
+    "Name": "Captive in Chains",
+    "Description": "A bound prisoner pleads for help, but a group of captors stands guard.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "3": "Dungeon Brute"
+    },
+    "EncounterSetup": "The prisoner is chained to the far side of the room. The captors look amused at your approach.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "2XP. The hostage will accompany you until the end of the floor.",
+      "Free the prisoner stealthily before the captors notice.": "1XP. Gain a free movement action."
+    }
+  },
+  {
+    "Name": "Ritual in Progress",
+    "Description": "A group of cultists chants in eerie unison. A dark presence looms over their altar.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "4": "Dark Cultist",
+      "1": "Abyssal Spawn"
+    },
+    "EncounterSetup": "The ritual is incomplete. Stopping it early will have consequences.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "3XP. The ritual is stopped.",
+      "Interrupt the ritual before it finishes.": "2XP. The Abyssal Spawn does not appear."
+    }
+  },
+  {
+    "Name": "Treasure Hoard",
+    "Description": "An unguarded pile of treasure lies in the center of the room. It almost seems too easy...",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Mimic",
+      "2": "Dungeon Guardian"
+    },
+    "EncounterSetup": "The moment the chest is touched, the mimic awakens, and hidden guardians emerge.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "2 rare items. 4XP.",
+      "Use Perception to determine if the chest is a trap.": "2XP. Avoid triggering the encounter."
+    }
+  },
+  {
+    "Name": "Corrupted Fountain",
+    "Description": "A once-pristine fountain now pulses with dark energy. Strange creatures lurk nearby.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "3": "Shadow Wraith"
+    },
+    "EncounterSetup": "The fountain radiates corruption, strengthening the wraiths. Each wraith regains 1 health at the start of its turn.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "3XP. The corruption is cleansed.",
+      "Use Arcane knowledge to purify the fountain.": "1 XP. The wraiths flee."
+    }
+  },
+  {
+    "Name": "Bridge Ambush",
+    "Description": "A narrow stone bridge stretches across a bottomless chasm. Shadows move on the other side.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "4": "Bandit",
+      "1": "Bandit Captain"
+    },
+    "EncounterSetup": "The bandits attempt to push you off the bridge rather than fight fair.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "2XP. Find a hidden cache of gold.",
+      "Persuade the bandits to let you pass.": "1XP. Avoid combat."
+    }
+  },
+  {
+    "Name": "Cursed Statue",
+    "Description": "A grand statue dominates the room. The air feels heavy with magic.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Cursed Guardian"
+    },
+    "EncounterSetup": "The guardian does not attack unless the statue is disturbed.",
+    "RequirementAndRewards": {
+      "Defeat the guardian.": "1 rare item. 3XP.",
+      "Decipher the runes to deactivate the guardian.": "2XP. Avoid combat."
+    }
+  },
+  {
+    "Name": "The Lair of the Broodmother",
+    "Description": "A massive web-covered chamber houses a terrifying arachnid matriarch.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Giant Spider",
+      "4": "Spiderling"
+    },
+    "EncounterSetup": "The spiderlings swarm if the Broodmother is attacked first.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "4XP. 1 uncommon item.",
+      "Burn the webs to force the creatures out.": "2XP. The Broodmother loses 5 health before combat starts."
+    }
+  },
+  {
+    "Name": "The Runebound Prisoner",
+    "Description": "A powerful being is imprisoned here. They watch you with curiosity.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Arcane Sentinel"
+    },
+    "EncounterSetup": "The prisoner warns that releasing them will have consequences.",
+    "RequirementAndRewards": {
+      "Defeat the construct and free the prisoner.": "Gain a temporary ally. 2XP.",
+      "Seal the chamber and leave.": "1XP. Gain a magical ward."
+    }
+  },
+  {
+    "Name": "Goblin Ambush",
+    "Description": "A band of goblins ambushes you from the shadows, screeching for your valuables!",
+    "CardType": "Encounter",
+    "Creatures": {
+      "4": "Goblin",
+      "2": "Goblin Archer"
+    },
+    "EncounterSetup": "The goblins use the terrain for cover, attacking from the shadows.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "3XP. 1 common item.",
+      "Bribe the goblins with 20 gold.": "Avoid combat. They provide a crude dungeon map.",
+      "Scare them off with an Intimidation roll (7+).": "2XP. They flee, leaving behind a trinket."
+    }
+  },
+  {
+    "Name": "Forsaken Library",
+    "Description": "Rows of ancient tomes line the shelves. A spectral librarian watches warily.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Phantom Archivist"
+    },
+    "EncounterSetup": "The librarian demands silence and respect in its haunted domain.",
+    "RequirementAndRewards": {
+      "Defeat the Archivist.": "4XP. The books reveal lost knowledge (Gain 1 random spell scroll).",
+      "Decipher the runes with an Int roll (8+).": "2XP. Gain insight into an upcoming room.",
+      "Offer a worthy tome.": "3XP. The spirit bestows a boon for the next encounter."
+    }
+  },
+  {
+    "Name": "Shifting Maze",
+    "Description": "The walls suddenly shift, cutting off certain paths.",
+    "CardType": "Encounter",
+    "Creatures": {},
+    "EncounterSetup": "A puzzle of moving stone walls blocks the way forward.",
+    "RequirementAndRewards": {
+      "Solve the maze with an Int roll (7+).": "2XP. Find a shortcut to another room.",
+      "Force your way through with a Str roll (9+).": "2XP. Take 1 damage but break the mechanism.",
+      "Use magic to manipulate the walls.": "2XP. Gain a mystical insight into the dungeons layout."
+    }
+  },
+  {
+    "Name": "Cultist Ritual",
+    "Description": "A dark ritual is being conducted by hooded cultists.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "3": "Cultist Acolyte",
+      "1": "Cultist Priest"
+    },
+    "EncounterSetup": "A blood-stained altar pulsates with eerie energy.",
+    "RequirementAndRewards": {
+      "Defeat all cultists before they complete the ritual.": "4XP. 1 rare item.",
+      "Disrupt the ritual with a magic roll (7+).": "3XP. The cultists flee in terror.",
+      "Pretend to be a follower (Cha roll 6+).": "2XP. Gain temporary insight into their plans."
+    }
+  },
+  {
+    "Name": "Wandering Merchant",
+    "Description": "A robed figure offers wares from a rolling cart.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Traveling Merchant"
+    },
+    "EncounterSetup": "The merchant offers a variety of goods, though some seem cursed.",
+    "RequirementAndRewards": {
+      "Successfully haggle (Cha roll 7+).": "Items cost 25% less. 1XP.",
+      "Rob the merchant.": "3XP. 1 rare item, but future merchants may be hostile.",
+      "Trade a rare item.": "Gain an artifact of unknown power."
+    }
+  },
+  {
+    "Name": "Spider Lair",
+    "Description": "Sticky webs cover the area, and the air is filled with clicking noises.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "3": "Giant Spider",
+      "1": "Broodmother"
+    },
+    "EncounterSetup": "The spiders attack from the darkness, using their webs to ensnare prey.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "4XP. 1 rare item.",
+      "Burn the webs with fire magic.": "3XP. The spiders scatter, revealing a hidden path.",
+      "Sneak past using Dex (6+).": "Avoid combat. Gain advantage in the next room."
+    }
+  },
+  {
+    "Name": "Cursed Relic",
+    "Description": "An ominous artifact hums with dark energy.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Possessed Guardian"
+    },
+    "EncounterSetup": "The relic pulses, whispering in unknown tongues.",
+    "RequirementAndRewards": {
+      "Take the relic and endure its effects.": "Gain a powerful but cursed item.",
+      "Destroy the relic using magic.": "3XP. The dark presence vanishes.",
+      "Sell it to a collector later.": "Future reward possible."
+    }
+  },
+  {
+    "Name": "Flooded Cavern",
+    "Description": "The next room is submerged in water, limiting movement.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "2": "Water Wraith"
+    },
+    "EncounterSetup": "The water is murky, and something lurks beneath.",
+    "RequirementAndRewards": {
+      "Swim through with a Str roll (7+).": "1XP. Gain a small treasure.",
+      "Fight the wraiths.": "4XP. The water becomes safe to traverse.",
+      "Use magic to part the water.": "2XP. Reveal hidden stairs."
+    }
+  },
+  {
+    "Name": "Ancient Guardian",
+    "Description": "A slumbering stone construct awakens as you enter the chamber.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Stone Sentinel"
+    },
+    "EncounterSetup": "The sentinels glowing eyes scan the intruders.",
+    "RequirementAndRewards": {
+      "Defeat the guardian.": "5XP. Gain an ancient artifact.",
+      "Deactivate it using an Int roll (9+).": "3XP. Gain valuable information.",
+      "Sneak past undetected (Dex roll 8+).": "Avoid combat. Find a hidden switch."
+    }
+  },
+  {
+    "Name": "Treasure Mimic",
+    "Description": "A suspiciously unguarded chest sits in the middle of the room.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Mimic"
+    },
+    "EncounterSetup": "The chest seems... alive.",
+    "RequirementAndRewards": {
+      "Attack before it strikes.": "3XP. Gain a rare item.",
+      "Use an Int check (7+) to recognize the mimic.": "Avoid the fight entirely.",
+      "Feed it something valuable.": "It leaves peacefully, granting a small boon."
+    }
+  },
+  {
+    "Name": "Mysterious Fountain",
+    "Description": "A magical fountain bubbles with an unknown liquid.",
+    "CardType": "Encounter",
+    "Creatures": {},
+    "EncounterSetup": "The waters shimmer with arcane energy.",
+    "RequirementAndRewards": {
+      "Drink the water.": "Gain a random beneficial OR harmful effect.",
+      "Analyze it with an Int check (6+).": "2XP. Learn about its properties.",
+      "Use the water to bless a weapon.": "Temporary bonus to next encounter."
+    }
+  },
+  {
+    "Name": "Rogue Assassin",
+    "Description": "A shadowy figure watches from the darkness, blade at the ready.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Assassin"
+    },
+    "EncounterSetup": "The assassin tests your worth in combat.",
+    "RequirementAndRewards": {
+      "Defeat the assassin.": "4XP. Gain an enchanted dagger.",
+      "Convince them to stand down (Cha roll 7+).": "2XP. The assassin vanishes into the shadows.",
+      "Offer gold to call off the fight.": "No combat, but at what cost?"
+    }
+  },
+  {
+    "Name": "The Bandits Toll",
+    "Description": "A group of bandits block the way, demanding a toll for passage.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "3": "Bandit",
+      "1": "Bandit Leader"
+    },
+    "EncounterSetup": "The bandits have set up a roadblock and demand valuables from the party.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "2 common items. 4XP.",
+      "Successfully intimidate the bandits with a Str roll higher than their leader.": "1 common item. Passage without combat.",
+      "Bribe the bandits with 50 gold.": "Avoid combat. Gain knowledge of a nearby hidden stash."
+    }
+  },
+  {
+    "Name": "Merchant in Distress",
+    "Description": "A traveling merchant is cornered by goblins, begging for help.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "4": "Goblin",
+      "1": "Goblin Bruiser"
+    },
+    "EncounterSetup": "The goblins are robbing the merchants cart while holding him at knifepoint.",
+    "RequirementAndRewards": {
+      "Defeat all goblins before the merchant is killed.": "2XP. Merchant will sell rare items for 10% less.",
+      "Sneak past using a Dex roll higher than 6.": "Avoid combat. Gain access to merchant goods later.",
+      "Attack the merchant and goblins.": "Steal 1 rare item but suffer reputation loss."
+    }
+  },
+  {
+    "Name": "Undead Siege",
+    "Description": "The doors creak open, revealing a ruined chamber filled with the restless dead.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "5": "Skeleton Warrior",
+      "1": "Wraith"
+    },
+    "EncounterSetup": "A cursed knights remains are scattered on the floor, glowing faintly.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "3XP. The curse is broken, revealing a hidden chest.",
+      "Use divine magic to cleanse the room.": "2XP. All undead are instantly destroyed.",
+      "Persuade the wraith with a Cha roll higher than 8.": "The wraith bestows an ancient blessing before fading."
+    }
+  },
+  {
+    "Name": "The Pit Trap",
+    "Description": "The ground suddenly gives way, revealing a spiked pit below!",
+    "CardType": "Encounter",
+    "Creatures": {},
+    "EncounterSetup": "Each hero must roll a Dex save (6+) to avoid falling into the pit.",
+    "RequirementAndRewards": {
+      "Successfully avoid the trap.": "1XP. Continue forward unharmed.",
+      "Fall into the trap and climb out using a Str roll (5+).": "Take 1d6 damage but find a hidden key at the bottom.",
+      "Disarm the trap with a successful Int roll (7+).": "1XP. Trap is disabled for future explorers."
+    }
+  },
+  {
+    "Name": "Treasure Guardian",
+    "Description": "An enchanted golem stands motionless in front of a treasure chest.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Stone Guardian"
+    },
+    "EncounterSetup": "The chest hums with power, seemingly bound to the golem.",
+    "RequirementAndRewards": {
+      "Defeat the guardian in combat.": "4XP. Chest contains 1 rare item.",
+      "Use magic to deactivate the golem with an Int roll (8+).": "2XP. Guardian shuts down, allowing access to the chest.",
+      "Attempt to open the chest without fighting.": "Failing an Int check (6+) causes the guardian to attack."
+    }
+  },
+  {
+    "Name": "Captured Scout",
+    "Description": "A wounded scout is tied up, being interrogated by goblins.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "3": "Goblin",
+      "1": "Goblin Shaman"
+    },
+    "EncounterSetup": "The scout looks desperate, struggling against their bonds.",
+    "RequirementAndRewards": {
+      "Defeat the goblins before they kill the scout.": "3XP. The scout will assist you until the next floor.",
+      "Sneak in and free the scout unnoticed (Dex roll 7+).": "2XP. The goblins remain unaware.",
+      "Bribe the goblins with 30 gold.": "Scout is freed, but goblins will report your presence to others."
+    }
+  },
+  {
+    "Name": "Mysterious Doorway",
+    "Description": "A strange portal hums with arcane energy, its destination unknown.",
+    "CardType": "Encounter",
+    "Creatures": {},
+    "EncounterSetup": "The portal pulses with colors that shift unpredictably.",
+    "RequirementAndRewards": {
+      "Step through the portal.": "Transported to a random room.",
+      "Study the portal using Int (7+).": "2XP. Gain knowledge of teleportation magic.",
+      "Disrupt the portal with magic.": "Portal is disabled, but an unexpected effect occurs."
+    }
+  },
+  {
+    "Name": "Ogres Toll Booth",
+    "Description": "A large ogre stands in the middle of the path, demanding a toll.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Ogre"
+    },
+    "EncounterSetup": "The ogre has a large sack of stolen goods and an irritated expression.",
+    "RequirementAndRewards": {
+      "Defeat the ogre in combat.": "4XP. Gain a rare item from the sack.",
+      "Pay the ogre 50 gold.": "Safe passage without combat.",
+      "Trick the ogre using a Cha roll (6+).": "Avoid combat and recover some stolen goods."
+    }
+  },
+  {
+    "Name": "Sleeping Beasts",
+    "Description": "A pack of wolves sleeps soundly in the middle of the chamber.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "4": "Dire Wolf"
+    },
+    "EncounterSetup": "The beasts seem undisturbed, but any sudden noise could wake them.",
+    "RequirementAndRewards": {
+      "Sneak past with a Dex roll (6+).": "Avoid combat.",
+      "Attack while they sleep.": "1XP. Wolves awaken but start the fight at disadvantage.",
+      "Feed them rations.": "2XP. Wolves leave peacefully."
+    }
+  },
+  {
+    "Name": "The Cursed Altar",
+    "Description": "An ancient altar hums with dark energy, surrounded by eerie whispers.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "2": "Shadow Spirit"
+    },
+    "EncounterSetup": "A powerful force beckons any who dare to approach.",
+    "RequirementAndRewards": {
+      "Destroy the altar using divine magic.": "3XP. Shadows vanish, revealing hidden treasure.",
+      "Offer a blood sacrifice (Lose 2 HP).": "Gain a random magical boon for the next encounter.",
+      "Leave the altar undisturbed.": "No reward, but avoid potential danger."
+    }
+  },
+  {
+    "Name": "Doomguard Vanguard",
+    "Description": "A squad of infernal warriors stands before an ominous gate, blocking your path.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "3": "Doomguard Enforcer",
+      "1": "Doomguard Captain"
+    },
+    "EncounterSetup": "They fight as a disciplined unit, protecting their leader.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "6XP. Gain an infernal key.",
+      "Bribe the Doomguard with a rare item.": "Pass safely. Lose the item.",
+      "Challenge the Captain to single combat (Str roll 10+).": "Win and they yield. 4XP."
+    }
+  },
+  {
+    "Name": "The Corrupting Shrine",
+    "Description": "A dark altar pulses with unholy energy, tempting you to make an offering.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Abyssal Guardian"
+    },
+    "EncounterSetup": "Whispers call out, promising power... for a price.",
+    "RequirementAndRewards": {
+      "Destroy the shrine.": "5XP. Purge the corruption.",
+      "Offer a rare item.": "Gain a permanent stat boost but attract abyssal creatures.",
+      "Pray to the shrine (Wis roll 9+).": "A vision grants insight into the next floor."
+    }
+  },
+  {
+    "Name": "Dragons Rest",
+    "Description": "A slumbering dragon blocks the exit, its breathing deep and rumbling.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Ancient Guardian Drake"
+    },
+    "EncounterSetup": "The dragon sleeps, but any wrong move will wake it.",
+    "RequirementAndRewards": {
+      "Sneak past undetected (Dex roll 10+).": "Avoid combat, gain 3XP.",
+      "Appease the dragon with a worthy tribute.": "Gain its favor and 1 legendary item.",
+      "Fight the dragon.": "8XP. If defeated, its hoard is yours."
+    }
+  },
+  {
+    "Name": "The Mirror of Judgement",
+    "Description": "A towering mirror reflects not your form, but your sins and virtues.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "2": "Judgement Echo"
+    },
+    "EncounterSetup": "Your reflections emerge from the glass, seeking battle.",
+    "RequirementAndRewards": {
+      "Defeat the reflections.": "6XP. Gain insight into yourself.",
+      "Embrace the judgement (Wis roll 9+).": "Obtain a unique blessing.",
+      "Shatter the mirror.": "The reflections vanish, but the magic is lost."
+    }
+  },
+  {
+    "Name": "Demonic Pact",
+    "Description": "A bound demon offers a bargain in a magic circle, grinning with sharp teeth.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Bound Pit Fiend"
+    },
+    "EncounterSetup": "The fiend offers power, but at what cost?",
+    "RequirementAndRewards": {
+      "Make a deal.": "Gain an enchanted weapon. Also gain a permanent curse.",
+      "Break the circle with a magic roll (Int 10+).": "The demon is banished. Gain 5XP.",
+      "Challenge the fiend to a battle.": "7XP. The fight will be brutal."
+    }
+  },
+  {
+    "Name": "Chamber of Living Statues",
+    "Description": "Rows of ancient statues line the hall, but some begin to move...",
+    "CardType": "Encounter",
+    "Creatures": {
+      "3": "Living Statue",
+      "1": "Titanic Golem"
+    },
+    "EncounterSetup": "The statues remain still until the moment is right.",
+    "RequirementAndRewards": {
+      "Destroy all statues.": "6XP. Gain a magical gemstone.",
+      "Find the hidden command rune (Int roll 9+).": "Deactivate the statues. 4XP.",
+      "Use a divine spell.": "The golem ceases movement and allows safe passage."
+    }
+  },
+  {
+    "Name": "Elder Vampires Banquet",
+    "Description": "A lavish feast is set, hosted by an aristocratic vampire.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Elder Vampire",
+      "2": "Vampire Thrall"
+    },
+    "EncounterSetup": "The vampire invites you to dine... or be dined upon.",
+    "RequirementAndRewards": {
+      "Defeat the vampire lord.": "8XP. Gain a powerful relic.",
+      "Convince the vampire to sponsor you (Cha roll 11+).": "Gain noble favors.",
+      "Accept his gift of vampiric blood.": "Gain a powerful boon, but risk corruption."
+    }
+  },
+  {
+    "Name": "Eternal Duel",
+    "Description": "Two undead champions battle endlessly, seeking a worthy opponent.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Undead Knight",
+      "1": "Ghostly Duelist"
+    },
+    "EncounterSetup": "They beckon challengers to take up the blade.",
+    "RequirementAndRewards": {
+      "Defeat both champions.": "6XP. Claim their legendary swords.",
+      "Best them in a duel of skill (Dex roll 10+).": "3XP. Learn their secrets.",
+      "Offer them a worthy challenge.": "They grant a boon and fade away."
+    }
+  },
+  {
+    "Name": "Astral Convergence",
+    "Description": "A celestial portal swirls with cosmic energy, revealing glimpses of other worlds.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Voidspawn",
+      "1": "Starborne Titan"
+    },
+    "EncounterSetup": "The portal draws you into an unknown realm.",
+    "RequirementAndRewards": {
+      "Seal the portal (Int roll 10+).": "4XP. Prevents further void incursions.",
+      "Enter the portal willingly.": "Gain a powerful astral boon.",
+      "Defeat the voidspawn.": "6XP. Gain insight into cosmic forces."
+    }
+  },
+  {
+    "Name": "Lichs Final Trial",
+    "Description": "An ancient lich watches, offering one final challenge before its phylactery is destroyed.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Archlich",
+      "3": "Skeletal Archmage"
+    },
+    "EncounterSetup": "The air crackles with forbidden magic.",
+    "RequirementAndRewards": {
+      "Defeat the lich and his minions.": "10XP. Gain the staff of forbidden knowledge.",
+      "Pass his trial of knowledge (Int 11+).": "4XP. Obtain an artifact without bloodshed.",
+      "Offer a worthy magical tome.": "Lich bestows an ancient spell in return."
+    }
+  },
+  {
+    "Name": "Cage of Eternal Suffering",
+    "Description": "A massive iron cage stands in the center, filled with souls in torment.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "2": "Tormented Wraith",
+      "1": "Spirit Reaver"
+    },
+    "EncounterSetup": "The souls plead for release, but dark forces bind them.",
+    "RequirementAndRewards": {
+      "Destroy the cage.": "5XP. The souls are freed, but at what cost?",
+      "Perform a holy rite (Wis roll 10+).": "3XP. The suffering ends peacefully.",
+      "Harvest the souls power.": "Gain a powerful necromantic spell."
+    }
+  },
+  {
+    "Name": "The Dark Kings Awakening",
+    "Description": "A long-dead tyrant stirs in his tomb, ready to reclaim his throne.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Dark King",
+      "2": "Undying Knight"
+    },
+    "EncounterSetup": "The crypt shudders as the dead king rises.",
+    "RequirementAndRewards": {
+      "Defeat the Dark King.": "10XP. His throne lies vacant.",
+      "Bargain for power (Cha roll 11+).": "Gain dark knowledge at a terrible price.",
+      "Seal the tomb forever.": "4XP. Prevents future evil."
+    }
+  },
+  {
+    "Name": "Broken Siege Engine",
+    "Description": "A massive war machine lies in ruins, but scavengers fight over its remains.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "3": "Bandit",
+      "1": "Scavenger Thug"
+    },
+    "EncounterSetup": "The scavengers argue among themselves, but will fight intruders.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "4XP. Recover mechanical parts worth 30 gold.",
+      "Convince them to share the loot (Cha 6+).": "2XP. Gain a minor artifact.",
+      "Examine the siege engine (Int 7+).": "1XP. Learn engineering knowledge."
+    }
+  },
+  {
+    "Name": "Vermin Infestation",
+    "Description": "A storage room has become home to an overwhelming swarm of vermin.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "5": "Giant Rat"
+    },
+    "EncounterSetup": "The rats scatter in unpredictable patterns, making attacks harder.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "3XP. Find intact supplies worth 15 gold.",
+      "Use fire to drive them away.": "2XP. The rats flee, but part of the supplies are ruined.",
+      "Set a clever trap (Int 6+).": "1XP. Avoid combat entirely."
+    }
+  },
+  {
+    "Name": "The Abandoned Chapel",
+    "Description": "A ruined place of worship, now home to shadowy figures whispering in the dark.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "2": "Cultist Acolyte",
+      "1": "Shadow Wraith"
+    },
+    "EncounterSetup": "The air is thick with corrupted energy, making divine magic weaker.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "3XP. Cleanse the chapel and gain a divine blessing.",
+      "Use holy magic to banish the corruption.": "2XP. The wraith vanishes without a fight.",
+      "Search for relics (Wis 7+).": "1XP. Find a minor holy symbol."
+    }
+  },
+  {
+    "Name": "The Mad Alchemist",
+    "Description": "A crazed alchemist mixes unstable concoctions, cackling as you approach.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "1": "Mad Alchemist",
+      "2": "Animated Homunculus"
+    },
+    "EncounterSetup": "The alchemist hurls volatile potions while his minions attack.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "4XP. Gain a random potion.",
+      "Convince the alchemist to stand down (Cha 8+).": "2XP. He shares some alchemical knowledge.",
+      "Steal a potion and flee (Dex 7+).": "1XP. Gain 1 minor potion."
+    }
+  },
+  {
+    "Name": "Crumbling Ruins",
+    "Description": "The ceiling begins to collapse, but lurking creatures stand between you and safety.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "2": "Giant Rat",
+      "1": "Cave Spider"
+    },
+    "EncounterSetup": "Each turn, debris falls randomly, making combat riskier.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "3XP. Find an old relic in the ruins.",
+      "Escape before the ruins collapse (Dex 7+).": "Avoid combat. Gain 1XP.",
+      "Use a Strength roll (8+) to brace the ceiling.": "2XP. You prevent a collapse and can explore further."
+    }
+  },
+  {
+    "Name": "Bandit Roadblock",
+    "Description": "A pair of bandits have set up a crude blockade, demanding payment for passage.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "2": "Bandit"
+    },
+    "EncounterSetup": "The bandits seem more greedy than aggressive, but they wont hesitate to fight if provoked.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "3XP. Recover stolen goods worth 25 gold.",
+      "Bribe the bandits (Pay 30 gold).": "Avoid combat. Gain 1XP.",
+      "Deceive them into letting you pass (Cha 6+).": "2XP. They let you through, but may remember your face."
+    }
+  },
+  {
+    "Name": "Cultist Initiation",
+    "Description": "A group of cloaked figures chant around a frightened prisoner, their dagger raised for sacrifice.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "3": "Cultist Acolyte"
+    },
+    "EncounterSetup": "The ritual is moments away from completion. Act quickly to save the victim!",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "3XP. The captive gives you 1 uncommon item in gratitude.",
+      "Persuade the cultists to release the captive (Cha 7+).": "2XP. The captive joins you as an ally for one encounter.",
+      "Interrupt the ritual before combat (Int 6+).": "1XP. The cultists scatter, leaving behind their ritual supplies."
+    }
+  },
+  {
+    "Name": "The Pack Hunts",
+    "Description": "A pack of wolves circles the area, growling as they prepare to strike.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "4": "Wolf"
+    },
+    "EncounterSetup": "The wolves are hungry and aggressive, but they seem wary of fire.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "3XP. Gain 1 set of pelts worth 15 gold.",
+      "Use fire to ward them off.": "2XP. The wolves flee, but leave behind bones and scraps.",
+      "Calm the pack with an Animal Handling roll (Wis 6+).": "1XP. The wolves leave peacefully."
+    }
+  },
+  {
+    "Name": "Skeleton Ambush",
+    "Description": "Old bones litter the floor then suddenly, they rise to attack!",
+    "CardType": "Encounter",
+    "Creatures": {
+      "3": "Skeleton Warrior"
+    },
+    "EncounterSetup": "The undead lurk in the shadows, waiting for an opportune moment to strike.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "3XP. Find a minor enchanted trinket.",
+      "Use a divine spell before combat.": "2XP. The skeletons collapse instantly.",
+      "Escape the ambush (Dex 7+).": "Avoid combat entirely but gain no loot."
+    }
+  },
+  {
+    "Name": "Goblin Raiders",
+    "Description": "A group of goblins are looting a ruined campsite, laughing as they dig through old supplies.",
+    "CardType": "Encounter",
+    "Creatures": {
+      "3": "Goblin",
+      "1": "Goblin Sharpshooter"
+    },
+    "EncounterSetup": "The goblins are distracted by their scavenging, but they wont hesitate to fight back if threatened.",
+    "RequirementAndRewards": {
+      "Defeat all creatures in the encounter.": "3XP. Find 20 gold in stolen supplies.",
+      "Sneak past using a Dex roll (6+).": "Avoid combat. Gain 1XP.",
+      "Scare them off with an Intimidation roll (Str 7+).": "They drop some stolen loot and flee. Gain 2XP, 1 common item."
+    }
+  }
+
+
+]
