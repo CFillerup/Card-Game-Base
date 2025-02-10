@@ -1,0 +1,212 @@
+[
+  {
+    "Name": "Healing Potion",
+    "Description": "A simple red potion that restores vitality.",
+    "CardType": "Item",
+    "ItemType": "Consumable",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Drink",
+        "Effect": "Restore 4 hearts.",
+        "AbilityType": "Consumable"
+      }
+    ]
+  },
+  {
+    "Name": "Stamina Draught",
+    "Description": "A refreshing tonic that revitalizes the body.",
+    "CardType": "Item",
+    "ItemType": "Consumable",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Drink",
+        "Effect": "Regain 2 Action Points.",
+        "AbilityType": "Consumable"
+      }
+    ]
+  },
+  {
+    "Name": "Antidote",
+    "Description": "A small vial of bitter liquid that neutralizes poisons.",
+    "CardType": "Item",
+    "ItemType": "Consumable",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Drink",
+        "Effect": "Remove Poisoned condition.",
+        "AbilityType": "Consumable"
+      }
+    ]
+  },
+  {
+    "Name": "Torch Stick",
+    "Description": "A small stick coated in flammable resin. Burns brightly for a short time.",
+    "CardType": "Item",
+    "ItemType": "Consumable",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Ignite",
+        "Effect": "Illuminates a dark area for 3 turns.",
+        "AbilityType": "Consumable"
+      }
+    ]
+  },
+  {
+    "Name": "Throwing Dagger",
+    "Description": "A balanced blade designed for quick throwing.",
+    "CardType": "Item",
+    "ItemType": "Consumable",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Throw",
+        "Effect": "Make a ranged attack using 1d6+2.",
+        "AbilityType": "Consumable"
+      }
+    ]
+  },
+  {
+    "Name": "Explosive Powder",
+    "Description": "A small bag of volatile black powder.",
+    "CardType": "Item",
+    "ItemType": "Consumable",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Detonate",
+        "Effect": "Deal 1d8 fire damage in a 1-space radius.",
+        "AbilityType": "Consumable"
+      }
+    ]
+  },
+  {
+    "Name": "Smelling Salts",
+    "Description": "A strong stimulant that jolts the senses awake.",
+    "CardType": "Item",
+    "ItemType": "Consumable",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Inhale",
+        "Effect": "End Stunned condition immediately.",
+        "AbilityType": "Consumable"
+      }
+    ]
+  },
+  {
+    "Name": "Sticky Bomb",
+    "Description": "A crude explosive that clings to surfaces before detonating.",
+    "CardType": "Item",
+    "ItemType": "Consumable",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Throw",
+        "Effect": "Stick to a target. Detonates at the start of their next turn for 1d6+3 fire damage.",
+        "AbilityType": "Consumable"
+      }
+    ]
+  },
+  {
+    "Name": "Flash Powder",
+    "Description": "A handful of powder that creates a sudden blinding flash.",
+    "CardType": "Item",
+    "ItemType": "Consumable",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Use",
+        "Effect": "All creatures within 2 spaces must roll their Wis or become Blinded for 1 turn.",
+        "AbilityType": "Consumable"
+      }
+    ]
+  },
+  {
+    "Name": "Soothing Balm",
+    "Description": "A cool, herbal paste that numbs pain and speeds healing.",
+    "CardType": "Item",
+    "ItemType": "Consumable",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Apply",
+        "Effect": "Restore 2 hearts and reduce Wounded condition by 1 turn.",
+        "AbilityType": "Consumable"
+      }
+    ]
+  },
+  {
+    "Name": "Throwing Net",
+    "Description": "A lightweight net designed to entangle foes.",
+    "CardType": "Item",
+    "ItemType": "Consumable",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Throw",
+        "Effect": "Target must roll Dex or become Restrained until they succeed a Str check (6+).",
+        "AbilityType": "Consumable"
+      }
+    ]
+  },
+  {
+    "Name": "Ration Pack",
+    "Description": "A simple meal that provides energy for the road.",
+    "CardType": "Item",
+    "ItemType": "Consumable",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Eat",
+        "Effect": "Restore 1 heart and regain 1 Action Point.",
+        "AbilityType": "Consumable"
+      }
+    ]
+  },
+  {
+    "Name": "Mystic Ink",
+    "Description": "A small vial of enchanted ink used to scribe runes.",
+    "CardType": "Item",
+    "ItemType": "Consumable",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Use",
+        "Effect": "Enhance a scroll or spell, increasing its effect by 1 round.",
+        "AbilityType": "Consumable"
+      }
+    ]
+  },
+  {
+    "Name": "Minor Mana Potion",
+    "Description": "A faintly glowing blue liquid that restores magical energy.",
+    "CardType": "Item",
+    "ItemType": "Consumable",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Drink",
+        "Effect": "Refresh 1 spent magical action.",
+        "AbilityType": "Consumable"
+      }
+    ]
+  },
+  {
+    "Name": "Dust of Tracking",
+    "Description": "A fine powder that glows faintly when near its intended target.",
+    "CardType": "Item",
+    "ItemType": "Consumable",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Use",
+        "Effect": "Target is easier to track, giving +2 to all tracking attempts.",
+        "AbilityType": "Consumable"
+      }
+    ]
+  }
+]

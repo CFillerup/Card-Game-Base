@@ -1,0 +1,494 @@
+[
+  {
+    "Name": "Rusty Shortsword",
+    "Description": "A battered shortsword, still serviceable despite its age.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Melee",
+    "AttackRoll": "1d6",
+    "TwoHanded": false,
+    "Requirements": [
+      {
+        "Description": "Requires Str d6+",
+        "RequirementType": "Ability",
+        "Value": "Str d6+"
+      }
+    ],
+    "Abilities": []
+  },
+  {
+    "Name": "Wooden Club",
+    "Description": "A simple club, often used by bandits and thugs.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Melee",
+    "AttackRoll": "1d6",
+    "TwoHanded": false,
+    "Requirements": [
+      {
+        "Description": "Requires Str d6+",
+        "RequirementType": "Ability",
+        "Value": "Str d6+"
+      }
+    ],
+    "Abilities": []
+  },
+  {
+    "Name": "Old Spear",
+    "Description": "A basic spear, offering extra reach in battle.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Melee",
+    "AttackRoll": "1d6 + 1",
+    "TwoHanded": true,
+    "Requirements": [
+      {
+        "Description": "Requires Str d6+",
+        "RequirementType": "Ability",
+        "Value": "Str d6+"
+      }
+    ],
+    "Abilities": [
+      {
+        "Name": "Reach",
+        "Effect": "Can attack a target up to 2 spaces away.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Hunting Bow",
+    "Description": "A basic bow used for hunting small game.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Ranged",
+    "AttackRoll": "1d6",
+    "TwoHanded": true,
+    "Requirements": [
+      {
+        "Description": "Requires Dex d6+",
+        "RequirementType": "Ability",
+        "Value": "Dex d6+"
+      }
+    ],
+    "Abilities": []
+  },
+  {
+    "Name": "Slingshot",
+    "Description": "A crude but effective ranged weapon.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Ranged",
+    "AttackRoll": "1d4 + 1",
+    "TwoHanded": false,
+    "Requirements": [
+      {
+        "Description": "Requires Dex d4+",
+        "RequirementType": "Ability",
+        "Value": "Dex d4+"
+      }
+    ],
+    "Abilities": []
+  },
+  {
+    "Name": "Apprentices Wand",
+    "Description": "A simple wand used by novice spellcasters.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Magic",
+    "AttackRoll": "1d4 + 2",
+    "TwoHanded": false,
+    "Requirements": [
+      {
+        "Description": "Requires Int d6+",
+        "RequirementType": "Ability",
+        "Value": "Int d6+"
+      }
+    ],
+    "Abilities": []
+  },
+  {
+    "Name": "Spellbook of Sparks",
+    "Description": "A beginners spellbook containing minor magical incantations.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Magic",
+    "AttackRoll": "1d4 + 1",
+    "TwoHanded": true,
+    "Requirements": [
+      {
+        "Description": "Requires Int d6+",
+        "RequirementType": "Ability",
+        "Value": "Int d6+"
+      }
+    ],
+    "Abilities": [
+      {
+        "Name": "Basic Spellcasting",
+        "Effect": "Once per turn, can deal 1 fire damage instead of attacking.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Iron Buckler",
+    "Description": "A small, sturdy shield that provides basic protection.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "OffHand",
+    "AttackRoll": "",
+    "TwoHanded": false,
+    "Requirements": [
+      {
+        "Description": "Requires Str d6+",
+        "RequirementType": "Ability",
+        "Value": "Str d6+"
+      }
+    ],
+    "Abilities": [
+      {
+        "Name": "Defensive Bonus",
+        "Effect": "+1 to defense rolls while equipped.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Crystal Focus",
+    "Description": "A small magical focus used for spellcasting.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "OffHand",
+    "AttackRoll": "",
+    "TwoHanded": false,
+    "Requirements": [
+      {
+        "Description": "Requires Int d6+",
+        "RequirementType": "Ability",
+        "Value": "Int d6+"
+      }
+    ],
+    "Abilities": [
+      {
+        "Name": "Mana Reserve",
+        "Effect": "Once per combat, can reroll a magic attack die.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Training Saber",
+    "Description": "A dull-edged saber used for training purposes.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Melee",
+    "AttackRoll": "1d6",
+    "TwoHanded": false,
+    "Requirements": [
+      {
+        "Description": "Requires Str d6+",
+        "RequirementType": "Ability",
+        "Value": "Str d6+"
+      }
+    ],
+    "Abilities": [
+      {
+        "Name": "Parry Training",
+        "Effect": "+1 to defense rolls against melee attacks.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Rusty Dagger",
+    "Description": "A worn-out dagger, still sharp enough to be dangerous.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Melee",
+    "AttackRoll": "1d4 + 1",
+    "TwoHanded": false,
+    "Requirements": [
+      {
+        "Description": "Requires Dex d6+",
+        "RequirementType": "Ability",
+        "Value": "Dex d6+"
+      }
+    ],
+    "Abilities": []
+  },
+  {
+    "Name": "War Club",
+    "Description": "A heavy wooden club reinforced with iron.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Melee",
+    "AttackRoll": "1d8",
+    "TwoHanded": true,
+    "Requirements": [
+      {
+        "Description": "Requires Str d8+",
+        "RequirementType": "Ability",
+        "Value": "Str d8+"
+      }
+    ],
+    "Abilities": []
+  },
+  {
+    "Name": "Militia Pike",
+    "Description": "A long wooden pike, often issued to town guards and militias.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Melee",
+    "AttackRoll": "1d6 + 1",
+    "TwoHanded": true,
+    "Requirements": [
+      {
+        "Description": "Requires Str d6+",
+        "RequirementType": "Ability",
+        "Value": "Str d6+"
+      }
+    ],
+    "Abilities": [
+      {
+        "Name": "Reach",
+        "Effect": "Can attack a target up to 2 spaces away.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Stone Axe",
+    "Description": "A crude axe made of sharpened stone, effective but primitive.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Melee",
+    "AttackRoll": "1d6",
+    "TwoHanded": false,
+    "Requirements": [
+      {
+        "Description": "Requires Str d6+",
+        "RequirementType": "Ability",
+        "Value": "Str d6+"
+      }
+    ],
+    "Abilities": []
+  },
+  {
+    "Name": "Sling",
+    "Description": "A simple leather sling used to hurl stones at enemies.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Ranged",
+    "AttackRoll": "1d4 + 1",
+    "TwoHanded": false,
+    "Requirements": [
+      {
+        "Description": "Requires Dex d4+",
+        "RequirementType": "Ability",
+        "Value": "Dex d4+"
+      }
+    ],
+    "Abilities": []
+  },
+  {
+    "Name": "Sharpened Pitchfork",
+    "Description": "A farming tool repurposed into a makeshift weapon.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Melee",
+    "AttackRoll": "1d6",
+    "TwoHanded": true,
+    "Requirements": [
+      {
+        "Description": "Requires Str d6+",
+        "RequirementType": "Ability",
+        "Value": "Str d6+"
+      }
+    ],
+    "Abilities": [
+      {
+        "Name": "Wide Strike",
+        "Effect": "Can target two adjacent enemies with a single attack.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Apprentices Grimoire",
+    "Description": "A basic spellbook filled with introductory spells.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Magic",
+    "AttackRoll": "1d4",
+    "TwoHanded": true,
+    "Requirements": [
+      {
+        "Description": "Requires Int d6+",
+        "RequirementType": "Ability",
+        "Value": "Int d6+"
+      }
+    ],
+    "Abilities": [
+      {
+        "Name": "Minor Arcana",
+        "Effect": "Once per combat, can cast a simple magical effect instead of attacking.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Iron Cudgel",
+    "Description": "A short, heavy iron rod, commonly used by enforcers.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Melee",
+    "AttackRoll": "1d6",
+    "TwoHanded": false,
+    "Requirements": [
+      {
+        "Description": "Requires Str d6+",
+        "RequirementType": "Ability",
+        "Value": "Str d6+"
+      }
+    ],
+    "Abilities": []
+  },
+  {
+    "Name": "Rusted Greatsword",
+    "Description": "A massive, worn-out sword that still holds some power.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Melee",
+    "AttackRoll": "1d8",
+    "TwoHanded": true,
+    "Requirements": [
+      {
+        "Description": "Requires Str d8+",
+        "RequirementType": "Ability",
+        "Value": "Str d8+"
+      }
+    ],
+    "Abilities": []
+  },
+  {
+    "Name": "Hunters Crossbow",
+    "Description": "A simple crossbow used for hunting small game.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Ranged",
+    "AttackRoll": "1d6",
+    "TwoHanded": true,
+    "Requirements": [
+      {
+        "Description": "Requires Dex d6+",
+        "RequirementType": "Ability",
+        "Value": "Dex d6+"
+      }
+    ],
+    "Abilities": []
+  },
+  {
+    "Name": "Heavy Rock",
+    "Description": "Its just a big rock. But it sure does hurt when thrown.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Melee",
+    "AttackRoll": "1d6",
+    "TwoHanded": false,
+    "Requirements": [],
+    "Abilities": [
+      {
+        "Name": "Improvised Weapon",
+        "Effect": "If this item is discarded after attacking, deal +1 damage.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Torch",
+    "Description": "A simple wooden torch, useful for both light and combat.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "Melee",
+    "AttackRoll": "1d4 + 1 (Fire)",
+    "TwoHanded": false,
+    "Requirements": [],
+    "Abilities": [
+      {
+        "Name": "Illuminates",
+        "Effect": "Can reveal hidden paths or creatures in darkness.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Enchanted Pebble",
+    "Description": "A small stone with faint magical energy.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "OffHand",
+    "AttackRoll": "",
+    "TwoHanded": false,
+    "Requirements": [
+      {
+        "Description": "Requires Int d6+",
+        "RequirementType": "Ability",
+        "Value": "Int d6+"
+      }
+    ],
+    "Abilities": [
+      {
+        "Name": "Arcane Spark",
+        "Effect": "Once per encounter, add +1 to a magic attack roll.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Guards Round Shield",
+    "Description": "A sturdy, reliable shield used by city guards.",
+    "CardType": "Item",
+    "ItemType": "Held",
+    "Rarity": "Common",
+    "Subtype": "OffHand",
+    "AttackRoll": "",
+    "TwoHanded": false,
+    "Requirements": [
+      {
+        "Description": "Requires Str d6+",
+        "RequirementType": "Ability",
+        "Value": "Str d6+"
+      }
+    ],
+    "Abilities": [
+      {
+        "Name": "Defensive Bonus",
+        "Effect": "+2 to defense rolls while equipped.",
+        "AbilityType": "Passive"
+      }
+    ]
+  }
+]

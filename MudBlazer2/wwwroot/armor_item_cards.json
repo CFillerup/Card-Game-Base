@@ -1,0 +1,386 @@
+[
+  {
+    "Name": "Leather Hood",
+    "Description": "A simple hood made from tanned leather, offering minimal protection.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Helm",
+    "DefenseBonus": 1,
+    "Requirements": [],
+    "Abilities": []
+  },
+  {
+    "Name": "Rusty Helmet",
+    "Description": "A dented iron helmet that has seen better days.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Helm",
+    "DefenseBonus": 2,
+    "Requirements": [
+      {
+        "Description": "Requires Str d6+",
+        "RequirementType": "Ability",
+        "Value": "Str d6+"
+      }
+    ],
+    "Abilities": []
+  },
+  {
+    "Name": "Cloth Hat",
+    "Description": "A simple cloth cap, more for warmth than protection.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Helm",
+    "DefenseBonus": 0,
+    "Requirements": [],
+    "Abilities": [
+      {
+        "Name": "Lightweight",
+        "Effect": "+1 to movement rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Padded Vest",
+    "Description": "A thick padded vest that provides minor protection against strikes.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Chest",
+    "DefenseBonus": 2,
+    "Requirements": [],
+    "Abilities": []
+  },
+  {
+    "Name": "Gambeson",
+    "Description": "A thick, quilted coat worn under armor or alone for defense.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Chest",
+    "DefenseBonus": 3,
+    "Requirements": [],
+    "Abilities": []
+  },
+  {
+    "Name": "Rusty Chainmail",
+    "Description": "An old, rusted chainmail shirt that still offers some protection.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Chest",
+    "DefenseBonus": 4,
+    "Requirements": [
+      {
+        "Description": "Requires Str d6+",
+        "RequirementType": "Ability",
+        "Value": "Str d6+"
+      }
+    ],
+    "Abilities": []
+  },
+  {
+    "Name": "Tattered Robes",
+    "Description": "Worn robes that offer little protection but great comfort.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Chest",
+    "DefenseBonus": 1,
+    "Requirements": [],
+    "Abilities": [
+      {
+        "Name": "Mystic Affinity",
+        "Effect": "+1 to Magic rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Soft Leather Boots",
+    "Description": "Comfortable and flexible, these boots allow for quick movement.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Boots",
+    "DefenseBonus": 1,
+    "Requirements": [],
+    "Abilities": [
+      {
+        "Name": "Quick Step",
+        "Effect": "+1 to movement rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Sturdy Work Boots",
+    "Description": "Heavy-duty boots worn by laborers and adventurers alike.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Boots",
+    "DefenseBonus": 2,
+    "Requirements": [
+      {
+        "Description": "Requires Str d6+",
+        "RequirementType": "Ability",
+        "Value": "Str d6+"
+      }
+    ],
+    "Abilities": []
+  },
+  {
+    "Name": "Travelers Sandals",
+    "Description": "Simple sandals, designed for long journeys rather than combat.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Boots",
+    "DefenseBonus": 0,
+    "Requirements": [],
+    "Abilities": [
+      {
+        "Name": "Endurance",
+        "Effect": "Ignore movement penalties from difficult terrain.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Worn Leather Greaves",
+    "Description": "Basic leather shin guards that provide minimal protection.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Boots",
+    "DefenseBonus": 1,
+    "Requirements": [],
+    "Abilities": []
+  },
+  {
+    "Name": "Steel-Toed Boots",
+    "Description": "Reinforced boots that help protect the wearers feet.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Boots",
+    "DefenseBonus": 2,
+    "Requirements": [
+      {
+        "Description": "Requires Str d6+",
+        "RequirementType": "Ability",
+        "Value": "Str d6+"
+      }
+    ],
+    "Abilities": [
+      {
+        "Name": "Braced Stance",
+        "Effect": "Reduce forced movement by 1 space.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Iron Helm",
+    "Description": "A sturdy iron helmet that provides decent protection.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Helm",
+    "DefenseBonus": 3,
+    "Requirements": [
+      {
+        "Description": "Requires Str d6+",
+        "RequirementType": "Ability",
+        "Value": "Str d6+"
+      }
+    ],
+    "Abilities": []
+  },
+  {
+    "Name": "Bone Mask",
+    "Description": "A crude mask fashioned from bone, more intimidating than protective.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Helm",
+    "DefenseBonus": 1,
+    "Requirements": [],
+    "Abilities": [
+      {
+        "Name": "Fearsome Visage",
+        "Effect": "Enemies suffer -1 to their first attack roll against you.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Bucket Helmet",
+    "Description": "A dented metal bucket turned into a makeshift helmet.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Helm",
+    "DefenseBonus": 2,
+    "Requirements": [],
+    "Abilities": [
+      {
+        "Name": "Limited Vision",
+        "Effect": "-1 to Perception checks.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Brigandine Vest",
+    "Description": "A leather vest reinforced with small metal plates.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Chest",
+    "DefenseBonus": 4,
+    "Requirements": [
+      {
+        "Description": "Requires Str d8+",
+        "RequirementType": "Ability",
+        "Value": "Str d8+"
+      }
+    ],
+    "Abilities": []
+  },
+  {
+    "Name": "Rogues Jacket",
+    "Description": "A lightweight leather coat favored by thieves and scouts.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Chest",
+    "DefenseBonus": 2,
+    "Requirements": [],
+    "Abilities": [
+      {
+        "Name": "Silent Steps",
+        "Effect": "+1 to Stealth rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Wooden Plated Armor",
+    "Description": "Simple wooden slats tied together to provide makeshift protection.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Chest",
+    "DefenseBonus": 3,
+    "Requirements": [],
+    "Abilities": []
+  },
+  {
+    "Name": "Hardened Leather Cuirass",
+    "Description": "A treated leather chest piece, durable but flexible.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Chest",
+    "DefenseBonus": 3,
+    "Requirements": [],
+    "Abilities": []
+  },
+  {
+    "Name": "Nomads Sandals",
+    "Description": "Thin, flexible footwear designed for long journeys.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Boots",
+    "DefenseBonus": 0,
+    "Requirements": [],
+    "Abilities": [
+      {
+        "Name": "Desert Walker",
+        "Effect": "Ignore movement penalties from sandy terrain.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Clawed Greaves",
+    "Description": "Reinforced boots with metal claws attached to the toes.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Boots",
+    "DefenseBonus": 2,
+    "Requirements": [
+      {
+        "Description": "Requires Str d6+",
+        "RequirementType": "Ability",
+        "Value": "Str d6+"
+      }
+    ],
+    "Abilities": [
+      {
+        "Name": "Savage Kick",
+        "Effect": "Unarmed attacks deal +1 damage.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Mud-Soaked Boots",
+    "Description": "Well-worn boots caked in dried mud, oddly comfortable.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Boots",
+    "DefenseBonus": 1,
+    "Requirements": [],
+    "Abilities": [
+      {
+        "Name": "Surefooted",
+        "Effect": "+1 to Balance-related rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Iron-Toed Boots",
+    "Description": "Heavy boots reinforced with iron plates on the toes.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Boots",
+    "DefenseBonus": 3,
+    "Requirements": [
+      {
+        "Description": "Requires Str d8+",
+        "RequirementType": "Ability",
+        "Value": "Str d8+"
+      }
+    ],
+    "Abilities": []
+  },
+  {
+    "Name": "Travelers Boots",
+    "Description": "Well-made boots that provide comfort during long treks.",
+    "CardType": "Item",
+    "ItemType": "Armor",
+    "Rarity": "Common",
+    "Subtype": "Boots",
+    "DefenseBonus": 1,
+    "Requirements": [],
+    "Abilities": [
+      {
+        "Name": "Enduring March",
+        "Effect": "+1 to movement rolls for long-distance travel.",
+        "AbilityType": "Passive"
+      }
+    ]
+  }
+]

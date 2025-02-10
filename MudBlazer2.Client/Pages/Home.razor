@@ -9,6 +9,7 @@
     <button @onclick="AddHeroClassCards">Add Card Pile</button>
     <button @onclick="AddRoomCards">Add Room Pile</button>
     <button @onclick="AddEncounterCards">Add Encounter Pile</button>
+    <button @onclick="AddItemCards">Add Item Pile</button>
     @foreach (var pile in cardPiles)
     {
         if (pile.Cards.Count > 0)
@@ -190,11 +191,31 @@
                                                 </div>
                                             </div>
                                             break;
+                                        case CardBase.CardTypeEnum.Item:
+                                            var itemCard = pile.Cards.LastOrDefault() as ItemCardBase;
+                                            <div class="hero-class-card">
+                                                <h3 class="card-title">@itemCard.Name - @itemCard.ItemType</h3>
+                                                <p class="card-description">@itemCard.Description</p>
+                                                <div class="dice-modifications">
+                                                    @foreach (var req in itemCard.Requirements)
+                                                    {
+                                                        <h4>@req.RequirementType: @req.Description</h4>
+                                                    }
+                                                </div>
+                                                <div class="class-abilities">
+                                                    <ul>
+                                                        @foreach (var ability in itemCard.Abilities)
+                                                        {
+                                                            <li><strong>@ability.Name</strong> (@ability.AbilityType): @ability.Effect</li>
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            break;
                                         default:
                                             <div style="height:10%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.Name</div>
-                                            <div style="height:40%; outline: 2px solid black;">image</div>
+                                            <div style="height:10%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.Description</div>
                                             <div style="height:10%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.CardType</div>
-                                            <div style="height:40%; outline: 2px solid black;">@pile.Cards.LastOrDefault()?.Description</div>
                                             break;
                                     }
 
@@ -350,19 +371,27 @@
             Console.WriteLine($"Collision Error: Could not find piles for {id1} or {id2}");
             return;
         }
+        if (pileOne.Cards.LastOrDefault().CardType == pileTwo.Cards.LastOrDefault().CardType)
+        {
 
-        Console.WriteLine($"Triggering snapToStack for {id1} → {id2}");
 
-        //   Call JavaScript to animate the snap effect
-        await JSRuntime.InvokeVoidAsync("snapToStack", $"draggableDiv_{pileOne.Id}", $"draggableDiv_{pileTwo.Id}");
+            Console.WriteLine($"Triggering snapToStack for {id1} → {id2}");
 
-        //   Wait for animation to complete before merging
-        await Task.Delay(250);
+            //   Call JavaScript to animate the snap effect
+            await JSRuntime.InvokeVoidAsync("snapToStack", $"draggableDiv_{pileOne.Id}", $"draggableDiv_{pileTwo.Id}");
 
-        pileTwo.Cards.AddRange(pileOne.Cards);
-        cardPiles.Remove(pileOne);
+            //   Wait for animation to complete before merging
+            await Task.Delay(250);
 
-        StateHasChanged();
+            pileTwo.Cards.AddRange(pileOne.Cards);
+            cardPiles.Remove(pileOne);
+
+            StateHasChanged();
+        }
+        else
+        {
+            Console.WriteLine($"Collision Error: Card Types do not match for {id1} and {id2}");
+        }
     }
     [JSInvokable]
     public async Task ShufflePileJS(string elementId)
@@ -629,6 +658,240 @@
                 await EnableDragging(newPile);
                 //classCount++;
 
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+    }
+
+    public async Task AddItemCards()
+    {
+        //string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "hero_class_cards.json");
+        //Console.WriteLine($"Looking for file at: {Path.GetFullPath(filePath)}");
+        // Ensure this file exists in the working directory
+        //List<HeroClassCard> heroClassCards = LoadCardPileFromJson(filePath);
+
+        try
+        {
+
+            List<HeldItem>? heldItems = await Http.GetFromJsonAsync<List<HeldItem>>("held_item_cards.json");
+            List<ArmorItem>? armorItems = await Http.GetFromJsonAsync<List<ArmorItem>>("armor_item_cards.json");
+            List<ItemCardBase>? accessoryItems = await Http.GetFromJsonAsync<List<ItemCardBase>>("accessory_item_cards.json");
+            List<ItemCardBase>? consumableItems = await Http.GetFromJsonAsync<List<ItemCardBase>>("consumable_item_cards.json");
+            List<ItemCardBase>? relicItems = await Http.GetFromJsonAsync<List<ItemCardBase>>("relic_item_cards.json");
+
+            List<CardBase> commonItems = new List<CardBase>();
+            List<CardBase> rareItems = new List<CardBase>();
+            List<CardBase> epicItems = new List<CardBase>();
+            List<CardBase> legendaryItems = new List<CardBase>();
+
+            foreach (var item in heldItems)
+            {
+                switch (item.Rarity)
+                {
+                    case ItemCardBase.ItemRarityEnum.Common:
+                        commonItems.Add(item);
+                        break;
+                    case ItemCardBase.ItemRarityEnum.Rare:
+                        rareItems.Add(item);
+                        break;
+                    case ItemCardBase.ItemRarityEnum.Epic:
+                        epicItems.Add(item);
+                        break;
+                    case ItemCardBase.ItemRarityEnum.Legendary:
+                        legendaryItems.Add(item);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            foreach (var armor in armorItems)
+            {
+                switch (armor.Rarity)
+                {
+                    case ItemCardBase.ItemRarityEnum.Common:
+                        commonItems.Add(armor);
+                        break;
+                    case ItemCardBase.ItemRarityEnum.Rare:
+                        rareItems.Add(armor);
+                        break;
+                    case ItemCardBase.ItemRarityEnum.Epic:
+                        epicItems.Add(armor);
+                        break;
+                    case ItemCardBase.ItemRarityEnum.Legendary:
+                        legendaryItems.Add(armor);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            foreach (var accessory in accessoryItems)
+            {
+                switch (accessory.Rarity)
+                {
+                    case ItemCardBase.ItemRarityEnum.Common:
+                        commonItems.Add(accessory);
+                        break;
+                    case ItemCardBase.ItemRarityEnum.Rare:
+                        rareItems.Add(accessory);
+                        break;
+                    case ItemCardBase.ItemRarityEnum.Epic:
+                        epicItems.Add(accessory);
+                        break;
+                    case ItemCardBase.ItemRarityEnum.Legendary:
+                        legendaryItems.Add(accessory);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            foreach (var consumable in consumableItems)
+            {
+                switch (consumable.Rarity)
+                {
+                    case ItemCardBase.ItemRarityEnum.Common:
+                        commonItems.Add(consumable);
+                        break;
+                    case ItemCardBase.ItemRarityEnum.Rare:
+                        rareItems.Add(consumable);
+                        break;
+                    case ItemCardBase.ItemRarityEnum.Epic:
+                        epicItems.Add(consumable);
+                        break;
+                    case ItemCardBase.ItemRarityEnum.Legendary:
+                        legendaryItems.Add(consumable);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            foreach (var relic in relicItems)
+            {
+                switch (relic.Rarity)
+                {
+                    case ItemCardBase.ItemRarityEnum.Common:
+                        commonItems.Add(relic);
+                        break;
+                    case ItemCardBase.ItemRarityEnum.Rare:
+                        rareItems.Add(relic);
+                        break;
+                    case ItemCardBase.ItemRarityEnum.Epic:
+                        epicItems.Add(relic);
+                        break;
+                    case ItemCardBase.ItemRarityEnum.Legendary:
+                        legendaryItems.Add(relic);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            foreach (var item in commonItems)
+            {
+                item.CardBack = "Common Item";
+            }
+            foreach (var item in rareItems)
+            {
+                item.CardBack = "Rare Item";
+            }
+            foreach (var item in epicItems)
+            {
+                item.CardBack = "Epic Item";
+            }
+            foreach (var item in legendaryItems)
+            {
+                item.CardBack = "Legendary Item";
+            }
+
+            if (commonItems == null || commonItems.Count == 0)
+            {
+                Console.WriteLine("No creature cards found");
+
+            }
+            else
+            {
+
+
+                pileCount++;
+                var commonPile = new CardPile
+                    {
+                        Name = $"Common Item Pile",
+                        Id = pileCount,
+                        CanMove = true,
+                        FaceUp = true,
+                        Cards = new List<CardBase>(commonItems),
+                        StartingPosition = new Models.Position { X = 100, Y = 100 }
+                    };
+                cardPiles.Add(commonPile);
+                await JSRuntime.InvokeVoidAsync("setElementPosValues", $"draggableDiv_{commonPile.Id}", commonPile.StartingPosition.X, commonPile.StartingPosition.Y);
+                StateHasChanged();
+                await EnableDragging(commonPile);
+                //classCount++;
+
+            }
+            if (rareItems == null || rareItems.Count == 0)
+            {
+                Console.WriteLine("No creature cards found");
+            }
+            else
+            {
+                pileCount++;
+                var rarePile = new CardPile
+                    {
+                        Name = $"Rare Item Pile",
+                        Id = pileCount,
+                        CanMove = true,
+                        FaceUp = true,
+                        Cards = new List<CardBase>(rareItems),
+                        StartingPosition = new Models.Position { X = 100, Y = 100 }
+                    };
+                cardPiles.Add(rarePile);
+                await JSRuntime.InvokeVoidAsync("setElementPosValues", $"draggableDiv_{rarePile.Id}", rarePile.StartingPosition.X, rarePile.StartingPosition.Y);
+                StateHasChanged();
+                await EnableDragging(rarePile);
+            }
+            if (epicItems == null || epicItems.Count == 0)
+            {
+                Console.WriteLine("No creature cards found");
+            }
+            else
+            {
+                pileCount++;
+                var epicPile = new CardPile
+                    {
+                        Name = $"Epic Item Pile",
+                        Id = pileCount,
+                        CanMove = true,
+                        FaceUp = true,
+                        Cards = new List<CardBase>(epicItems),
+                        StartingPosition = new Models.Position { X = 100, Y = 100 }
+                    };
+                cardPiles.Add(epicPile);
+                await JSRuntime.InvokeVoidAsync("setElementPosValues", $"draggableDiv_{epicPile.Id}", epicPile.StartingPosition.X, epicPile.StartingPosition.Y);
+                StateHasChanged();
+                await EnableDragging(epicPile);
+            }
+            if (legendaryItems == null || legendaryItems.Count == 0)
+            {
+                Console.WriteLine("No creature cards found");
+            }
+            else
+            {
+                pileCount++;
+                var legendaryPile = new CardPile
+                    {
+                        Name = $"Legendary Item Pile",
+                        Id = pileCount,
+                        CanMove = true,
+                        FaceUp = true,
+                        Cards = new List<CardBase>(legendaryItems),
+                        StartingPosition = new Models.Position { X = 100, Y = 100 }
+                    };
+                cardPiles.Add(legendaryPile);
+                await JSRuntime.InvokeVoidAsync("setElementPosValues", $"draggableDiv_{legendaryPile.Id}", legendaryPile.StartingPosition.X, legendaryPile.StartingPosition.Y);
+                StateHasChanged();
+                await EnableDragging(legendaryPile);
             }
         }
         catch (Exception ex)

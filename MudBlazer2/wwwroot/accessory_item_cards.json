@@ -1,0 +1,478 @@
+[
+  {
+    "Name": "Travelers Ring",
+    "Description": "A simple bronze ring that brings luck to weary wanderers.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Enduring Fortune",
+        "Effect": "Once per floor, reroll a failed skill check.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Cloak of Muffled Steps",
+    "Description": "A dark cloak that dulls sound, aiding in stealth.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Silent Approach",
+        "Effect": "+1 to Stealth rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Lucky Coin",
+    "Description": "An old, well-worn coin said to bring luck.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Fortunes Favor",
+        "Effect": "Once per floor, flip a coin to reroll a failed attack roll. Heads: Success.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Talisman of Minor Protection",
+    "Description": "A small wooden charm blessed by a local priest.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Blessed Ward",
+        "Effect": "+1 to Defense rolls against undead enemies.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Wanderers Scarf",
+    "Description": "A lightweight scarf that protects against dust and wind.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Weather Resistance",
+        "Effect": "Ignore penalties from harsh weather conditions.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Pocket Compass",
+    "Description": "A small, reliable compass that always points north.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Direction Sense",
+        "Effect": "+1 to navigation-related rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Amulet of Lesser Clarity",
+    "Description": "A simple amulet inscribed with a rune of focus.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Minds Eye",
+        "Effect": "+1 to Int-based skill rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Rope Belt",
+    "Description": "A sturdy rope repurposed as a belt, useful in a pinch.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Rope Mastery",
+        "Effect": "+1 to Climbing rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Charm of Minor Healing",
+    "Description": "A charm infused with faint restorative energy.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Healing Pulse",
+        "Effect": "Once per floor, regain 1 heart.",
+        "AbilityType": "Consumable"
+      }
+    ]
+  },
+  {
+    "Name": "Simple Lockpicks",
+    "Description": "A small set of rudimentary lockpicks.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Lockpicking Aid",
+        "Effect": "+1 to lockpicking attempts.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Lantern Pendant",
+    "Description": "A pendant shaped like a tiny lantern, faintly glowing.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Guiding Light",
+        "Effect": "Once per encounter, reveal hidden enemies within 3 spaces.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Gamblers Die",
+    "Description": "A loaded die that somehow never rolls a one.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Lucky Streak",
+        "Effect": "Once per floor, reroll a roll of 1.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Tinkers Monocle",
+    "Description": "A small monocle that enhances detail work.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Keen Observation",
+        "Effect": "+1 to crafting or repair-related rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Herbal Satchel",
+    "Description": "A small pouch filled with common medicinal herbs.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Herbal Remedies",
+        "Effect": "Once per floor, reduce poison duration by 1 turn.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Hunters Token",
+    "Description": "A carved bone charm carried by seasoned hunters.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Keen Instincts",
+        "Effect": "+1 to tracking rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Travelers Ring",
+    "Description": "A simple bronze ring that brings luck to weary wanderers.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Enduring Fortune",
+        "Effect": "Once per floor, reroll a failed skill check.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Cloak of Muffled Steps",
+    "Description": "A dark cloak that dulls sound, aiding in stealth.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Silent Approach",
+        "Effect": "+1 to Stealth rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Lucky Coin",
+    "Description": "An old, well-worn coin said to bring luck.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Fortunes Favor",
+        "Effect": "Once per floor, flip a coin to reroll a failed attack roll. Heads: Success.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Talisman of Minor Protection",
+    "Description": "A small wooden charm blessed by a local priest.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Blessed Ward",
+        "Effect": "+1 to Defense rolls against undead enemies.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Wanderers Scarf",
+    "Description": "A lightweight scarf that protects against dust and wind.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Weather Resistance",
+        "Effect": "Ignore penalties from harsh weather conditions.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Pocket Compass",
+    "Description": "A small, reliable compass that always points north.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Direction Sense",
+        "Effect": "+1 to navigation-related rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Amulet of Lesser Clarity",
+    "Description": "A simple amulet inscribed with a rune of focus.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Minds Eye",
+        "Effect": "+1 to Int-based skill rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Rope Belt",
+    "Description": "A sturdy rope repurposed as a belt, useful in a pinch.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Rope Mastery",
+        "Effect": "+1 to Climbing rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Charm of Minor Healing",
+    "Description": "A charm infused with faint restorative energy.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Healing Pulse",
+        "Effect": "Once per floor, regain 1 heart.",
+        "AbilityType": "Consumable"
+      }
+    ]
+  },
+  {
+    "Name": "Simple Lockpicks",
+    "Description": "A small set of rudimentary lockpicks.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Lockpicking Aid",
+        "Effect": "+1 to lockpicking attempts.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Lantern Pendant",
+    "Description": "A pendant shaped like a tiny lantern, faintly glowing.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Guiding Light",
+        "Effect": "Once per encounter, reveal hidden enemies within 3 spaces.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Gamblers Die",
+    "Description": "A loaded die that somehow never rolls a one.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Lucky Streak",
+        "Effect": "Once per floor, reroll a roll of 1.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Tinkers Monocle",
+    "Description": "A small monocle that enhances detail work.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Keen Observation",
+        "Effect": "+1 to crafting or repair-related rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Herbal Satchel",
+    "Description": "A small pouch filled with common medicinal herbs.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Herbal Remedies",
+        "Effect": "Once per floor, reduce poison duration by 1 turn.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Hunters Token",
+    "Description": "A carved bone charm carried by seasoned hunters.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Keen Instincts",
+        "Effect": "+1 to tracking rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Brawlers Knuckles",
+    "Description": "Reinforced leather wraps for stronger unarmed strikes.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Fist of Fury",
+        "Effect": "+1 to unarmed attack rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Messengers Band",
+    "Description": "A thin bracelet worn by couriers for speed.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Swift Steps",
+        "Effect": "+1 to movement speed.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Thiefs Gloves",
+    "Description": "Black gloves that enhance dexterity.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Sleight of Hand",
+        "Effect": "+1 to pickpocketing rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Crystal Earring",
+    "Description": "A shimmering earring said to protect the mind.",
+    "CardType": "Item",
+    "ItemType": "Accessory",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Mental Ward",
+        "Effect": "+1 to magic resistance rolls.",
+        "AbilityType": "Passive"
+      }
+    ]
+  }
+]

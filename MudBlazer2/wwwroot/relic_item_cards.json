@@ -1,0 +1,212 @@
+[
+  {
+    "Name": "Travelers Compass",
+    "Description": "A simple yet reliable compass that always points towards the safest path.",
+    "CardType": "Item",
+    "ItemType": "Relic",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Guiding Needle",
+        "Effect": "Once per floor, reveals the safest path forward.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Whispering Coin",
+    "Description": "A tarnished coin that murmurs when flipped, predicting fortune or misfortune.",
+    "CardType": "Item",
+    "ItemType": "Relic",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Flip for Fate",
+        "Effect": "Once per encounter, flip a coin. Heads: Gain +1 to your next roll. Tails: -1 to your next roll.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Rune-Carved Stone",
+    "Description": "A small stone covered in ancient runes, radiating a faint magical warmth.",
+    "CardType": "Item",
+    "ItemType": "Relic",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Runic Protection",
+        "Effect": "Once per floor, gain +2 to a single defense roll.",
+        "AbilityType": "Reaction"
+      }
+    ]
+  },
+  {
+    "Name": "Phantoms Locket",
+    "Description": "A locket containing a blurry image. It hums with unseen energy.",
+    "CardType": "Item",
+    "ItemType": "Relic",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Flickering Presence",
+        "Effect": "When rolling for stealth, roll twice and take the higher result.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Everburning Candle",
+    "Description": "A candle that never melts nor flickers, providing steady light.",
+    "CardType": "Item",
+    "ItemType": "Relic",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Steady Glow",
+        "Effect": "Illuminates darkness and reveals hidden glyphs or writings within 5 spaces.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Echoing Conch",
+    "Description": "Holding this shell to your ear lets you hear distant voices.",
+    "CardType": "Item",
+    "ItemType": "Relic",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Distant Murmurs",
+        "Effect": "Once per floor, listen to distant sounds from a room ahead.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Pocket Watch of Punctuality",
+    "Description": "A watch that is always perfectly on time, down to the second.",
+    "CardType": "Item",
+    "ItemType": "Relic",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Predictive Timing",
+        "Effect": "Once per encounter, gain +1 to an initiative roll.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Feather of Light Steps",
+    "Description": "A delicate feather that makes footsteps eerily quiet.",
+    "CardType": "Item",
+    "ItemType": "Relic",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Silent Step",
+        "Effect": "Once per encounter, ignore movement-based traps.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Charm of Minor Luck",
+    "Description": "A tiny rabbits foot that tingles when held.",
+    "CardType": "Item",
+    "ItemType": "Relic",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Lucky Break",
+        "Effect": "Once per encounter, reroll a failed skill check.",
+        "AbilityType": "Reaction"
+      }
+    ]
+  },
+  {
+    "Name": "Bottled Starlight",
+    "Description": "A vial containing shimmering liquid light.",
+    "CardType": "Item",
+    "ItemType": "Relic",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Radiant Glow",
+        "Effect": "Once per floor, dispel magical darkness in a room.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Echo Stone",
+    "Description": "A small stone that records brief sounds.",
+    "CardType": "Item",
+    "ItemType": "Relic",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Replay Sound",
+        "Effect": "Can record and replay a sound up to 10 seconds long.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Wanderers Map",
+    "Description": "A worn parchment that changes to reflect the surrounding area.",
+    "CardType": "Item",
+    "ItemType": "Relic",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Pathfinder",
+        "Effect": "Once per floor, reveal a hidden passage or shortcut.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Gamblers Dice",
+    "Description": "A pair of old dice, warm to the touch.",
+    "CardType": "Item",
+    "ItemType": "Relic",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "High Stakes Roll",
+        "Effect": "Once per encounter, roll a d6. On a 6, refresh an action. On a 1, lose an action.",
+        "AbilityType": "Action"
+      }
+    ]
+  },
+  {
+    "Name": "Travelers Knot",
+    "Description": "A length of enchanted rope that never tangles.",
+    "CardType": "Item",
+    "ItemType": "Relic",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "Secure Grip",
+        "Effect": "Once per floor, automatically succeed a climbing check.",
+        "AbilityType": "Passive"
+      }
+    ]
+  },
+  {
+    "Name": "Mirror of Reflection",
+    "Description": "A hand mirror that always shows the true form of its wielder.",
+    "CardType": "Item",
+    "ItemType": "Relic",
+    "Rarity": "Common",
+    "Abilities": [
+      {
+        "Name": "True Sight",
+        "Effect": "Once per floor, reveal an illusion or disguise.",
+        "AbilityType": "Action"
+      }
+    ]
+  }
+]
